@@ -2,18 +2,22 @@ using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.XR.Interaction;
 
 public class Player : MonoBehaviour
 {
-
+    // Private
     private int _health = 100;
     private int _shield = 100;
+    private int _criticalHealth;
     private Vector3 _position;
     private Quaternion _rotation;
+
+    // Bool Flags
     private bool _isAlive = true;
     private bool _isCritical = false;
-    private int _criticalHealth = 50;
 
+    // Public
     public Camera MainCamera;
 
     // Getters and Setters
@@ -41,9 +45,20 @@ public class Player : MonoBehaviour
         }
     }
 
+    public int CriticalHealth
+    {
+        get { return _criticalHealth; }
+        set
+        {
+            if (value < 0) // Ensure non-negative
+                _criticalHealth = 0;
+            else
+                _criticalHealth = value;
+        }
+    }
+
     public bool IsAlive { get; set; }
     public bool IsCritical { get; set; }
-    public int CriticalHealth { get; set; }
 
     public Vector3 Position
     {
@@ -65,19 +80,19 @@ public class Player : MonoBehaviour
             _health = 0;
     }
 
+    public void DamageShield(int damage)
+    {
+        _shield -= damage; // Ensure no negative shield
+        if (_shield < 0)
+            _shield = 0;
+    }
+
     public void CheckHealth()
     {
         if (_health < 1)
             IsAlive = false;
         if (_health < CriticalHealth)
             IsCritical = false;
-    }
-
-    public void DamageShield(int damage)
-    {
-        _shield -= damage; // Ensure no negative shield
-        if (_shield < 0)
-            _shield = 0;
     }
 
     public void UpdatePosition()
@@ -105,7 +120,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         UpdatePosition();
-        Debug.Log("POSITION");
-        Debug.Log(Position);
+        Debug.Log("POSITION: " + Position);
+        Debug.Log("Rotation: " + Rotation);
     }
 }
