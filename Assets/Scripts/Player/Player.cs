@@ -7,18 +7,15 @@ using UnityEngine.Experimental.XR.Interaction;
 public class Player : MonoBehaviour
 {
     // Private
-    private int _health = 100;
-    private int _shield = 100;
+    [SerializeField] private int _health = 100;
+    [SerializeField] private int _shield = 100;
     private int _criticalHealth;
-    private Vector3 _position;
-    private Quaternion _rotation;
+    [SerializeField] private Vector3 _position;
+    [SerializeField] private Quaternion _rotation;
 
     // Bool Flags
     private bool _isAlive = true;
     private bool _isCritical = false;
-
-    // Public
-    public Camera MainCamera;
 
     // Getters and Setters
     public int Health
@@ -95,32 +92,14 @@ public class Player : MonoBehaviour
             IsCritical = false;
     }
 
-    public void UpdatePosition()
-    {
-        MainCamera = Camera.main;
-
-        // Get and save current position of the MainCamera
-        Vector3 position;
-        Quaternion rotation;
-        MainCamera.transform.GetPositionAndRotation(out position, out rotation);
-        Position = position;
-        Rotation = rotation;
-    }
-
     // Unity Methods
     // Start is called before the first frame update
     void Start()
     {
-        UpdatePosition();
-        Debug.Log("START OF PLAYER");
-        Debug.Log(Position);
     }
 
     // Update is called once per frame
     void Update()
     {
-        UpdatePosition();
-        Debug.Log("POSITION: " + Position);
-        Debug.Log("Rotation: " + Rotation);
     }
 }
