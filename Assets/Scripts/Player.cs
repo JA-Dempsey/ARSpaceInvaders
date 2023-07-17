@@ -8,6 +8,9 @@ public class Player : MonoBehaviour
 {
     // Private
 
+    // Bool Flags
+    private bool _isAlive = true;
+
     // Public
     public int MaxHealth = 100;
     public int MinHealth = 0;
@@ -18,11 +21,6 @@ public class Player : MonoBehaviour
 
     public BaseResource Health;
     public BaseResource Shield;
-
-    // Bool Flags
-    private bool _isAlive = true;
-    
-    
 
     public bool IsAlive { get; set; }
 
