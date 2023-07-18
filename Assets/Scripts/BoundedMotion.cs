@@ -11,11 +11,11 @@ public class BoundedMotion : MonoBehaviour
 {
 
     // public fields
-    public float initial_velocity = 3.0f;
+    public float initial_velocity = 1.0f;
 
     // private fields
     private Rigidbody rb;
-    private Vector3 currentVelocity;
+    [SerializeField] private Vector3 currentVelocity;
 
 
     // Start is called before the first frame update
