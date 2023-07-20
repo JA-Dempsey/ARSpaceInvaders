@@ -10,7 +10,8 @@ public class RotatingHover : MonoBehaviour
 
     // Allow changing speed of movement via Unity Editor
     public float RotationSpeed = 20.0f;
-    public float MovementSpeed = 1.0f;
+    public float MovementSpeed = 0.1f;
+    private float _time = 30;
 
     // Allow changing the Amount of movement via Unity Editor
     public float YMovement = 0.5f;
@@ -23,6 +24,11 @@ public class RotatingHover : MonoBehaviour
     public int Angle { get; set; }
 
     // Methods
+    public void UpdateTime(float delta)
+    {
+        _time -= delta;
+
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -34,8 +40,10 @@ public class RotatingHover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Position = new Vector3(0, Mathf.Sin(Time.time * MovementSpeed) * YMovement, 0);
+        Position = new Vector3(transform.position.x, Mathf.Sin((_time * MovementSpeed)) * YMovement, transform.position.z);
         transform.position = Position;
+
+        UpdateTime(Time.deltaTime);
 
         transform.Rotate(new Vector3(0, RotationSpeed, 0) * Time.deltaTime);
     }
