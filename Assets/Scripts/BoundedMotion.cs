@@ -36,7 +36,7 @@ public class BoundedMotion : MonoBehaviour
     private void OnCollisionEnter(Collision other) {
 
         // if colliding with a boundary
-        if(other.gameObject.tag == "Boundary" ){
+        if(other.gameObject.tag == this.gameObject.tag || other.gameObject.tag == "Boundary" || other.gameObject.tag == "Enemy" || other.gameObject.tag == "Debris" || other.gameObject.tag == "Powerup"){
 
             // reflect off the boundary at the same velocity as entered
             Vector3 collision_normal = other.contacts[0].normal;
@@ -44,6 +44,6 @@ public class BoundedMotion : MonoBehaviour
 
             rb.velocity = new_direction * currentVelocity.magnitude;
         }
-        Debug.Log("Collide)");
+
     }
 }

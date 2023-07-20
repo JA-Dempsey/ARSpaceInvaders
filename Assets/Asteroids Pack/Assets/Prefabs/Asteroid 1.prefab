@@ -238,10 +238,13 @@ GameObject:
   m_Component:
   - component: {fileID: 494976}
   - component: {fileID: 5444550}
-  - component: {fileID: 11425652}
+  - component: {fileID: 1126163928074094329}
+  - component: {fileID: 7879984672927578374}
+  - component: {fileID: 266704787055011007}
+  - component: {fileID: 4853428417020199279}
   m_Layer: 0
   m_Name: Asteroid 1
-  m_TagString: Enemy
+  m_TagString: Debris
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -255,12 +258,12 @@ Transform:
   m_GameObject: {fileID: 151664}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 488002}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &5444550
 Rigidbody:
@@ -270,8 +273,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 151664}
   serializedVersion: 4
-  m_Mass: 100
-  m_Drag: 1
+  m_Mass: 1
+  m_Drag: 0
   m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -289,7 +292,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &11425652
+--- !u!135 &1126163928074094329
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151664}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.8541382
+  m_Center: {x: 0, y: 0, z: 0.040495932}
+--- !u!114 &7879984672927578374
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -298,10 +322,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 151664}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a718c138b20419b499c3d92b17e6ff7a, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d4ca40047ce14b51914498fd0be22d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tumble: 0.25
+  upperBound: 1
+  lowerBound: 0.1
+  rotationVector: {x: 0, y: 0, z: 0}
+--- !u!114 &266704787055011007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa9f248f689b423f9928765e64c4a08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initial_velocity: 1
+  currentVelocity: {x: 0, y: 0, z: 0}
+--- !u!114 &4853428417020199279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b9cc4e6016b4bd39edb8c822c57ba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 2
 --- !u!1 &176588
 GameObject:
   m_ObjectHideFlags: 0
