@@ -11,7 +11,7 @@ public class BoundedMotion : MonoBehaviour
 {
 
     // public fields
-    public float initial_velocity = 1.0f;
+    public float velocity = 1.0f;
 
     // private fields
     private Rigidbody rb;
@@ -24,13 +24,22 @@ public class BoundedMotion : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         Vector3 randomDirection = Random.onUnitSphere;
-        rb.velocity = randomDirection * initial_velocity;
+        rb.velocity = randomDirection * velocity;
+        currentVelocity = rb.velocity;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        // update velocity if it is changed via the variable
+        if(velocity != currentVelocity.magnitude){
+            rb.velocity = rb.velocity.normalized * velocity;
+        }
+
+        // store the last velocity for use elsewhere
         currentVelocity = rb.velocity;
+
     }
 
     private void OnCollisionEnter(Collision other) {
