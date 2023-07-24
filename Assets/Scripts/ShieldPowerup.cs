@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.LowLevelPhysics;
 
-public class HealthPowerup : MonoBehaviour
+public class ShieldPowerup : MonoBehaviour
 {
     // Private
     private PowerupEffect _powerupEffect;
@@ -31,19 +30,20 @@ public class HealthPowerup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _powerupEffect = new("Health", 20, 0);
+        _powerupEffect = new("Shield", 20, 0);
         if (_powerupEffect.Decay == 0)
             IsImmediate = true;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
+

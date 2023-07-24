@@ -13,7 +13,7 @@ public class Powerup : MonoBehaviour
     // Methods
     public void ApplyEffects()
     {
-        Effect.EffectFunction();
+        
     }
 
     public void SelectEffect(PowerupEffect effect)
