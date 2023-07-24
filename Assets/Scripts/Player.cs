@@ -31,12 +31,34 @@ public class Player : MonoBehaviour
             IsAlive = false;
     }
 
+    public void DamageHealth(int damage)
+    {
+        Health.Decrease(damage);
+    }
+
+    public void HealHealth(int heal)
+    {
+        Health.Increase(heal);
+    }
+
+    public void DamageShield(int damage)
+    {
+        Shield.Decrease(damage);
+    }
+
+    public void RechargeShield(int recharge)
+    {
+        Shield.Increase(recharge);
+    }
+
+
     // Unity Methods
     private void Awake()
     {
         Health = new(MinHealth, MaxHealth, CriticalHealth);
         Shield = new(MinShield, MaxShield, CriticalShield);
     }
+
     // Start is called before the first frame update
     void Start()
     {

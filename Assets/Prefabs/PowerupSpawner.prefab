@@ -118,4 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92403ed26eef70146a6b7b5a8c89b45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PrefabPowerup: {fileID: 414104466010988198, guid: 7d70b11fb116ad24bb23592d263632cd, type: 3}
+  Prefabs:
+  - {fileID: 2989385936901310870, guid: e050e8b363ac3464da8ab52324ccb8f0, type: 3}
+  - {fileID: 1636796238053027040, guid: 9337aaa2a56208e49b349c18c7f2a7fd, type: 3}
