@@ -20,7 +20,7 @@ public class ShieldPowerup : MonoBehaviour
     // Methods
     public void Immediate()
     {
-        // Use Player Functions to heal
+        // Function to modify shields
     }
 
     // Unity
@@ -37,7 +37,10 @@ public class ShieldPowerup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
+        if (other.gameObject.name == "Player")
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame

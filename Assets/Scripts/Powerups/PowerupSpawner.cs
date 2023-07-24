@@ -8,10 +8,7 @@ public class PowerupSpawner : MonoBehaviour
 
     // Public
     public PowerupEffect[] Effects;
-    
-    public GameObject PrefabPowerup;
-
-
+    public GameObject[] Prefabs;
 
     // Powerup Effects
     public void RestoreHealth()
@@ -26,10 +23,8 @@ public class PowerupSpawner : MonoBehaviour
 
     private void Awake()
     {
-        Effects = new PowerupEffect[10];
-
-        Effects[0] = new("Health", 20, 0);
     }
+
     // Start is called before the first frame update
 
     public void SpawnPowerup()
@@ -38,9 +33,7 @@ public class PowerupSpawner : MonoBehaviour
         Vector3 newPosition = Random.insideUnitSphere * 5;
         newPosition.y = 0;
         transform.position = newPosition;
-        GameObject instance = Instantiate(PrefabPowerup, transform.position, Quaternion.identity);
-        var test = instance.GetComponent<Powerup>();
-        test.SelectEffect(Effects[0]);
+        GameObject instance = Instantiate(Prefabs[(int) Random.Range(0, 2)], transform.position, Quaternion.identity);
 
     }
 
