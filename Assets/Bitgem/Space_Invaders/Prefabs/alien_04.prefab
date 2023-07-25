@@ -437,10 +437,10 @@ GameObject:
   - component: {fileID: 3743037347477451596}
   - component: {fileID: 6526529420380468113}
   - component: {fileID: 8728397667057012885}
-  - component: {fileID: 3316912784867262897}
+  - component: {fileID: -4432136817915814067}
   m_Layer: 0
   m_Name: alien_04
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -461,7 +461,7 @@ Transform:
   - {fileID: 4406472805128674}
   - {fileID: 4672141756627318}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!111 &111291919436393782
 Animation:
@@ -542,7 +542,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caa9f248f689b423f9928765e64c4a08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initial_velocity: 1
+  velocity: 1
+  currentVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &8728397667057012885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -556,31 +557,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
---- !u!895512359 &3316912784867262897
-AimConstraint:
+--- !u!114 &-4432136817915814067
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700304613907954}
   m_Enabled: 1
-  serializedVersion: 2
-  m_Weight: 1
-  m_RotationAtRest: {x: -0, y: 0, z: 0}
-  m_RotationOffset: {x: 21.801401, y: 180, z: 0}
-  m_AimVector: {x: 0, y: 0, z: 0}
-  m_UpVector: {x: 0, y: 1, z: 0}
-  m_WorldUpVector: {x: 0, y: 1, z: 0}
-  m_WorldUpObject: {fileID: 0}
-  m_UpType: 0
-  m_AffectRotationX: 1
-  m_AffectRotationY: 1
-  m_AffectRotationZ: 1
-  m_Active: 1
-  m_IsLocked: 1
-  m_Sources:
-  - sourceTransform: {fileID: 0}
-    weight: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 025cf11c15a4c421fa6b2540473a94de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!1 &1837863064232324
 GameObject:
   m_ObjectHideFlags: 0

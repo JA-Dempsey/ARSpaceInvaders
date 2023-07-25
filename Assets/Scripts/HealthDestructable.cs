@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Health_Destructable : MonoBehaviour
+public class HealthDestructable : MonoBehaviour
 {
 
     public float health = 1f;

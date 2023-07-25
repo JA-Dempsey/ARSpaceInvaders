@@ -18,11 +18,13 @@ public class BoundedMotion : MonoBehaviour
     [SerializeField] private Vector3 currentVelocity;
 
 
+    void Awake(){
+        rb = GetComponent<Rigidbody>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-
         Vector3 randomDirection = Random.onUnitSphere;
         rb.velocity = randomDirection * velocity;
         currentVelocity = rb.velocity;

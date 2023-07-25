@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 111302903304519566}
   - component: {fileID: 7368935085199868226}
   - component: {fileID: 2682784916489367430}
-  - component: {fileID: 2241926787472487544}
   - component: {fileID: 1128431942884152179}
   - component: {fileID: 7804902863149053195}
+  - component: {fileID: 1450453255947125670}
   m_Layer: 0
   m_Name: alien_01
   m_TagString: Enemy
@@ -108,31 +108,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.39298898, y: 0.6019078, z: 0.38250637}
   m_Center: {x: -0.00065264106, y: 0.003597349, z: 0.009050369}
---- !u!895512359 &2241926787472487544
-AimConstraint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1001970181146104}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Weight: 1
-  m_RotationAtRest: {x: -0, y: 0, z: 0}
-  m_RotationOffset: {x: 0, y: 0, z: 0}
-  m_AimVector: {x: 0, y: 0, z: 1}
-  m_UpVector: {x: 0, y: 1, z: 0}
-  m_WorldUpVector: {x: 0, y: 1, z: 0}
-  m_WorldUpObject: {fileID: 0}
-  m_UpType: 0
-  m_AffectRotationX: 1
-  m_AffectRotationY: 1
-  m_AffectRotationZ: 1
-  m_Active: 1
-  m_IsLocked: 1
-  m_Sources:
-  - sourceTransform: {fileID: 0}
-    weight: 1
 --- !u!114 &1128431942884152179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,7 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caa9f248f689b423f9928765e64c4a08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initial_velocity: 1
+  velocity: 1
+  currentVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &7804902863149053195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,6 +135,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+--- !u!114 &1450453255947125670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001970181146104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 025cf11c15a4c421fa6b2540473a94de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!1 &1174406235233968
 GameObject:
   m_ObjectHideFlags: 0

@@ -72,11 +72,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4539102002488964}
   - component: {fileID: 111601498382983200}
-  - component: {fileID: 971197960673645053}
   - component: {fileID: 2173727336665591358}
   - component: {fileID: 3656080240758597768}
   - component: {fileID: 9176029473531358266}
   - component: {fileID: 6391333770121879109}
+  - component: {fileID: -1380677667077639790}
   m_Layer: 0
   m_Name: alien_03
   m_TagString: Enemy
@@ -100,7 +100,7 @@ Transform:
   - {fileID: 4192703523304240}
   - {fileID: 4455584226564826}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!111 &111601498382983200
 Animation:
@@ -121,31 +121,6 @@ Animation:
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 1
---- !u!895512359 &971197960673645053
-AimConstraint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1237488794017540}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Weight: 1
-  m_RotationAtRest: {x: -0, y: 0, z: 0}
-  m_RotationOffset: {x: 0, y: 0, z: 0}
-  m_AimVector: {x: 0, y: 0, z: 0}
-  m_UpVector: {x: 0, y: 1, z: 0}
-  m_WorldUpVector: {x: 0, y: 1, z: 0}
-  m_WorldUpObject: {fileID: 0}
-  m_UpType: 0
-  m_AffectRotationX: 1
-  m_AffectRotationY: 1
-  m_AffectRotationZ: 1
-  m_Active: 1
-  m_IsLocked: 1
-  m_Sources:
-  - sourceTransform: {fileID: 0}
-    weight: 1
 --- !u!114 &2173727336665591358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,7 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caa9f248f689b423f9928765e64c4a08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initial_velocity: 1
+  velocity: 1
+  currentVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &3656080240758597768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,6 +196,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.52030635, y: 0.34161663, z: 0.3319602}
   m_Center: {x: 0.0044103265, y: -0.015472174, z: -0.02641368}
+--- !u!114 &-1380677667077639790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237488794017540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 025cf11c15a4c421fa6b2540473a94de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!1 &1343950858989396
 GameObject:
   m_ObjectHideFlags: 0
