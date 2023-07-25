@@ -20,9 +20,9 @@ public class ShieldPowerup : MonoBehaviour
     public bool IsImmediate { get; set; }
 
     // Methods
-    public void Immediate()
+    public void Effect()
     {
-        // Function to modify shields
+        PlayerScript.RechargeShield(_powerupEffect.Scale);
     }
 
     // Unity
@@ -45,7 +45,7 @@ public class ShieldPowerup : MonoBehaviour
     {
         if (other.gameObject.name == "Player")
         {
-            PlayerScript.RechargeShield(_powerupEffect.Scale);
+            Effect();
             Destroy(gameObject);
         }
     }
