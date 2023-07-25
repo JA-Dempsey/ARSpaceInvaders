@@ -82,11 +82,18 @@ public class BaseResource
             IsCritical = false;
     }
 
-    public void Damage(int damage)
+    public void Decrease(int decrease)
     {
-        _current -= damage;
+        _current -= decrease;
         if (_current < 0) // Ensure non-negative
             _current = 0;
+    }
+
+    public void Increase(int increase)
+    {
+        _current += increase;
+        if (_current > _max)
+            _current = _max;
     }
 
 
