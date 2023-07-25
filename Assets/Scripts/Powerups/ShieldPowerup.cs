@@ -6,12 +6,14 @@ public class ShieldPowerup : MonoBehaviour
 {
     // Private
     private PowerupEffect _powerupEffect;
-
     // Public
-    public GameObject Player;
+    public GameObject PlayerObject;
+    public Player PlayerScript;
+
 
     // Flags
     private bool _isImmediate = false;
+    private Component _playerScript;
 
     // Setters/Getters
 
@@ -26,6 +28,7 @@ public class ShieldPowerup : MonoBehaviour
     // Unity
     private void Awake()
     {
+
     }
     // Start is called before the first frame update
     void Start()
@@ -33,12 +36,16 @@ public class ShieldPowerup : MonoBehaviour
         _powerupEffect = new("Shield", 20, 0);
         if (_powerupEffect.Decay == 0)
             IsImmediate = true;
+
+        PlayerScript = PlayerObject.GetComponent<Player>();
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name == "Player")
         {
+            PlayerScript.RechargeShield(_powerupEffect.Scale);
             Destroy(gameObject);
         }
     }
