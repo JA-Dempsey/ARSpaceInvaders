@@ -10,17 +10,6 @@ public class PowerupSpawner : MonoBehaviour
     public PowerupEffect[] Effects;
     public GameObject[] Prefabs;
 
-    // Powerup Effects
-    public void RestoreHealth()
-    {
-        
-    }
-
-    public void RestoreShield()
-    {
-
-    }
-
     private void Awake()
     {
     }
@@ -29,11 +18,11 @@ public class PowerupSpawner : MonoBehaviour
 
     public void SpawnPowerup()
     {
-
+        int len = Prefabs.Length;
         Vector3 newPosition = Random.insideUnitSphere * 5;
         newPosition.y = 0;
         transform.position = newPosition;
-        GameObject instance = Instantiate(Prefabs[(int) Random.Range(0, 2)], transform.position, Quaternion.identity);
+        GameObject instance = Instantiate(Prefabs[(int) Random.Range(0, len)], transform.position, Quaternion.identity);
 
     }
 
@@ -44,6 +33,6 @@ public class PowerupSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SpawnPowerup();
+        SpawnPowerup();  // Testing mass calls to program
     }
 }
