@@ -11,7 +11,7 @@ public class Projectile : MonoBehaviour
     private bool _fired = false;
 
     public GameObject Target;
-    public float Speed;
+    public float Speed = 1.0f;
 
     // Getters/Setters
     public bool IsPointed { get; set; }
