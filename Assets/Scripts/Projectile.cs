@@ -1,27 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
     private bool _isPointed;
-    private Vector3 _targetPos;
+    private bool _fired = false;
 
     public GameObject Target;
-    public float Speed = 0.5f;
-
-    public Vector3 TargetPos { get; set; }
+    public int Speed;
     public bool IsPointed { get; set; }
+    public bool Fired { get; set; }
+
 
     // Methods
-    public void Look()
+    public void Shoot()
     {
-        transform.LookAt(Target.transform);
-    }
 
-    public void Move()
-    {
-        transform.position = Vector3.MoveTowards(transform.position, TargetPos, Speed);
+        // Multiplied by 10 to get into more acceptable speed range
+        GetComponent<Rigidbody>().AddForce(transform.forward * 10 * Speed);
     }
 
     public void DestroyOutOfBounds()
@@ -38,7 +37,6 @@ public class Projectile : MonoBehaviour
 
     void Start()
     {
-        TargetPos = Target.transform.position;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -56,11 +54,11 @@ public class Projectile : MonoBehaviour
         {
             // Rotation should likely be
             // handled at creation at the spawner/enemy
-            Look(); // Remove/comment out to just move forward
+            transform.LookAt(Target.transform); // Remove/comment out to just move forward
             IsPointed = true;
         }
 
-        Move();
+        Shoot();
         DestroyOutOfBounds();
 
     }
