@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caa9f248f689b423f9928765e64c4a08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initial_velocity: 1
+  velocity: 1
   currentVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &394898693107612213
 MonoBehaviour:
@@ -189,6 +189,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 15
+  explosion: {fileID: 1200464223753380778, guid: e16068a9b58b04653aebcf82d43b4357, type: 3}
+  explosion_scale: 3
 --- !u!1 &153142
 GameObject:
   m_ObjectHideFlags: 0
