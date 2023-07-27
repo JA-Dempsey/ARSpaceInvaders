@@ -21,7 +21,8 @@ public class HealthDestructable : MonoBehaviour
         // if colliding with projectile, then reduce health
         if(other.gameObject.tag == "Projectile"){
             // TODO deduct projectile strength from object
-
+            health -= 1.0f;
         }
+        Debug.Log(other.gameObject.tag);
     }
 }
