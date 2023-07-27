@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
+using UnityEditor.XR.Management;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -11,9 +12,15 @@ public class Projectile : MonoBehaviour
 
     public GameObject Target;
     public int Speed;
+
+    // Getters/Setters
     public bool IsPointed { get; set; }
     public bool Fired { get; set; }
 
+    public void SetTarget(GameObject target)
+    {
+        Target = target;
+    }
 
     // Methods
     public void Shoot()
