@@ -37,7 +37,7 @@ public class ShieldPowerup : MonoBehaviour
         if (_powerupEffect.Decay == 0)
             IsImmediate = true;
 
-        PlayerScript = PlayerObject.GetComponent<Player>();
+        PlayerScript = GameObject.Find("Player").GetComponent<Player>();
 
     }
 

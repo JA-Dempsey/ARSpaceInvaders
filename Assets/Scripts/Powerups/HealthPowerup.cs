@@ -8,10 +8,10 @@ public class HealthPowerup : MonoBehaviour
 {
     // Private
     private PowerupEffect _powerupEffect;
+    private Player _playerScript;
 
     // Public
     public GameObject PlayerObject;
-    public Player Player;
 
     // Flags
     private bool _isImmediate = false;
@@ -32,9 +32,9 @@ public class HealthPowerup : MonoBehaviour
             IsImmediate = true;
         }
     }
-    public void Heal()
+    public void Effect()
     {
-        Player.HealHealth(_powerupEffect.Scale);
+        _playerScript.HealHealth(_powerupEffect.Scale);
     }
 
     public void Decay(float time)
@@ -42,6 +42,7 @@ public class HealthPowerup : MonoBehaviour
         _powerupEffect.Decay -= time;
         if (_powerupEffect.Decay == 0)
             IsFinished = true;
+
     }
 
     // Unity
@@ -51,23 +52,21 @@ public class HealthPowerup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Local Startup
         _powerupEffect = new("Health", 20, 0);
         if (_powerupEffect.Decay == 0)
             IsImmediate = true;
 
         // Interaction with other Unity Objects
-        PlayerObject = GameObject.Find("Player");
-        Player = PlayerObject.GetComponent<Player>();
+        // This is slow, but can be updated if we decide to go with
+        // an instance controlled by the central game controller
+        _playerScript = GameObject.Find("Player").GetComponent<Player>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collision detected");
-        Debug.Log("Name of Collider: " + other.gameObject.name);
         if (other.gameObject.name == "Player")
         {
-            //Heal();
+            Effect();
             Destroy(gameObject);
             Debug.Log("Powerup Destroyed");
         }
