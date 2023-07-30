@@ -16,11 +16,15 @@ public class Player : MonoBehaviour
     public int MinHealth = 0;
     public int MaxShield = 100;
     public int MinShield = 0;
+    public int MaxEnergy = 3;
+    public int MinEnergy = 0;
     public int CriticalHealth = 50;
     public int CriticalShield = 0;
+    public int CriticalEnergy = 1;
 
     public BaseResource Health;
     public BaseResource Shield;
+    public BaseResource Energy;
 
     public bool IsAlive { get; set; }
 
@@ -51,12 +55,23 @@ public class Player : MonoBehaviour
         Shield.Increase(recharge);
     }
 
+    public void ReduceEnergy(int energy)
+    {
+        Energy.Decrease(energy);
+    }
+
+    public void IncreaseEnergy(int energy)
+    {
+        Energy.Increase(energy);
+    }
+
 
     // Unity Methods
     private void Awake()
     {
         Health = new(MinHealth, MaxHealth, CriticalHealth);
         Shield = new(MinShield, MaxShield, CriticalShield);
+        Energy = new(MinEnergy, MaxEnergy, CriticalEnergy);
     }
 
     // Start is called before the first frame update
