@@ -29,15 +29,23 @@ public class Player : MonoBehaviour
     public bool IsAlive { get; set; }
 
     // Methods
-    public void CheckHealth()
+    public bool CheckHealth()
     {
         if (Health.IsZero)
             IsAlive = false;
+
+        return IsAlive;
     }
 
+    // Increase/Decrease Function Maps
+    // Reduces complexity of calls from other objects
+    // and provides methods to do other things if necessary
     public void DamageHealth(int damage)
     {
         Health.Decrease(damage);
+
+        if (Health.IsZero)
+            IsAlive = false;
     }
 
     public void HealHealth(int heal)
@@ -55,12 +63,12 @@ public class Player : MonoBehaviour
         Shield.Increase(recharge);
     }
 
-    public void ReduceEnergy(int energy)
+    public void DamageEnergy(int energy)
     {
         Energy.Decrease(energy);
     }
 
-    public void IncreaseEnergy(int energy)
+    public void RechargeEnergy(int energy)
     {
         Energy.Increase(energy);
     }
@@ -69,6 +77,7 @@ public class Player : MonoBehaviour
     // Unity Methods
     private void Awake()
     {
+        // Initialize
         Health = new(MinHealth, MaxHealth, CriticalHealth);
         Shield = new(MinShield, MaxShield, CriticalShield);
         Energy = new(MinEnergy, MaxEnergy, CriticalEnergy);
