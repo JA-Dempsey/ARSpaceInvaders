@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-using TMPro.Examples;
 using UnityEngine;
 
 public class Powerup : MonoBehaviour
