@@ -26,7 +26,7 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Spawn();
+        // Spawn();
         
     }
 
@@ -54,9 +54,9 @@ public class Spawner : MonoBehaviour
         // loop over and spawn a random object from the prefab list
         for(int i = 0; i< numObjects; i++){
             // calculate a random position using min/max components
-            float pos_x = Random.Range(x_coordinates[0], x_coordinates[1]);
-            float pos_y = Random.Range(y_coordinates[0], y_coordinates[1]);
-            float pos_z = Random.Range(z_coordinates[0], z_coordinates[1]);
+            float pos_x = Random.Range(x_coordinates[0], x_coordinates[1]*0.8f);
+            float pos_y = Random.Range(y_coordinates[0], y_coordinates[1]*0.8f);
+            float pos_z = Random.Range(z_coordinates[0], z_coordinates[1]*0.8f);
 
             // give random position to the object
             Vector3 position = new Vector3(pos_x, pos_y, pos_z);

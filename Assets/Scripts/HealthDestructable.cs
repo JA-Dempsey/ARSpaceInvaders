@@ -14,7 +14,7 @@ public class HealthDestructable : MonoBehaviour
     void Update()
     {
         if(destroyTrigger){
-            Destroy(gameObject);
+            DestroyObject();
         }
     }
 
@@ -30,15 +30,17 @@ public class HealthDestructable : MonoBehaviour
             health -= 1.0f;
             // if health falls below 0, destroy the object
             if(health <= 0.0){
-
-                // play explosion animation
-                if(explosion != null){
-                    GameObject destruction_animation = Instantiate(explosion, this.gameObject.transform.position, Quaternion.identity);
-                    destruction_animation.transform.localScale *= explosion_scale; 
-                }
-                Destroy(this.gameObject);
+                DestroyObject();
             }
         }
+    }
+
+    private void DestroyObject() {
+        if(explosion != null){
+            GameObject destruction_animation = Instantiate(explosion, this.gameObject.transform.position, Quaternion.identity);
+            destruction_animation.transform.localScale *= explosion_scale; 
+        }
+        Destroy(gameObject);
     }
 
 

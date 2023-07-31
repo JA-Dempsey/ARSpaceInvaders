@@ -13,21 +13,34 @@ public class SpawnProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(TimeDelay());
+        StartCoroutine(TimeDelayStart());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(projectileChild == null){
-            Vector3 spawnPosition = transform.TransformDirection(new Vector3(0,0,1f));
-            projectileChild = Instantiate(projectilePrefab, transform.position, transform.rotation);
+        if(projectileChild == null && delayDone){
+            // adds short delay to firing projectile
+            Invoke("Shoot", Random.Range(1f,6f));
+            delayDone = false;
         }
     }
 
+    void Shoot(){
+
+        // spawn projectile
+        Vector3 spawnPosition = transform.TransformDirection(new Vector3(0,0,1f));
+        projectileChild = Instantiate(projectilePrefab, transform.position, transform.rotation);
+        
+        // set flag to allow another projectile to fire
+        delayDone = true;
+    }
+
     // gives delay time before firing projectiles
-    IEnumerator TimeDelay(){
+    IEnumerator TimeDelayStart(){
         yield return new WaitForSeconds(delay);
         delayDone = true;
     }
+
+
 }
