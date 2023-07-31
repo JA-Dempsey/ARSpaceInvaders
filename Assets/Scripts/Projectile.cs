@@ -19,7 +19,7 @@ public class Projectile : MonoBehaviour
 
         // set velocity of the laser
         GetComponent<Rigidbody>().velocity = (transform.forward * Speed);
-
+        
         // GetComponent<Rigidbody>().AddForce(transform.forward * Speed);
     }
 
@@ -27,17 +27,15 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // enemy collision with enemy projectile (ignore)
-        if (other.gameObject.tag == "Enemy" && gameObject.tag == "Projectile")
-        {
+        if(other.gameObject.tag == "Enemy" && gameObject.tag == "Projectile"){
             return;
         }
-        else
-        { // collision with anything else
+        else{ // collision with anything else
             Destroy(gameObject);
         }
 
-
-
+        
+        
     }
 
     // Update is called once per frame
