@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1128431942884152179}
   - component: {fileID: 7804902863149053195}
   - component: {fileID: 1450453255947125670}
+  - component: {fileID: 1269693669274528128}
   m_Layer: 0
   m_Name: alien_01
   m_TagString: Enemy
@@ -136,6 +137,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   explosion: {fileID: 1200464223753380778, guid: e16068a9b58b04653aebcf82d43b4357, type: 3}
+  explosion_scale: 1
+  destroyTrigger: 0
 --- !u!114 &1450453255947125670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,6 +152,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+--- !u!114 &1269693669274528128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001970181146104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b65c085fa5d4dd2b166163fc9449e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 5
+  projectilePrefab: {fileID: 9148571337746792110, guid: 05d5f83a75b3284439bc94ff53c0dd2c, type: 3}
 --- !u!1 &1174406235233968
 GameObject:
   m_ObjectHideFlags: 0

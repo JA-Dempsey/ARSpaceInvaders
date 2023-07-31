@@ -7,20 +7,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    private bool _isPointed;
-    private bool _fired = false;
 
-    public GameObject Target;
-    public float Speed = 1.0f;
-
-    // Getters/Setters
-    public bool IsPointed { get; set; }
-    public bool Fired { get; set; }
-
-    public void SetTarget(GameObject target)
-    {
-        Target = target;
-    }
+    public float Speed = 10.0f;
 
     public void SetSpeed(float speed)
     {
@@ -31,47 +19,30 @@ public class Projectile : MonoBehaviour
     public void Shoot()
     {
 
-        // Multiplied by 10 to get into more acceptable speed range
-        GetComponent<Rigidbody>().AddForce(transform.forward * 10 * Speed);
+        // set velocity of the laser
+        GetComponent<Rigidbody>().velocity = (transform.forward * Speed);
+        
+        // GetComponent<Rigidbody>().AddForce(transform.forward * Speed);
     }
 
-    public void DestroyOutOfBounds()
-    {
-        // Assume play area floor is 0
-        if (transform.position.y < 0)
-            Destroy(gameObject);
-    }
-
-    // Start is called before the first frame update
-    private void Awake()
-    {
-    }
-
-    void Start()
-    {
-    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Player")
-        {
+        // enemy collision with enemy projectile (ignore)
+        if(other.gameObject.tag == "Enemy" && gameObject.tag == "Projectile"){
+            return;
+        }
+        else{ // collision with anything else
             Destroy(gameObject);
         }
+
+        
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!IsPointed)
-        {
-            // Rotation should likely be
-            // handled at creation at the spawner/enemy
-            transform.LookAt(Target.transform); // Remove/comment out to just move forward
-            IsPointed = true;
-        }
-
         Shoot();
-        DestroyOutOfBounds();
-
     }
 }

@@ -63,7 +63,7 @@ public class Spawner : MonoBehaviour
 
             // instantiate
             GameObject randomPrefab = prefabs[Random.Range(0, prefabs.Length)];
-            GameObject newObject = Instantiate(randomPrefab, position, Quaternion.identity);
+            GameObject newObject = Instantiate(randomPrefab, position, Quaternion.identity, transform);
 
             // if aim target is provided, aim at the target
             if(aimTarget != null){
