@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 85150666365889907}
   m_Layer: 0
   m_Name: BlueLaser
-  m_TagString: Projectile
+  m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,7 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3123975658287818916
 MeshFilter:
@@ -120,7 +120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 118795f33642ced4e9168b8985000cbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 0}
   Speed: 1
 --- !u!54 &5623839166370124368
 Rigidbody:
@@ -168,5 +167,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5, y: 0.5, z: 10.5}
+  m_Size: {x: 0.3, y: 0.3, z: 10.15}
   m_Center: {x: 0, y: 0, z: 5}

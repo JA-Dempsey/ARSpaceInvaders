@@ -115,5 +115,8 @@ MonoBehaviour:
   MinHealth: 0
   MaxShield: 100
   MinShield: 0
+  MaxEnergy: 3
+  MinEnergy: 0
   CriticalHealth: 50
   CriticalShield: 0
+  CriticalEnergy: 1
