@@ -9,7 +9,9 @@ public class Player : MonoBehaviour
     // Private
 
     // Bool Flags
-    private bool _isAlive = true;
+    private bool _isDead = false;
+    private bool _hasShield = true;
+    private bool _hasEnergy = true;
 
     // Public
     public int MaxHealth = 100;
@@ -26,15 +28,18 @@ public class Player : MonoBehaviour
     public BaseResource Shield;
     public BaseResource Energy;
 
-    public bool IsAlive { get; set; }
+
+    public bool IsDead { get; set; }
+    public bool HasShield { get; set; }
+    public bool HasEnergy { get; set; }
 
     // Methods
     public bool CheckHealth()
     {
         if (Health.IsZero)
-            IsAlive = false;
+            IsDead = true;
 
-        return IsAlive;
+        return IsDead;
     }
 
     // Increase/Decrease Function Maps
@@ -45,7 +50,7 @@ public class Player : MonoBehaviour
         Health.Decrease(damage);
 
         if (Health.IsZero)
-            IsAlive = false;
+            IsDead = true;
     }
 
     public void HealHealth(int heal)
@@ -56,6 +61,9 @@ public class Player : MonoBehaviour
     public void DamageShield(int damage)
     {
         Shield.Decrease(damage);
+
+        if (Shield.IsZero)
+            HasShield = true;
     }
 
     public void RechargeShield(int recharge)
@@ -66,6 +74,9 @@ public class Player : MonoBehaviour
     public void DamageEnergy(int energy)
     {
         Energy.Decrease(energy);
+
+        if (Energy.IsZero)
+            HasEnergy = false;
     }
 
     public void RechargeEnergy(int energy)
@@ -91,5 +102,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        bool healthStatus = CheckHealth();
     }
 }
