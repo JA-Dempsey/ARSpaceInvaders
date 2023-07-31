@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -39,12 +40,13 @@ public class WaveManager : MonoBehaviour
 
         if(!enemySpawnInitiated && currentCount == 0){
 
-            // call for new wave
-            newWave();
-
             // set flag to track we are spawning
             enemySpawnInitiated = true;
 
+            // call for new wave
+            newWave();
+
+            
             
         }
         
@@ -57,14 +59,17 @@ public class WaveManager : MonoBehaviour
 
     void newWave(){
         
+        // display the UI element
+        wave +=1;
+        try{
+            waveTextDisplay.text = string.Format("WAVE {0}\nGet Ready!", wave.ToString());
+            Invoke("hideText", delaySecondsBetweenWaves-1);
+        }catch(NullReferenceException e){}
+
         // add delay to spawning next wave to give player time to prepare
         enemySpawner.Invoke("Spawn", delaySecondsBetweenWaves);
         debrisSpawner.Invoke("Spawn", delaySecondsBetweenWaves+1);
 
-        // display the UI element
-        wave +=1;
-        waveTextDisplay.text = string.Format("WAVE {0}\nGet Ready!", wave.ToString());
-        Invoke("hideText", delaySecondsBetweenWaves-1);
     }
 
     void hideText(){
