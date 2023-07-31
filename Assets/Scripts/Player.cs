@@ -2,7 +2,6 @@ using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.XR.Interaction;
 
 public class Player : MonoBehaviour
 {
@@ -14,6 +13,8 @@ public class Player : MonoBehaviour
     private bool _hasEnergy = true;
 
     // Public
+
+    // Stats and Creation
     public int MaxHealth = 100;
     public int MinHealth = 0;
     public int MaxShield = 100;
@@ -24,11 +25,13 @@ public class Player : MonoBehaviour
     public int CriticalShield = 0;
     public int CriticalEnergy = 1;
 
+
+    // Base Resources
     public BaseResource Health;
     public BaseResource Shield;
     public BaseResource Energy;
 
-
+    // Public Bool/Flags
     public bool IsDead { get; set; }
     public bool HasShield { get; set; }
     public bool HasEnergy { get; set; }
