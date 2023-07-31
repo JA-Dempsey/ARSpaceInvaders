@@ -31,7 +31,12 @@ public class Projectile : MonoBehaviour
         if(other.gameObject.tag == "Enemy" && gameObject.tag == "Projectile"){
             return;
         }
+        if (other.gameObject.tag == "Player" && gameObject.tag == "PlayerProjectile")
+        {
+            return;
+        }
         else{ // collision with anything else
+            Debug.Log("Destroyed with: " + other.gameObject.name);
             Destroy(gameObject);
         }
 

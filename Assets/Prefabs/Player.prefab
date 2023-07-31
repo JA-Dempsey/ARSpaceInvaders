@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 1291455731667887586}
   - component: {fileID: 3839178193161377047}
   - component: {fileID: 7840881585607695115}
-  - component: {fileID: 7243154807879856062}
+  - component: {fileID: 2111879466208274688}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1291455731667887586
 MonoBehaviour:
@@ -44,11 +44,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 3780683854729678749}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 970edeeca46879b47879ad321c119fd3, type: 3}
+  m_Script: {fileID: 11500000, guid: 845ccacce1fa5439b938fdbdf26aded9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FollowObject: {fileID: 0}
-  Offset: {x: 0, y: 0, z: 0}
+  MaxHealth: 100
+  MinHealth: 0
+  MaxShield: 100
+  MinShield: 0
+  MaxEnergy: 3
+  MinEnergy: 0
+  CriticalHealth: 50
+  CriticalShield: 0
+  CriticalEnergy: 1
 --- !u!136 &3839178193161377047
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -99,7 +106,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7243154807879856062
+--- !u!114 &2111879466208274688
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,12 +115,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3780683854729678749}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 800ddcb5e44ec1440a3ac17a8fb59873, type: 3}
+  m_Script: {fileID: 11500000, guid: 8fc6b7250406ca84c89e580d8a81eb74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 100
-  MinHealth: 0
-  MaxShield: 100
-  MinShield: 0
-  CriticalHealth: 50
-  CriticalShield: 0
+  PlayerProjectile: {fileID: 5766157714276240480, guid: de68e0081335340fa846376f4987c43a, type: 3}
