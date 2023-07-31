@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,7 +28,9 @@ public class ScoreManager : MonoBehaviour
             evaluateEnemies();
 
         // update the score text 
-        scoreText.text = score.ToString();
+        try{
+            scoreText.text = score.ToString();
+        }catch(NullReferenceException e){}
     }
 
     // allows score to be incremented/decremented by some value
