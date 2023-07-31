@@ -71,7 +71,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -118,4 +118,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fc6b7250406ca84c89e580d8a81eb74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerProjectile: {fileID: 5766157714276240480, guid: de68e0081335340fa846376f4987c43a, type: 3}
+  PlayerProjectile: {fileID: 5766348386932736938, guid: de68e0081335340fa846376f4987c43a, type: 3}
