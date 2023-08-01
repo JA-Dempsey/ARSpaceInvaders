@@ -7,31 +7,51 @@ using UnityEngine;
 public class HighScoreManager : MonoBehaviour
 {
     private HighScores highScores;
-    void Awake()
-    {
+    private const int TOTAL_TRACKED_SCORES = 10;
+
+    void Awake(){
         // load high scores and store into highScores
         var json = PlayerPrefs.GetString("scores", "{}");
         highScores = JsonUtility.FromJson<HighScores>(json);
     }
 
     public IEnumerable<ScoreEntry> GetHighScores(){
-        // returns list of scores descending
-        return highScores.scores.OrderByDescending(x => x.score);
+        // returns list of scores
+        return highScores.scores;
     }
 
+    /**
+    Adds a score entry and sorts the list and prunes the excess
+    */
     public void AddScore(ScoreEntry score){
-        // add a score to the high scores
+        // add a score to the high scores and sorts it to prepare for pruning
         highScores.scores.Add(score);
+        highScores.scores.Sort();
+
+        while(highScores.scores.Count > TOTAL_TRACKED_SCORES){
+            // remove the last item if it exceeds the max    
+            highScores.scores.RemoveAt(highScores.scores.Count-1);
+        }
     }
 
+    // returns the lowest score in the list
+    public int LowestScore(){
+        return highScores.scores[highScores.scores.Count-1].score;
+    }
+
+    // saves scores back into PlayerPrefs
     public void SaveScore(){
-        // saves scores back into PlayerPrefs
         var json = JsonUtility.ToJson(highScores);
         PlayerPrefs.SetString("scores", json);
     }
 
-    private void OnDestroy(){
-        // on destroy, save scores
+    private void OnDestroy(){        
         SaveScore();
     }
+
+    private void Update(){
+        
+    }
+
+    
 }

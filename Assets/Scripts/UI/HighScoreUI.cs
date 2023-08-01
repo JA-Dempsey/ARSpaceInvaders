@@ -8,16 +8,13 @@ public class HighScoreUI : MonoBehaviour
     public HighScoresRowUI rowPrefab;
     public HighScoreManager highScoreManager;
     
-    private int max_entries = 10;
-
-    void Start()
-    {
-
+    void Start(){
+        
+        // get the high scores
         var scores = highScoreManager.GetHighScores().ToArray();
         
-        // limit number of scores to 10
-        for (int i = 0; i < Mathf.Min(scores.Length, max_entries); i++)
-        {
+        // Go over each entry and create a UI row for it
+        for (int i = 0; i < scores.Length; i++){
             var row = Instantiate(rowPrefab, transform).GetComponent<HighScoresRowUI>();
             
             // turn fields into text
