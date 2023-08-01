@@ -236,6 +236,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2770440105388914317, guid: 44933551acf1eae43909fa36c5091b66, type: 3}
+      propertyPath: m_Name
+      value: MainMenuButtonText
+      objectReference: {fileID: 0}
     - target: {fileID: 3203007051425330247, guid: 44933551acf1eae43909fa36c5091b66, type: 3}
       propertyPath: m_Type
       value: 0
@@ -355,6 +359,10 @@ PrefabInstance:
     - target: {fileID: 6455250874873423285, guid: 44933551acf1eae43909fa36c5091b66, type: 3}
       propertyPath: m_text
       value: Try Again
+      objectReference: {fileID: 0}
+    - target: {fileID: 7077425975773762217, guid: 44933551acf1eae43909fa36c5091b66, type: 3}
+      propertyPath: m_Name
+      value: RetryButtonText
       objectReference: {fileID: 0}
     - target: {fileID: 8202979990358181651, guid: 44933551acf1eae43909fa36c5091b66, type: 3}
       propertyPath: m_Name
