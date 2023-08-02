@@ -1,3 +1,5 @@
 # ninja log v5
 0	189	7111911039514095	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	e9eee44d600ce72
 191	431	7111911041205512	C:/Users/jcoro/Desktop/OSU/Summer 2023/CS467-Capstone Project/ARSpaceInvaders-menu-navigation/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4y5u1uk5/obj/arm64-v8a/libswappywrapper.so	4f7cbd631e17a18b
+4	244	7127112757303727	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	e9eee44d600ce72
+251	863	7127112762319762	C:/Users/jcoro/Desktop/OSU/Summer 2023/CS467-Capstone Project/ARSpaceInvaders-menu-navigation/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4y5u1uk5/obj/arm64-v8a/libswappywrapper.so	4f7cbd631e17a18b
