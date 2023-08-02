@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class HighScoreManager : MonoBehaviour
 {
-    private HighScores highScores;
+        private HighScores highScores;
     private const int TOTAL_TRACKED_SCORES = 10;
 
     void Awake(){
@@ -15,8 +15,8 @@ public class HighScoreManager : MonoBehaviour
         highScores = JsonUtility.FromJson<HighScores>(json);
     }
 
+    // returns list of scores
     public IEnumerable<ScoreEntry> GetHighScores(){
-        // returns list of scores
         return highScores.scores;
     }
 
@@ -49,8 +49,9 @@ public class HighScoreManager : MonoBehaviour
         SaveScore();
     }
 
-    private void Update(){
-        
+    // returns true if 
+    public bool AtCapacity(){
+        return highScores.scores.Count >= TOTAL_TRACKED_SCORES;
     }
 
     
