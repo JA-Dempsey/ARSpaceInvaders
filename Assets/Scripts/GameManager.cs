@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
     private void HandleGamePaused()
     {
         // 1. Set unity time to 0
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
         // 2. Load Main Menu Scene
     }
 
