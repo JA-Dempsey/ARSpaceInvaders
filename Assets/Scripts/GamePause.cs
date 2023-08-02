@@ -70,6 +70,12 @@ public class GamePause : MonoBehaviour
 
     public void ReturnToMainMenu()
     {
+        // Delay scene load
+        Invoke("ExecuteReturnToMainMenu", 0.5f);
+    }
+
+    public void ExecuteReturnToMainMenu()
+    {
         // 1. Load Main Menu
         SceneManager.LoadScene("MainMenu");
         Debug.Log("Returned to Main Menu");
@@ -78,7 +84,7 @@ public class GamePause : MonoBehaviour
     public void ReturnToGame()
     {
         // 1. Unpause Game
-        //Time.timeScale = 1f;
+        Time.timeScale = 1f;
 
         // 2. Hide ConfirmationScreen
         HideConfirmationScreen();
