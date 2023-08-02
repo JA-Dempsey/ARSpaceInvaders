@@ -36,6 +36,11 @@ public class PowerupSpawner : MonoBehaviour
         GameObject instance = Instantiate(Prefabs[(int)Random.Range(0, len)], transform.position, Quaternion.identity);
     }
 
+    public void SetTimer(float timer)
+    {
+        _timer.Timer = timer;
+        _timer.Reset();
+    }
 
     void Start()
     {
@@ -47,11 +52,9 @@ public class PowerupSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Is Timer Zero?: " + _timer.IsZero);
         _timer.Update(Time.deltaTime);
         if (_timer.IsZero)
         {
-            Debug.Log("Timer is zero!");
             SpawnPowerup();
             _timer.Reset();
         }
