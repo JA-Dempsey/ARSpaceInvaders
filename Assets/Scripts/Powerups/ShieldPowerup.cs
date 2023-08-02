@@ -7,13 +7,11 @@ public class ShieldPowerup : MonoBehaviour
     // Private
     private PowerupEffect _powerupEffect;
     // Public
-    public GameObject PlayerObject;
-    public Player PlayerScript;
+    private Player _playerScript;
 
 
     // Flags
     private bool _isImmediate = false;
-    private Component _playerScript;
 
     // Setters/Getters
 
@@ -22,7 +20,7 @@ public class ShieldPowerup : MonoBehaviour
     // Methods
     public void Effect()
     {
-        PlayerScript.RechargeShield(_powerupEffect.Scale);
+        _playerScript.RechargeShield(_powerupEffect.Scale);
     }
 
     // Unity
@@ -37,13 +35,13 @@ public class ShieldPowerup : MonoBehaviour
         if (_powerupEffect.Decay == 0)
             IsImmediate = true;
 
-        PlayerScript = GameObject.Find("Player").GetComponent<Player>();
+        _playerScript = GameObject.Find("Player").GetComponent<Player>();
 
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Player")
+        if (other.gameObject.tag == "Player")
         {
             Effect();
             Destroy(gameObject);

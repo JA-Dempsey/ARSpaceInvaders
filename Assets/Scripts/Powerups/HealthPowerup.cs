@@ -64,7 +64,7 @@ public class HealthPowerup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Player")
+        if (other.gameObject.tag == "Player")
         {
             Effect();
             Destroy(gameObject);
