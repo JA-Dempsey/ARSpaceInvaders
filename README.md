@@ -6,3 +6,4 @@ An AR Space Invaders game made for a Capstone Project at Oregon State University
 <li>Aliens - Low Poly Space Invader Set (https://assetstore.unity.com/packages/3d/characters/robots/low-poly-space-invader-set-8410)</li>
 <li>Laser Projectiles - Volumetric Lines (https://assetstore.unity.com/packages/tools/particles-effects/volumetric-lines-29160)</li>
 <li>Asteroids - Asteroids Pack (https://assetstore.unity.com/packages/3d/environments/asteroids-pack-84988)</li>
+<li>Satellite - Magellan (https://assetstore.unity.com/packages/3d/vehicles/space/magellan-98970#content)</li>
