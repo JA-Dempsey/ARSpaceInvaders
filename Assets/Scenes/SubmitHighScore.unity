@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -686,6 +686,22 @@ PrefabInstance:
     - target: {fileID: 6382794653559081801, guid: 590eaca48ebc845389b1f3db95951160, type: 3}
       propertyPath: m_Name
       value: SubmitHighScoreCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407708838173928834, guid: 590eaca48ebc845389b1f3db95951160, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407708838173928834, guid: 590eaca48ebc845389b1f3db95951160, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407708838173928834, guid: 590eaca48ebc845389b1f3db95951160, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407708838173928834, guid: 590eaca48ebc845389b1f3db95951160, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 7373267460717546208, guid: 590eaca48ebc845389b1f3db95951160, type: 3}
       propertyPath: fadeImage
