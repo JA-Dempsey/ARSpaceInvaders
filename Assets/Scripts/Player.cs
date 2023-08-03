@@ -42,7 +42,17 @@ public class Player : MonoBehaviour
     // and provides methods to do other things if necessary
     public void DamageHealth(int damage)
     {
-        Health.Decrease(damage);
+        int unshieldedDamage = Mathf.Abs(Shield.Current - damage);
+
+        if (unshieldedDamage > 0)
+        {
+            Shield.Current = 0; // Damage burned through shield
+            Health.Decrease(unshieldedDamage);
+        }
+        else
+        {
+            DamageHealth(damage); // Burn through shield before health
+        }
 
         if (Health.IsZero)
             IsAlive = false;
@@ -55,7 +65,17 @@ public class Player : MonoBehaviour
 
     public void DamageShield(int damage)
     {
-        Shield.Decrease(damage);
+        int unshieldedDamage = Mathf.Abs(Shield.Current - damage);
+        
+        if (unshieldedDamage > 0)
+        {
+            Shield.Current = 0; // Damage burned through shield
+            Health.Decrease(unshieldedDamage);
+        }
+        else
+        {
+            Shield.Decrease(damage); // Damage shield first
+        }
     }
 
     public void RechargeShield(int recharge)
