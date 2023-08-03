@@ -130,7 +130,7 @@ public class GameManager : MonoBehaviour
     private void HandleGameWon()
     {
         // 1. Load Game Won Scene with options to save high score or return to main menu
-        SceneManager.LoadScene("GameWon");
+        SceneManager.LoadScene("SubmitHighScore");
     }
 
     // Instructions for GameLost
