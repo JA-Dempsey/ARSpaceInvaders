@@ -87,6 +87,8 @@ public class BaseResource
         _current -= decrease;
         if (_current < 0) // Ensure non-negative
             _current = 0;
+
+        CheckFlags();
     }
 
     public void Increase(int increase)
@@ -94,6 +96,8 @@ public class BaseResource
         _current += increase;
         if (_current > _max)
             _current = _max;
+
+        CheckFlags();
     }
 
 
