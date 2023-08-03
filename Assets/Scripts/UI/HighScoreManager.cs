@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class HighScoreManager : MonoBehaviour
 {
-        private HighScores highScores;
-    private const int TOTAL_TRACKED_SCORES = 10;
+    private HighScores highScores;
+    private const int TOTAL_TRACKED_SCORES = 7;
 
     void Awake(){
         // load high scores and store into highScores

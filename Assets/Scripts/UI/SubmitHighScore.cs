@@ -10,7 +10,7 @@ public class SubmitHighScore : MonoBehaviour
     
     public TMP_Text scoreText;
     public TMP_Text nameSubmission;
-    public Image fadeImage;
+    public GameObject fadeImageObject;
     private HighScoreManager highScoreManager;
 
     private int score;
@@ -51,6 +51,7 @@ public class SubmitHighScore : MonoBehaviour
     }
 
     IEnumerator FadeImage(){
+        Image fadeImage = fadeImageObject.GetComponent<Image>();
         // loop over 1 second backwards
             for (float i = 1; i >= 0; i -= Time.deltaTime)
             {
@@ -58,5 +59,8 @@ public class SubmitHighScore : MonoBehaviour
                 fadeImage.color = new Color(255, 255, 255, i);
                 yield return null;
             }
+            Destroy(fadeImageObject);
+            
+            
     }
 }
