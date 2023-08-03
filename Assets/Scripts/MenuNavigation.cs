@@ -57,7 +57,7 @@ public class MenuNavigation : MonoBehaviour
         Debug.Log("Main Menu");
     }
 
-    // Main Menu
+    // Shooting Tutorial
     public void ShootingButton()
     {
         // Delay scene load
@@ -67,5 +67,17 @@ public class MenuNavigation : MonoBehaviour
     {
         SceneManager.LoadScene("Shooting");
         Debug.Log("Shooting Tutorial");
+    }
+
+    // Obstacles Tutorial
+    public void ObstaclesButton()
+    {
+        // Delay scene load
+        Invoke("ExecuteObstaclesButton", 0.5f);
+    }
+    public void ExecuteObstaclesButton()
+    {
+        SceneManager.LoadScene("Obstacles");
+        Debug.Log("Obstacles Tutorial");
     }
 }
