@@ -31,7 +31,7 @@ public class AudioManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         string sceneName = scene.name;
-        if (sceneName == "MainMenu" || sceneName == "HighScores" || sceneName == "HowToPlay" || sceneName == "Shooting" || sceneName == "Obstacles" || sceneName == "Enemies")
+        if (sceneName == "MainMenu" || sceneName == "HighScores" || sceneName == "HowToPlay" || sceneName == "Shooting" || sceneName == "Obstacles" || sceneName == "Enemies" || sceneName == "Powerups")
         {
             PlayBackgroundMusic();
         }

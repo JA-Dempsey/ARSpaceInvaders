@@ -557,6 +557,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 102130083502852631, guid: ce0b2d06852d2244c9a9ee35291b4c5e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 102130083502852631, guid: ce0b2d06852d2244c9a9ee35291b4c5e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 102130083502852631, guid: ce0b2d06852d2244c9a9ee35291b4c5e, type: 3}
@@ -564,15 +568,35 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1298886830}
     - target: {fileID: 102130083502852631, guid: ce0b2d06852d2244c9a9ee35291b4c5e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 745532525}
+    - target: {fileID: 102130083502852631, guid: ce0b2d06852d2244c9a9ee35291b4c5e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 102130083502852631, guid: ce0b2d06852d2244c9a9ee35291b4c5e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 102130083502852631, guid: ce0b2d06852d2244c9a9ee35291b4c5e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PowerupsButton
       objectReference: {fileID: 0}
     - target: {fileID: 102130083502852631, guid: ce0b2d06852d2244c9a9ee35291b4c5e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.AudioSource, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 102130083502852631, guid: ce0b2d06852d2244c9a9ee35291b4c5e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MenuNavigation, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 102130083502852631, guid: ce0b2d06852d2244c9a9ee35291b4c5e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 102130083502852631, guid: ce0b2d06852d2244c9a9ee35291b4c5e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 471427218379381592, guid: ce0b2d06852d2244c9a9ee35291b4c5e, type: 3}

@@ -92,4 +92,16 @@ public class MenuNavigation : MonoBehaviour
         SceneManager.LoadScene("Enemies");
         Debug.Log("Enemies Tutorial");
     }
+
+    // Powerups Tutorial
+    public void PowerupsButton()
+    {
+        // Delay scene load
+        Invoke("ExecutePowerupsButton", 0.5f);
+    }
+    public void ExecutePowerupsButton()
+    {
+        SceneManager.LoadScene("Powerups");
+        Debug.Log("Powerups Tutorial");
+    }
 }
