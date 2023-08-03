@@ -19,7 +19,7 @@ public class HighScoreUI : MonoBehaviour
             
             // turn fields into text
             row.index.text = (i + 1).ToString();
-            row.name.text = scores[i].name;
+            row.username.text = scores[i].name;
             row.score.text = scores[i].score.ToString();
         }
     }
