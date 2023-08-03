@@ -56,4 +56,9 @@ public class ScoreManager : MonoBehaviour
 
         lastEnemyCount = currentCount;
     }
+
+    private void OnDestroy() {
+        // on Destroy, set the lastScore in order to use it externally
+        PlayerPrefs.SetInt("lastScore", score);
+    }
 }

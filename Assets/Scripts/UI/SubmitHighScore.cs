@@ -26,11 +26,12 @@ public class SubmitHighScore : MonoBehaviour
         highScoreManager = GetComponent<HighScoreManager>();
         if(score < highScoreManager.LowestScore() && highScoreManager.AtCapacity()){
             SceneManager.LoadScene("GameLost");
+        }else{
+            // destroy the Player Prefs score
+            PlayerPrefs.DeleteKey("lastScore");
+            StartCoroutine(FadeImage());
         }
-
-
-        StartCoroutine(FadeImage());
-        
+                
     }
 
     // Submit score
@@ -46,8 +47,7 @@ public class SubmitHighScore : MonoBehaviour
     }
 
     private void OnDestroy(){
-        // destroy the Player Prefs score
-        PlayerPrefs.DeleteKey("lastScore");
+        
     }
 
     IEnumerator FadeImage(){
