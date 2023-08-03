@@ -80,4 +80,16 @@ public class MenuNavigation : MonoBehaviour
         SceneManager.LoadScene("Obstacles");
         Debug.Log("Obstacles Tutorial");
     }
+
+    // Enemies Tutorial
+    public void EnemiesButton()
+    {
+        // Delay scene load
+        Invoke("ExecuteEnemiesButton", 0.5f);
+    }
+    public void ExecuteEnemiesButton()
+    {
+        SceneManager.LoadScene("Enemies");
+        Debug.Log("Enemies Tutorial");
+    }
 }
