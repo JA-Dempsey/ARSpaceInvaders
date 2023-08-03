@@ -8,7 +8,10 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    
+    // Private
+    private Player _player;
+
+    // Public
     public static GameManager Instance;
     public GameState State;
     public static event Action<GameState> OnGameStateUpdated;
@@ -18,6 +21,7 @@ public class GameManager : MonoBehaviour
     public int playerShield;
     public int playerPowerup;
     public int enemiesCount;
+
 
     // Make instance accessible anywhere in the game
     private void Awake()
@@ -75,11 +79,14 @@ public class GameManager : MonoBehaviour
         else 
         {
             // Set starting game parameters...pull values from other scripts instead of hardcoding
-            playerHealth = 100;
-            playerShield = 100;
-            playerScore = 0;
-            playerPowerup = 0;
-            enemiesCount = 5;
+
+            // Get Player Script from Player Object
+            // Defaults set within Editor for vitals/resources
+            _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+
+            // This is likely dealt within objects/wave manager
+            // playerPowerup = 0;
+            // enemiesCount = 5;
         }
 
         // Update State
@@ -101,7 +108,7 @@ public class GameManager : MonoBehaviour
     private void HandleGamePlay()
     {
         // Check if player health is 0 %, update state to game lost
-        if (playerHealth <= 0)
+        if (!_player.IsAlive)
         {
             UpdateState(GameState.GameLost);
         }
