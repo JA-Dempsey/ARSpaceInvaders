@@ -54,5 +54,4 @@ public class HighScoreManager : MonoBehaviour
         return highScores.scores.Count >= TOTAL_TRACKED_SCORES;
     }
 
-    
 }
