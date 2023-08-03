@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
     public int CriticalShield = 0;
     public int CriticalEnergy = 1;
 
+    public int EnemyDamage = 10; // Damage done when Player hit by enemy
+
     public BaseResource Health;
     public BaseResource Shield;
     public BaseResource Energy;
@@ -103,6 +105,16 @@ public class Player : MonoBehaviour
         Energy = new(MinEnergy, MaxEnergy, CriticalEnergy);
     }
 
+    // Collisions
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Projectile")
+        {
+            DamageHealth(EnemyDamage);
+            CheckHealth(); // Determine if player is still alive
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -112,4 +124,6 @@ public class Player : MonoBehaviour
     void Update()
     {
     }
+
+
 }
