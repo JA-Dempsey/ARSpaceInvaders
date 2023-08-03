@@ -10,9 +10,6 @@ public class HealthPowerup : MonoBehaviour
     private PowerupEffect _powerupEffect;
     private Player _playerScript;
 
-    // Public
-    public GameObject PlayerObject;
-
     // Flags
     private bool _isImmediate = false;
     private bool _isFinished = false;
