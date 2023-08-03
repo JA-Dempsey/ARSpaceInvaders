@@ -11,7 +11,6 @@ public class PowerupSpawner : MonoBehaviour
 
     // Public
     public float SpawnTimer;
-    public PowerupEffect[] Effects;
     public GameObject[] Prefabs;
 
     // Currently only one is needed for a radius
