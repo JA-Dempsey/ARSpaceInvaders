@@ -14,9 +14,9 @@ public class WaveManager : MonoBehaviour
     public TMP_Text waveTextDisplay;
 
     
-    [SerializeField] private int wave = 0;
+    private int wave = 0;
     private bool enemySpawnInitiated = false;
-    private int delaySecondsBetweenWaves = 10;
+    private const int DELAY_SECONDS_BETWEEN_WAVES = 10;
     
 
 
@@ -63,13 +63,23 @@ public class WaveManager : MonoBehaviour
         wave +=1;
         try{
             waveTextDisplay.text = string.Format("WAVE {0}\nGet Ready!", wave.ToString());
-            Invoke("hideText", delaySecondsBetweenWaves-1);
+            Invoke("hideText", DELAY_SECONDS_BETWEEN_WAVES-1);
         }catch(NullReferenceException e){}
 
         // add delay to spawning next wave to give player time to prepare
-        enemySpawner.Invoke("Spawn", delaySecondsBetweenWaves);
-        debrisSpawner.Invoke("Spawn", delaySecondsBetweenWaves+1);
+        enemySpawner.Invoke("Spawn", DELAY_SECONDS_BETWEEN_WAVES);
+        SpawnDebris();
+    }
 
+    void SpawnDebris(){
+        const int MAX_DEBRIS = 8;
+
+        // spawn debris
+        GameObject[] debris = GameObject.FindGameObjectsWithTag("Debris");
+
+        // limit number of debris in game to 8
+        debrisSpawner.numObjects = Mathf.Max(MAX_DEBRIS - debris.Length, 0);
+        debrisSpawner.Invoke("Spawn", DELAY_SECONDS_BETWEEN_WAVES+1);
     }
 
     void hideText(){
