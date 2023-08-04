@@ -13,6 +13,7 @@ public class Boundaries : MonoBehaviour
     public bool debugVisibility = false;
 
     private const float Y_OFFSET = -2.5f;
+    private GameObject[] boundaries;
 
     
     // Start is called before the first frame update
@@ -29,41 +30,44 @@ public class Boundaries : MonoBehaviour
         boundary = Instantiate(BoundaryPrefab, transform);
         boundary.name = "Boundary Y-";
         boundary.transform.localScale = boundaryScale;
-        boundary.transform.position = new Vector3(0, Y_OFFSET, 0);
+        boundary.transform.localPosition = new Vector3(0, Y_OFFSET, 0);
 
         // ceiling
         boundary = Instantiate(BoundaryPrefab, transform);
         boundary.name = "Boundary Y+";
         boundary.transform.localScale = boundaryScale;
-        boundary.transform.position = new Vector3(0,distanceFromOrigin+y_position, 0);
+        boundary.transform.localPosition = new Vector3(0,distanceFromOrigin+y_position, 0);
 
         // walls
         boundary = Instantiate(BoundaryPrefab, transform);
         boundary.name = "Boundary X+";
         boundary.transform.localScale = boundaryScale;
         boundary.transform.Rotate(0.0f, 0.0f, 90.0f, Space.Self);
-        boundary.transform.position = new Vector3(distanceFromOrigin, y_position, 0);
+        boundary.transform.localPosition = new Vector3(distanceFromOrigin, y_position, 0);
 
         boundary = Instantiate(BoundaryPrefab, transform);
         boundary.name = "Boundary X-";
         boundary.transform.localScale = boundaryScale;
         boundary.transform.Rotate(0.0f, 0.0f, 90.0f, Space.Self);
-        boundary.transform.position = new Vector3(-distanceFromOrigin, y_position, 0);
+        boundary.transform.localPosition = new Vector3(-distanceFromOrigin, y_position, 0);
 
         boundary = Instantiate(BoundaryPrefab, transform);
         boundary.name = "Boundary Z+";
         boundary.transform.localScale = boundaryScale;
         boundary.transform.Rotate(90.0f, 0.0f, 0.0f, Space.Self);
-        boundary.transform.position = new Vector3(0, y_position, distanceFromOrigin);
+        boundary.transform.localPosition = new Vector3(0, y_position, distanceFromOrigin);
 
         boundary = Instantiate(BoundaryPrefab, transform);
         boundary.name = "Boundary Z-";
         boundary.transform.localScale = boundaryScale;
         boundary.transform.Rotate(90.0f, 0.0f, 0.0f, Space.Self);
-        boundary.transform.position = new Vector3(0, y_position, -distanceFromOrigin);
+        boundary.transform.localPosition = new Vector3(0, y_position, -distanceFromOrigin);
         
+        boundaries = GameObject.FindGameObjectsWithTag("Boundary");
+    }
 
-        GameObject[] boundaries = GameObject.FindGameObjectsWithTag("Boundary");
+    void Update(){
+        
         for(int i = 0; i<boundaries.Length; i++){
             boundaries[i].GetComponent<Renderer>().enabled = debugVisibility;
         }
