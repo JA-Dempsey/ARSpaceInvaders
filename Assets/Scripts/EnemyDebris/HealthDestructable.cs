@@ -9,6 +9,21 @@ public class HealthDestructable : MonoBehaviour
     public GameObject explosion;
     public float explosion_scale = 1f;
     public bool destroyTrigger = false; // allows for instant destruction of the object
+    
+    Renderer rend;
+    public bool fadeIn = false;
+    [SerializeField] bool fadeOut = false;
+    [SerializeField] Color color;
+    private bool hasRenderer;
+
+    void Start(){
+        try{
+            rend = GetComponent<Renderer>();
+            hasRenderer = true;
+        }catch(MissingComponentException e){
+            hasRenderer = false;
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -16,6 +31,11 @@ public class HealthDestructable : MonoBehaviour
         if(destroyTrigger){
             DestroyObject();
         }
+        if(hasRenderer){
+            FlashRedOnHit();
+            color = rend.material.color;
+        }
+        
     }
 
     private void OnCollisionEnter(Collision other) {
@@ -31,6 +51,8 @@ public class HealthDestructable : MonoBehaviour
             // if health falls below 0, destroy the object
             if(health <= 0.0){
                 DestroyObject();
+            }else if(hasRenderer){
+                fadeIn = true;
             }
         }
     }
@@ -41,6 +63,25 @@ public class HealthDestructable : MonoBehaviour
             destruction_animation.transform.localScale *= explosion_scale; 
         }
         Destroy(gameObject);
+    }
+
+
+    void FlashRedOnHit(){
+        // this function flashes the item red when hit
+        if(fadeIn){
+            rend.material.color = new Color(rend.material.color.r , rend.material.color.g- Time.deltaTime, rend.material.color.b- Time.deltaTime, 1);
+            if(rend.material.color.g <= 0){
+                
+                fadeIn = false;
+                fadeOut = true;
+            }
+
+        }else if(fadeOut){
+            rend.material.color = new Color(rend.material.color.r , rend.material.color.g + Time.deltaTime, rend.material.color.b + Time.deltaTime, 1);
+            if(rend.material.color.g >= 1){
+                fadeOut = false;
+            }
+        }
     }
 
 

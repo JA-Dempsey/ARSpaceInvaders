@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5482831797609871600
 MonoBehaviour:
@@ -45,17 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numObjects: 10
-  maxX: {fileID: 0}
-  maxY: {fileID: 0}
-  maxZ: {fileID: 0}
-  minX: {fileID: 0}
-  minY: {fileID: 0}
-  minZ: {fileID: 0}
+  spawnTarget: {fileID: 0}
+  maxDistanceFromTarget: 8
+  minDistanceFromTarget: 2
   prefabs:
-  - {fileID: 1001970181146104, guid: 74792c929b6bd4b439b46e345ec09191, type: 3}
-  - {fileID: 1900922507057764, guid: 444766ddedc84a340b52c3a196c63cd9, type: 3}
-  - {fileID: 1237488794017540, guid: 328bd1384500c7640a91f83210dcdb3c, type: 3}
-  - {fileID: 1700304613907954, guid: 60eed48a21427de4483339eeeaeb1e84, type: 3}
-  - {fileID: 1776184382588364, guid: 925f1da9826a1c7478d9979ed2e0fb8d, type: 3}
+  - {fileID: 6798503572103092583, guid: aadcf346ed52b4d889a2f8835dd49616, type: 3}
   aimTarget: {fileID: 0}
   trigger: 0

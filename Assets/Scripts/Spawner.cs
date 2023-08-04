@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,23 +12,19 @@ public class Spawner : MonoBehaviour
 {
 
     public int numObjects = 1;
-    public GameObject maxX;
-    public GameObject maxY;
-    public GameObject maxZ;
-    public GameObject minX;
-    public GameObject minY;
-    public GameObject minZ;
+    public GameObject spawnTarget;
+    public float maxDistanceFromTarget = 8f;
+    public float minDistanceFromTarget = 2f;
+
 
     public GameObject[] prefabs;
     public GameObject aimTarget;
-
     public bool trigger = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        // Spawn();
-        
+    void Start(){
+        if(spawnTarget == null){
+            spawnTarget = this.gameObject;
+        }
     }
 
     // Update is called once per frame
@@ -46,40 +43,28 @@ public class Spawner : MonoBehaviour
             numObjects = 1;
         }
 
-        // collect min/max coordinates to use
-        float[] x_coordinates = {getPosition(minX).x, getPosition(maxX).x};
-        float[] y_coordinates = {getPosition(minY).y, getPosition(maxY).y};
-        float[] z_coordinates = {getPosition(minZ).z, getPosition(maxZ).z};
-
         // loop over and spawn a random object from the prefab list
         for(int i = 0; i< numObjects; i++){
-            // calculate a random position using min/max components
-            float pos_x = Random.Range(x_coordinates[0], x_coordinates[1]*0.8f);
-            float pos_y = Random.Range(y_coordinates[0], y_coordinates[1]*0.8f);
-            float pos_z = Random.Range(z_coordinates[0], z_coordinates[1]*0.8f);
-
             // give random position to the object
-            Vector3 position = new Vector3(pos_x, pos_y, pos_z);
+            Vector3 position = UnityEngine.Random.insideUnitSphere * UnityEngine.Random.Range(minDistanceFromTarget, maxDistanceFromTarget) + spawnTarget.transform.position;
 
             // instantiate
-            GameObject randomPrefab = prefabs[Random.Range(0, prefabs.Length)];
+            GameObject randomPrefab = prefabs[UnityEngine.Random.Range(0, prefabs.Length)];
             GameObject newObject = Instantiate(randomPrefab, position, Quaternion.identity, transform);
 
             // if aim target is provided, aim at the target
             if(aimTarget != null){
-                LookAt lookat_script = newObject.GetComponent<LookAt>();
-                if(lookat_script != null){
-                    lookat_script.target = aimTarget;
-                }
+                try{
+                    LookAt lookat_script = newObject.GetComponent<LookAt>();
+                    if(lookat_script != null){
+                        lookat_script.target = aimTarget;
+                    }
+                }catch(Exception e){}
+                
             }
 
         }
 
-    }
-
-    // helper function to get the position of a game object
-    Vector3 getPosition(GameObject obj){
-        return obj.gameObject.transform.position;
     }
 
 }

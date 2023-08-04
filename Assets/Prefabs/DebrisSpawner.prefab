@@ -24,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6050193666405325420}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9059872462939612669
 MonoBehaviour:
@@ -45,16 +45,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numObjects: 6
-  maxX: {fileID: 0}
-  maxY: {fileID: 0}
-  maxZ: {fileID: 0}
-  minX: {fileID: 0}
-  minY: {fileID: 0}
-  minZ: {fileID: 0}
+  spawnTarget: {fileID: 0}
+  maxDistanceFromTarget: 8
+  minDistanceFromTarget: 2
   prefabs:
-  - {fileID: 151664, guid: fa49e460baf435b4780da7196c2ab473, type: 3}
-  - {fileID: 141316, guid: 84cc3cd234dfc9d4d9d2e92c0eb0af75, type: 3}
-  - {fileID: 130102, guid: 04d0bf4be9447154188d86f6e3b8dce9, type: 3}
-  - {fileID: 1412742708598286, guid: 347040970b496ba4086308c48e34652b, type: 3}
+  - {fileID: 6771764900044702907, guid: ff1f9d734148347cea4565fe3d99e48c, type: 3}
+  - {fileID: 9009750890319207806, guid: b23af3cd659f84b028f42c8aa94c4725, type: 3}
+  - {fileID: 8895313416914116712, guid: 3c691f3a2821e457e8d9eb3872fbe8f1, type: 3}
+  - {fileID: 1827711986689191716, guid: e52f86da912cf408582a2f8160198b0e, type: 3}
   aimTarget: {fileID: 0}
   trigger: 0
