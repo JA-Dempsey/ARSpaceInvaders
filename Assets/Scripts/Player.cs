@@ -1,6 +1,8 @@
 using NUnit.Framework;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Experimental.XR.Interaction;
 
@@ -22,6 +24,11 @@ public class Player : MonoBehaviour
     public int CriticalShield = 0;
     public int CriticalEnergy = 1;
 
+    // Text
+    public TMP_Text HealthText;
+    public TMP_Text EnergyText;
+    public TMP_Text ShieldText;
+
     public int EnemyDamage = 10; // Damage done when Player hit by enemy
 
     public BaseResource Health;
@@ -37,6 +44,17 @@ public class Player : MonoBehaviour
             IsAlive = false;
 
         return IsAlive;
+    }
+
+    public void UpdateText()
+    {
+        try
+        {
+            HealthText.text = Health.Current.ToString();
+            ShieldText.text = Shield.Current.ToString();
+            EnergyText.text = Energy.Current.ToString();
+        }
+        catch (NullReferenceException e){ }
     }
 
     // Increase/Decrease Function Maps
@@ -123,6 +141,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateText();
     }
 
 
