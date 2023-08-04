@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
     public static event Action<GameState> OnGameStateUpdated;
 
     public int playerHealth;
-    public int playerScore;
     public int playerShield;
     public int playerPowerup;
     public int enemiesCount;
@@ -121,8 +120,8 @@ public class GameManager : MonoBehaviour
 
         // Continue calling HandleGamePlay()
         else
-        { 
-            HandleGamePlay();
+        {
+            UpdateState(GameState.GamePlay);
         }       
     }
 
