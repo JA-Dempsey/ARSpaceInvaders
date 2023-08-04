@@ -5,7 +5,12 @@ using UnityEngine;
 
 public class PowerupSpawner : MonoBehaviour
 {
+    // Const
+    // Increase of time for spawn per wave
+    // Reduces number of powerup spawns
+    private const float TIME_WAVE_MODIFIER = 5.0f;
 
+    // Private
     private float _radius;
     private ActionTimer _timer;
 
@@ -35,10 +40,26 @@ public class PowerupSpawner : MonoBehaviour
         GameObject instance = Instantiate(Prefabs[(int)Random.Range(0, len)], transform.position, Quaternion.identity);
     }
 
+    public void WaveSpawnTime(int wave)
+    {
+        float time = wave * TIME_WAVE_MODIFIER;
+        SetTimer(time);
+    }
+
     public void SetTimer(float timer)
     {
         _timer.Timer = timer;
         _timer.Reset();
+    }
+
+    public void PauseTimer()
+    {
+        _timer.Pause();
+    }
+
+    public void ResumeTimer()
+    {
+        _timer.Start();
     }
 
     void Start()
