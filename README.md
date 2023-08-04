@@ -7,3 +7,4 @@ An AR Space Invaders game made for a Capstone Project at Oregon State University
 <li>Laser Projectiles - Volumetric Lines (https://assetstore.unity.com/packages/tools/particles-effects/volumetric-lines-29160)</li>
 <li>Asteroids - Asteroids Pack (https://assetstore.unity.com/packages/3d/environments/asteroids-pack-84988)</li>
 <li>Satellite - Magellan (https://assetstore.unity.com/packages/3d/vehicles/space/magellan-98970)</li>
+<li>Explosion Sounds - Retro Sound Effects (https://assetstore.unity.com/packages/audio/sound-fx/retro-sound-effects-22153) </li>
