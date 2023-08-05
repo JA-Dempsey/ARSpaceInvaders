@@ -115,6 +115,7 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.tag == "Projectile")
         {
+            Handheld.Vibrate();
             TakeDamage(EnemyDamage);
             CheckHealth();
         }
