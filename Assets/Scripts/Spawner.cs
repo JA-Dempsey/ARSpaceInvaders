@@ -15,6 +15,7 @@ public class Spawner : MonoBehaviour
     public GameObject spawnTarget;
     public float maxDistanceFromTarget = 8f;
     public float minDistanceFromTarget = 2f;
+    public float minY = 1f;
 
 
     public GameObject[] prefabs;
@@ -46,7 +47,8 @@ public class Spawner : MonoBehaviour
         // loop over and spawn a random object from the prefab list
         for(int i = 0; i< numObjects; i++){
             // give random position to the object
-            Vector3 position = UnityEngine.Random.insideUnitSphere * UnityEngine.Random.Range(minDistanceFromTarget, maxDistanceFromTarget) + spawnTarget.transform.position;
+            Vector3 position = UnityEngine.Random.onUnitSphere * UnityEngine.Random.Range(minDistanceFromTarget, maxDistanceFromTarget) + spawnTarget.transform.position;
+            position.y = Mathf.Max(position.y, Mathf.Abs(minY));
 
             // instantiate
             GameObject randomPrefab = prefabs[UnityEngine.Random.Range(0, prefabs.Length)];
@@ -58,6 +60,13 @@ public class Spawner : MonoBehaviour
                     LookAt lookat_script = newObject.GetComponent<LookAt>();
                     if(lookat_script != null){
                         lookat_script.target = aimTarget;
+                    }
+                }catch(Exception e){}
+
+                try{
+                    ClosingSpeed closingSpeedSCript = newObject.GetComponent<ClosingSpeed>();
+                    if(closingSpeedSCript != null){
+                        closingSpeedSCript.target = aimTarget;
                     }
                 }catch(Exception e){}
                 

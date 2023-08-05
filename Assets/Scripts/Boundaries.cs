@@ -12,7 +12,7 @@ public class Boundaries : MonoBehaviour
     public GameObject BoundaryPrefab;
     public bool debugVisibility = false;
 
-    private const float Y_OFFSET = -2.5f;
+    private const float Y_OFFSET = -2;
     private GameObject[] boundaries;
 
     

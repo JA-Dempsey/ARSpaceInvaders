@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9059872462939612669
 MonoBehaviour:
@@ -44,10 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5385e65194624d19baa8e1eac7588af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numObjects: 6
+  numObjects: 3
   spawnTarget: {fileID: 0}
-  maxDistanceFromTarget: 8
-  minDistanceFromTarget: 2
+  maxDistanceFromTarget: 14
+  minDistanceFromTarget: 5
+  minY: 2
   prefabs:
   - {fileID: 6771764900044702907, guid: ff1f9d734148347cea4565fe3d99e48c, type: 3}
   - {fileID: 9009750890319207806, guid: b23af3cd659f84b028f42c8aa94c4725, type: 3}

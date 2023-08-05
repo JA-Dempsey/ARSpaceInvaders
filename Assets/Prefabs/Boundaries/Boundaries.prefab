@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1ca7d0e8f3a24c0380793ab960873c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceFromOrigin: 10
+  distanceFromOrigin: 15
   BoundaryPrefab: {fileID: 3208483342074621741, guid: 59e5db5f8d55b45509bf5ca5d6b89e4b, type: 3}
   debugVisibility: 0
