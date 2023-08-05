@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
         ScoreManager scoreManager = GetComponent<ScoreManager>();
         HighScoreManager highScoreManager = GetComponent<HighScoreManager>();
         
-        if(scoreManager.score > highScoreManager.LowestScore()){
+        if(!highScoreManager.AtCapacity() || scoreManager.score > highScoreManager.LowestScore()){
             SceneManager.LoadScene("SubmitHighScore");
         }else{
             SceneManager.LoadScene("GameLost");
