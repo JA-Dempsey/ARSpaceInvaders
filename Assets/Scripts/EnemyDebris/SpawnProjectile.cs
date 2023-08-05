@@ -9,6 +9,10 @@ public class SpawnProjectile : MonoBehaviour
     public GameObject projectilePrefab;
     private GameObject projectileChild;
     private bool delayDone = false;
+    
+    // allows projectiles to be spawned with different speed
+    public bool overWriteSpeed = false;
+    public float projectileSpeed = 3f;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +25,7 @@ public class SpawnProjectile : MonoBehaviour
     {
         if(projectileChild == null && delayDone){
             // adds short delay to firing projectile
-            Invoke("Shoot", Random.Range(1f,6f));
+            Invoke("Shoot", Random.Range(1f,3f));
             delayDone = false;
         }
     }
@@ -31,6 +35,10 @@ public class SpawnProjectile : MonoBehaviour
         // spawn projectile
         Vector3 spawnPosition = transform.TransformDirection(new Vector3(0,0,1f));
         projectileChild = Instantiate(projectilePrefab, transform.position, transform.rotation);
+        
+        if(overWriteSpeed){
+            projectileChild.GetComponent<Projectile>().Speed = projectileSpeed;
+        }
         
         // set flag to allow another projectile to fire
         delayDone = true;

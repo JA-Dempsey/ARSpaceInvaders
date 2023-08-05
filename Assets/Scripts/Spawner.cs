@@ -47,8 +47,7 @@ public class Spawner : MonoBehaviour
         // loop over and spawn a random object from the prefab list
         for(int i = 0; i< numObjects; i++){
             // give random position to the object
-            Vector3 position = UnityEngine.Random.insideUnitSphere * UnityEngine.Random.Range(minDistanceFromTarget, maxDistanceFromTarget) + spawnTarget.transform.position;
-
+            Vector3 position = UnityEngine.Random.onUnitSphere * UnityEngine.Random.Range(minDistanceFromTarget, maxDistanceFromTarget) + spawnTarget.transform.position;
             position.y = Mathf.Max(position.y, Mathf.Abs(minY));
 
             // instantiate

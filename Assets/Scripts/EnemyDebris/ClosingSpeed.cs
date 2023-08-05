@@ -6,17 +6,16 @@ public class ClosingSpeed : MonoBehaviour
 {
     public GameObject target;
     public float velocity = 0.5f;
+    public float sidewaysVelocity = 2f;
 
     private Rigidbody rb;
     private float sidewaysMotionV;
-    private const float sidewaysMultiplier = -2f;
-    [SerializeField] private float closingVelocity;
     [SerializeField] private float crossVelocity;
     [SerializeField] private float distance;
 
     void Start(){
         rb = GetComponent<Rigidbody>();
-        sidewaysMotionV = Random.Range(-sidewaysMultiplier,sidewaysMultiplier);
+        sidewaysMotionV = Random.Range(-sidewaysVelocity, sidewaysVelocity);
     }
 
     // Update is called once per frame
@@ -29,7 +28,6 @@ public class ClosingSpeed : MonoBehaviour
         rb.velocity = motion + cross;
 
         distance = direction.magnitude;
-        closingVelocity = motion.magnitude;
         crossVelocity = cross.magnitude;
     }
 }

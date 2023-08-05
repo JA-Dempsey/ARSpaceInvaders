@@ -34,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 6798503572103092583}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -48,7 +48,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6798503572103092583}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 1000
   m_Drag: 0
   m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -148,6 +148,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 5
   projectilePrefab: {fileID: 9148571337746792110, guid: 05d5f83a75b3284439bc94ff53c0dd2c, type: 3}
+  overWriteSpeed: 0
+  projectileSpeed: 3
 --- !u!114 &3410092518309556275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,4 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  velocity: 0.15
+  velocity: 0.1
+  sidewaysVelocity: 2
+  crossVelocity: 0
+  distance: 0

@@ -46,8 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numObjects: 3
   spawnTarget: {fileID: 0}
-  maxDistanceFromTarget: 5
-  minDistanceFromTarget: 1
+  maxDistanceFromTarget: 14
+  minDistanceFromTarget: 5
   minY: 2
   prefabs:
   - {fileID: 6771764900044702907, guid: ff1f9d734148347cea4565fe3d99e48c, type: 3}
