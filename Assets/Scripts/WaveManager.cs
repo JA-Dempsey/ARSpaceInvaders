@@ -72,7 +72,7 @@ public class WaveManager : MonoBehaviour
     }
 
     void SpawnDebris(){
-        const int MAX_DEBRIS = 8;
+        const int MAX_DEBRIS = 4;
 
         // spawn debris
         GameObject[] debris = GameObject.FindGameObjectsWithTag("Debris");

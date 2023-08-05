@@ -46,7 +46,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6771764900044702907}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 20000
   m_Drag: 0
   m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -102,6 +102,9 @@ MonoBehaviour:
   explosion: {fileID: 1200464223753380778, guid: ad553ed945e0a438089e670be239a4d4, type: 3}
   explosion_scale: 1
   destroyTrigger: 0
+  fadeIn: 0
+  fadeOut: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &3416258110808338764
 MonoBehaviour:
   m_ObjectHideFlags: 0
