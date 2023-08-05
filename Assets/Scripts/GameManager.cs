@@ -90,6 +90,8 @@ public class GameManager : MonoBehaviour
     // Instructions for GameLost
     private void HandleGameLost()
     {
+        Handheld.Vibrate();
+
         // Check to see if high score, then load the correct scene
         ScoreManager scoreManager = GetComponent<ScoreManager>();
         HighScoreManager highScoreManager = GetComponent<HighScoreManager>();
