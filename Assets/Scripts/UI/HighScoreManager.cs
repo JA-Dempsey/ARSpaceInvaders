@@ -36,7 +36,13 @@ public class HighScoreManager : MonoBehaviour
 
     // returns the lowest score in the list
     public int LowestScore(){
+        if(highScores.scores.Count == 0){
+            return 0;
+        }
+        
         return highScores.scores[highScores.scores.Count-1].score;
+
+        
     }
 
     // saves scores back into PlayerPrefs
