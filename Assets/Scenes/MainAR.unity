@@ -1089,6 +1089,10 @@ PrefabInstance:
       propertyPath: ShieldText
       value: 
       objectReference: {fileID: 7849444862975981439}
+    - target: {fileID: 1291455731667887586, guid: b4393e5a749d3a845895eff37daead39, type: 3}
+      propertyPath: FlashPanels
+      value: 
+      objectReference: {fileID: 2004222863}
     - target: {fileID: 1867544585037114678, guid: b4393e5a749d3a845895eff37daead39, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1353,6 +1357,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2620586182278987318, guid: 4a44c34dcd9fe714ba1f6f826c6b8fa8, type: 3}
   m_PrefabInstance: {fileID: 2004222861}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2004222863 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3184029819585523144, guid: 4a44c34dcd9fe714ba1f6f826c6b8fa8, type: 3}
+  m_PrefabInstance: {fileID: 2004222861}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 899fdafa78f5bd9429a6f333979b917e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7849444862975981437
 PrefabInstance:
   m_ObjectHideFlags: 0
