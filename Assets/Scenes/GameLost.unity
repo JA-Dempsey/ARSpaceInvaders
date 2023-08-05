@@ -516,10 +516,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2609995521421055750, guid: 44933551acf1eae43909fa36c5091b66, type: 3}
       insertIndex: 0
       addedObject: {fileID: 1147794894}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3952438631291752023, guid: 44933551acf1eae43909fa36c5091b66, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1469919075}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44933551acf1eae43909fa36c5091b66, type: 3}
 --- !u!224 &610466227 stripped
 RectTransform:
@@ -611,7 +608,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1164291783}
-  - component: {fileID: 1164291784}
+  - component: {fileID: 1164291785}
   m_Layer: 0
   m_Name: ScoreManager
   m_TagString: Untagged
@@ -634,7 +631,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1164291784
+--- !u!114 &1164291785
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -643,28 +640,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1164291781}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12319aa7ec2954eaf92851738d277bdf, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e85faedc2bc440b9bbd65df1dbd9e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1729985536}
---- !u!1 &1469919074 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3952438631291752023, guid: 44933551acf1eae43909fa36c5091b66, type: 3}
-  m_PrefabInstance: {fileID: 610466226}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1469919075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1469919074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12319aa7ec2954eaf92851738d277bdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 1729985536}
+  nameSubmission: {fileID: 0}
 --- !u!1 &1487906029
 GameObject:
   m_ObjectHideFlags: 0

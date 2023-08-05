@@ -30,9 +30,6 @@ public class Player : MonoBehaviour
     public TMP_Text EnergyText;
     public TMP_Text ShieldText;
 
-    // Camera Panels
-    public FlashPanels FlashPanels;
-
     public int EnemyDamage = 10; // Damage done when Player hit by enemy
 
     public BaseResource Health;
@@ -44,7 +41,8 @@ public class Player : MonoBehaviour
     // Methods
     public bool CheckHealth()
     {
-        return IsAlive = !Health.IsZero;
+        IsAlive = !Health.IsZero;
+        return IsAlive;
     }
 
     public void UpdateText()
@@ -70,11 +68,6 @@ public class Player : MonoBehaviour
         // if shield is in negative, give excess damage to health
         if(tempShield < 0){
             Health.Decrease(Mathf.Abs(tempShield));
-            FlashPanels.ShowRed();
-        }
-        else
-        {
-            FlashPanels.ShowBlue();
         }
 
     }
@@ -107,11 +100,8 @@ public class Player : MonoBehaviour
         Health = new(MinHealth, MaxHealth, CriticalHealth);
         Shield = new(MinShield, MaxShield, CriticalShield);
         Energy = new(MinEnergy, MaxEnergy, CriticalEnergy);
-    }
 
-    private void Start()
-    {
-        
+        CheckHealth();
     }
 
     // Collisions
@@ -120,20 +110,14 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "Projectile")
         {
             TakeDamage(EnemyDamage);
-
-            // exit scene if you die
-            if(!CheckHealth()){
-                SceneManager.LoadScene("SubmitHighScore");
-            }
+            CheckHealth();
         }
     }
-
 
     // Update is called once per frame
     void Update()
     {
         UpdateText();
-        
     }
 
 

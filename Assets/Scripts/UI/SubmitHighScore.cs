@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,6 @@ public class SubmitHighScore : MonoBehaviour
     
     public TMP_Text scoreText;
     public TMP_Text nameSubmission;
-    public GameObject fadeImageObject;
     private HighScoreManager highScoreManager;
 
     private int score;
@@ -22,16 +22,10 @@ public class SubmitHighScore : MonoBehaviour
         score = PlayerPrefs.GetInt("lastScore", 0);
         scoreText.text = score.ToString();
        
-        // if score is lower than lowest score and scoreboard is at capacity, then direct to game lost screen
-        highScoreManager = GetComponent<HighScoreManager>();
-        if(score < highScoreManager.LowestScore() && highScoreManager.AtCapacity()){
-            SceneManager.LoadScene("GameLost");
-        }else{
-            // destroy the Player Prefs score
-            PlayerPrefs.DeleteKey("lastScore");
-            StartCoroutine(FadeImage());
-        }
-                
+        // get the high score manager
+        try{
+            highScoreManager = GetComponent<HighScoreManager>();               
+        }catch(Exception e){};
     }
 
     // Submit score
@@ -46,21 +40,8 @@ public class SubmitHighScore : MonoBehaviour
         SceneManager.LoadScene("HighScores");
     }
 
+    // delete the retained score on destroy
     private void OnDestroy(){
-        
-    }
-
-    IEnumerator FadeImage(){
-        Image fadeImage = fadeImageObject.GetComponent<Image>();
-        // loop over 1 second backwards
-            for (float i = 1; i >= 0; i -= Time.deltaTime)
-            {
-                // set color with i as alpha
-                fadeImage.color = new Color(255, 255, 255, i);
-                yield return null;
-            }
-            Destroy(fadeImageObject);
-            
-            
+        PlayerPrefs.DeleteKey("lastScore");
     }
 }

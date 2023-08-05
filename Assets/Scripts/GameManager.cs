@@ -16,12 +16,6 @@ public class GameManager : MonoBehaviour
     public GameState State;
     public static event Action<GameState> OnGameStateUpdated;
 
-    public int playerHealth;
-    public int playerShield;
-    public int playerPowerup;
-    public int enemiesCount;
-
-
     // Make instance accessible anywhere in the game
     private void Awake()
     {
@@ -38,28 +32,6 @@ public class GameManager : MonoBehaviour
     public void UpdateState(GameState updatedState)
     {
         State = updatedState;
-
-        switch (updatedState)
-        {
-            case GameState.GameStart:
-                HandleGameStart();
-                break;
-            case GameState.GamePaused:
-                HandleGamePaused();
-                break;
-            case GameState.GamePlay:
-                HandleGamePlay();
-                break;
-            case GameState.GameWon:
-                HandleGameWon();
-                break;
-            case GameState.GameLost:
-                HandleGameLost();
-                break;
-            case GameState.GameQuit:
-                HandleGameQuit();
-                break;
-        }
 
         // Alerts scripts/objects that the state of the game has changed
         OnGameStateUpdated?.Invoke(updatedState);
@@ -82,10 +54,6 @@ public class GameManager : MonoBehaviour
             // Get Player Script from Player Object
             // Defaults set within Editor for vitals/resources
             _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-
-            // This is likely dealt within objects/wave manager
-            // playerPowerup = 0;
-            // enemiesCount = 5;
         }
 
         // Update State
@@ -112,12 +80,6 @@ public class GameManager : MonoBehaviour
             UpdateState(GameState.GameLost);
         }
 
-        // Check if there are still enemies left, update state to game won
-        else if (enemiesCount == 0)
-        {
-            UpdateState(GameState.GameWon);
-        }
-
         // Continue calling HandleGamePlay()
         else
         {
@@ -125,18 +87,18 @@ public class GameManager : MonoBehaviour
         }       
     }
 
-    // Instructions for GameWon
-    private void HandleGameWon()
-    {
-        // 1. Load Game Won Scene with options to save high score or return to main menu
-        SceneManager.LoadScene("SubmitHighScore");
-    }
-
     // Instructions for GameLost
     private void HandleGameLost()
     {
-        // 1. Load Game Lost Scene with options to retry or return to main menu
-        SceneManager.LoadScene("GameLost");
+        // Check to see if high score, then load the correct scene
+        ScoreManager scoreManager = GetComponent<ScoreManager>();
+        HighScoreManager highScoreManager = GetComponent<HighScoreManager>();
+        
+        if(scoreManager.score > highScoreManager.LowestScore()){
+            SceneManager.LoadScene("SubmitHighScore");
+        }else{
+            SceneManager.LoadScene("GameLost");
+        }
     }
 
     // Instructions for GameQuit
@@ -146,6 +108,27 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
+
+    private void Update(){
+        switch (State)
+        {
+            case GameState.GameStart:
+                HandleGameStart();
+                break;
+            case GameState.GamePaused:
+                HandleGamePaused();
+                break;
+            case GameState.GamePlay:
+                HandleGamePlay();
+                break;
+            case GameState.GameLost:
+                HandleGameLost();
+                break;
+            case GameState.GameQuit:
+                HandleGameQuit();
+                break;
+        }
+    }
 }
 
 // Different possible game states
@@ -153,7 +136,6 @@ public enum GameState{
     GameStart = 0,
     GamePaused = 1,
     GamePlay = 2,
-    GameWon = 3,
-    GameLost = 4,
-    GameQuit = 5
+    GameLost = 3,
+    GameQuit = 4
 }
