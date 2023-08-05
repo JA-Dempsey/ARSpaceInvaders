@@ -25,6 +25,9 @@ public class Player : MonoBehaviour
     public int CriticalShield = 0;
     public int CriticalEnergy = 1;
 
+    // Flashing Panels
+    public FlashPanels FlashPanels;
+
     // Text
     public TMP_Text HealthText;
     public TMP_Text EnergyText;
@@ -64,11 +67,14 @@ public class Player : MonoBehaviour
         // damage shield first
         int tempShield = Shield.Current - damage;
         Shield.Decrease(damage);
-        
+
         // if shield is in negative, give excess damage to health
-        if(tempShield < 0){
+        if (tempShield < 0)
+        {
             Health.Decrease(Mathf.Abs(tempShield));
+            FlashPanels.ShowRed();
         }
+        else { FlashPanels.ShowBlue(); }
 
     }
 
