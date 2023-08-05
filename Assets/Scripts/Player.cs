@@ -30,6 +30,9 @@ public class Player : MonoBehaviour
     public TMP_Text EnergyText;
     public TMP_Text ShieldText;
 
+    // Camera Panels
+    public FlashPanels FlashPanels;
+
     public int EnemyDamage = 10; // Damage done when Player hit by enemy
 
     public BaseResource Health;
@@ -67,6 +70,11 @@ public class Player : MonoBehaviour
         // if shield is in negative, give excess damage to health
         if(tempShield < 0){
             Health.Decrease(Mathf.Abs(tempShield));
+            FlashPanels.ShowRed();
+        }
+        else
+        {
+            FlashPanels.ShowBlue();
         }
 
     }
@@ -120,7 +128,6 @@ public class Player : MonoBehaviour
     void Update()
     {
         UpdateText();
-
         
     }
 
