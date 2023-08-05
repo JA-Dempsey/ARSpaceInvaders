@@ -61,6 +61,7 @@ MonoBehaviour:
   HealthText: {fileID: 0}
   EnergyText: {fileID: 0}
   ShieldText: {fileID: 0}
+  FlashPanels: {fileID: 3184029819585523144, guid: 4a44c34dcd9fe714ba1f6f826c6b8fa8, type: 3}
   EnemyDamage: 10
 --- !u!136 &3839178193161377047
 CapsuleCollider:
