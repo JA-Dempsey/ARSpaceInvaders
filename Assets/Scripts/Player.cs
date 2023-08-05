@@ -109,6 +109,11 @@ public class Player : MonoBehaviour
         Energy = new(MinEnergy, MaxEnergy, CriticalEnergy);
     }
 
+    private void Start()
+    {
+        
+    }
+
     // Collisions
     private void OnCollisionEnter(Collision other)
     {

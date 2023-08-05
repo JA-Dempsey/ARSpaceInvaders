@@ -206,6 +206,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899fdafa78f5bd9429a6f333979b917e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RedPanel: {fileID: 7618921994944187689}
+  BluePanel: {fileID: 3796324012209836956}
   FlashTime: 0.25
 --- !u!1 &7618921994944187689
 GameObject:
