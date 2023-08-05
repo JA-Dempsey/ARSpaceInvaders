@@ -11,7 +11,7 @@ public class RandomModel : MonoBehaviour
     void Start()
     {
         int randomInt = Random.Range(0, Prefabs.Length);
-        Instantiate(Prefabs[randomInt], transform);
+        Instantiate(Prefabs[randomInt], transform.position, transform.rotation, this.transform);
     }
 
 }

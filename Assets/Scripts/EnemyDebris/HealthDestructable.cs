@@ -39,7 +39,7 @@ public class HealthDestructable : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision other) {
-    
+        
         // if colliding with projectile, then reduce health
         if(other.gameObject.tag == "Projectile" || other.gameObject.tag == "PlayerProjectile"){
 

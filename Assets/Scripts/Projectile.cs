@@ -25,7 +25,7 @@ public class Projectile : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
         // enemy collision with enemy projectile (ignore)
         if(other.gameObject.tag == "Enemy" && gameObject.tag == "Projectile"){
