@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -571,6 +571,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 335347667165815480, guid: 590eaca48ebc845389b1f3db95951160, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 335347667165815480, guid: 590eaca48ebc845389b1f3db95951160, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.8901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 335347667165815480, guid: 590eaca48ebc845389b1f3db95951160, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.34117648
+      objectReference: {fileID: 0}
+    - target: {fileID: 335347667165815480, guid: 590eaca48ebc845389b1f3db95951160, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294959959
+      objectReference: {fileID: 0}
     - target: {fileID: 3036976893540269880, guid: 590eaca48ebc845389b1f3db95951160, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -655,12 +671,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3098484685971947963, guid: 590eaca48ebc845389b1f3db95951160, type: 3}
+      propertyPath: m_GlobalFontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 5f5a9cd997a2d724fa08ef96f2641764, type: 2}
     - target: {fileID: 6382794653559081801, guid: 590eaca48ebc845389b1f3db95951160, type: 3}
       propertyPath: m_Name
       value: SubmitHighScoreCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6407708838173928834, guid: 590eaca48ebc845389b1f3db95951160, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407708838173928834, guid: 590eaca48ebc845389b1f3db95951160, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407708838173928834, guid: 590eaca48ebc845389b1f3db95951160, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407708838173928834, guid: 590eaca48ebc845389b1f3db95951160, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118757780153241454, guid: 590eaca48ebc845389b1f3db95951160, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f57bf00aac19d349883ca003b039494, type: 2}
+    - target: {fileID: 7118757780153241454, guid: 590eaca48ebc845389b1f3db95951160, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3374262808974120758, guid: 2f57bf00aac19d349883ca003b039494, type: 2}
+    - target: {fileID: 7118757780153241454, guid: 590eaca48ebc845389b1f3db95951160, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7276213551454871699, guid: 590eaca48ebc845389b1f3db95951160, type: 3}
+      propertyPath: m_Name
+      value: SubmitButtonText
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7852896962520143539, guid: 590eaca48ebc845389b1f3db95951160, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 590eaca48ebc845389b1f3db95951160, type: 3}
