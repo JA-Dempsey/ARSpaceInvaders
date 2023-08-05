@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Experimental.XR.Interaction;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -40,10 +41,7 @@ public class Player : MonoBehaviour
     // Methods
     public bool CheckHealth()
     {
-        if (Health.IsZero)
-            IsAlive = false;
-
-        return IsAlive;
+        return IsAlive = !Health.IsZero;
     }
 
     public void UpdateText()
@@ -60,42 +58,22 @@ public class Player : MonoBehaviour
     // Increase/Decrease Function Maps
     // Reduces complexity of calls from other objects
     // and provides methods to do other things if necessary
-    public void DamageHealth(int damage)
+    public void TakeDamage(int damage)
     {
-        int unshieldedDamage = Mathf.Abs(Shield.Current - damage);
-
-        if (unshieldedDamage > 0)
-        {
-            Shield.Current = 0; // Damage burned through shield
-            Health.Decrease(unshieldedDamage);
-        }
-        else
-        {
-            DamageHealth(damage); // Burn through shield before health
+        // damage shield first
+        int tempShield = Shield.Current - damage;
+        Shield.Decrease(damage);
+        
+        // if shield is in negative, give excess damage to health
+        if(tempShield < 0){
+            Health.Decrease(Mathf.Abs(tempShield));
         }
 
-        if (Health.IsZero)
-            IsAlive = false;
     }
 
     public void HealHealth(int heal)
     {
         Health.Increase(heal);
-    }
-
-    public void DamageShield(int damage)
-    {
-        int unshieldedDamage = Mathf.Abs(Shield.Current - damage);
-        
-        if (unshieldedDamage > 0)
-        {
-            Shield.Current = 0; // Damage burned through shield
-            Health.Decrease(unshieldedDamage);
-        }
-        else
-        {
-            Shield.Decrease(damage); // Damage shield first
-        }
     }
 
     public void RechargeShield(int recharge)
@@ -124,24 +102,26 @@ public class Player : MonoBehaviour
     }
 
     // Collisions
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Projectile")
         {
-            DamageHealth(EnemyDamage);
-            CheckHealth(); // Determine if player is still alive
+            TakeDamage(EnemyDamage);
+
+            // exit scene if you die
+            if(!CheckHealth()){
+                SceneManager.LoadScene("SubmitHighScore");
+            }
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
 
     // Update is called once per frame
     void Update()
     {
         UpdateText();
+
+        
     }
 
 
