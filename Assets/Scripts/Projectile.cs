@@ -30,7 +30,7 @@ public class Projectile : MonoBehaviour
         // enemy collision with enemy projectile (ignore)
         if(other.gameObject.tag == "Enemy" && gameObject.tag == "Projectile"){return;} // Projectiles ignore enemies
         else if (other.gameObject.tag == "Player" && gameObject.tag == "PlayerProjectile"){return;} // PlayerProjectiles ignore Player
-        else if(other.gameObject.tag == "Projectile" || other.gameObject.tag == "PlayerProjection"){return;} // Projectiles ignore themselves
+        else if(other.gameObject.tag == "Projectile" || other.gameObject.tag == "PlayerProjectile"){return;} // Projectiles ignore themselves
 
         else{ // collision with anything else
             Debug.Log("Destroyed with: " + other.gameObject.name);
