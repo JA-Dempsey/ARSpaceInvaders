@@ -12,7 +12,7 @@ public class PlayerShoot : MonoBehaviour
 
     public void SpawnProjectile()
     {
-        Instantiate(PlayerProjectile, transform.forward, transform.rotation);
+        Instantiate(PlayerProjectile, transform.position, transform.rotation);
         _audio.PlayRandomLaser();
     }
 
