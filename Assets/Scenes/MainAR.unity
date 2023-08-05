@@ -1389,6 +1389,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: d6c97efc2e65c9b498b96afd0a2b764a, type: 3}
     - target: {fileID: 2602425049736023618, guid: 2a79431646af7544c89200accd7078d1, type: 3}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602425049736023618, guid: 2a79431646af7544c89200accd7078d1, type: 3}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602425049736023618, guid: 2a79431646af7544c89200accd7078d1, type: 3}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602425049736023618, guid: 2a79431646af7544c89200accd7078d1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1409786601}
@@ -1483,6 +1495,18 @@ PrefabInstance:
     - target: {fileID: 4493235168862382015, guid: 2a79431646af7544c89200accd7078d1, type: 3}
       propertyPath: m_Name
       value: FireButtonText
+      objectReference: {fileID: 0}
+    - target: {fileID: 7071365530333374975, guid: 2a79431646af7544c89200accd7078d1, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f57bf00aac19d349883ca003b039494, type: 2}
+    - target: {fileID: 7071365530333374975, guid: 2a79431646af7544c89200accd7078d1, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3374262808974120758, guid: 2f57bf00aac19d349883ca003b039494, type: 2}
+    - target: {fileID: 7071365530333374975, guid: 2a79431646af7544c89200accd7078d1, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
