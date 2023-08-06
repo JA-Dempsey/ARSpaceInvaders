@@ -58,6 +58,7 @@ MonoBehaviour:
   CriticalHealth: 50
   CriticalShield: 0
   CriticalEnergy: 1
+  Bunker: {fileID: 8661103474329817566, guid: 1f455e187d9ba493fb621083569cd8f6, type: 3}
   FlashPanels: {fileID: 0}
   HealthText: {fileID: 0}
   EnergyText: {fileID: 0}

@@ -281,6 +281,7 @@ GameObject:
   - component: {fileID: 1012850137908837058}
   - component: {fileID: 5098002816638639515}
   - component: {fileID: 4997089254048338615}
+  - component: {fileID: 8537306092900536966}
   m_Layer: 5
   m_Name: GamePlayScreen
   m_TagString: Untagged
@@ -302,11 +303,12 @@ RectTransform:
   m_Children:
   - {fileID: 6086787536446944088}
   - {fileID: 4545488331286384198}
-  - {fileID: 6843227071181578520}
   - {fileID: 5419374689268506121}
+  - {fileID: 6843227071181578520}
   - {fileID: 8051771786937078054}
+  - {fileID: 1419991061542546378}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -389,6 +391,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   confirmationScreen: {fileID: 6653469426343675658}
+--- !u!114 &8537306092900536966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3011780110989752134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b157bb6931c4cd42be2b945b9c78118, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rawImage: {fileID: 703559675491833413}
 --- !u!1 &3440748186470349562
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,6 +477,79 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Texture: {fileID: 2800000, guid: 3ccf91019443cff40825bc3cec355f32, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!1 &3613218290307539229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1419991061542546378}
+  - component: {fileID: 4655974738656540700}
+  - component: {fileID: 703559675491833413}
+  m_Layer: 5
+  m_Name: Scope
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1419991061542546378
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3613218290307539229}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4457459223003892482}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 500, y: 500}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &4655974738656540700
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3613218290307539229}
+  m_CullTransparentMesh: 1
+--- !u!114 &703559675491833413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3613218290307539229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: bf7bbd3d78d93f64692053b6f222b5ad, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1289,7 +1377,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3110194133976639737, guid: d0cebc0774fd10f478fd986df7a0d66e, type: 3}
       propertyPath: m_text
-      value: Main Menu
+      value: Pause
       objectReference: {fileID: 0}
     - target: {fileID: 3361501741460524061, guid: d0cebc0774fd10f478fd986df7a0d66e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
