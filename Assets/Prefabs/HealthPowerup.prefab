@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ecaa2065637841448bd93df113f3851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerObject: {fileID: 0}
+  PowerupScale: 10
 --- !u!54 &5267541542520880826
 Rigidbody:
   m_ObjectHideFlags: 0

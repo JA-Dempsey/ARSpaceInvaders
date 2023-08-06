@@ -13,7 +13,6 @@ public class PowerupSpawner : MonoBehaviour
     public float timeWaveModifier = 5.0f;
 
     // Private
-    private Transform _xBoundary;
     private float _radius;
     private ActionTimer _timer;
     private ActionTimer _awaitBoundaries;
@@ -37,12 +36,6 @@ public class PowerupSpawner : MonoBehaviour
         newPosition.y = 0;
         transform.position = newPosition;
         GameObject instance = Instantiate(Prefabs[(int)Random.Range(0, len)], transform.position, Quaternion.identity);
-    }
-
-    // Only need x or z since spawner uses circle area
-    public Transform GetXBoundary()
-    {
-        return Boundaries.transform.Find("Boundary X+");
     }
 
     public void WavePowerupSpawn(int wave)
@@ -71,24 +64,22 @@ public class PowerupSpawner : MonoBehaviour
 
     void Start()
     {
-        _timer = new(5.0f);
+        _timer = new(baseTimePerSpawn);
         _timer.Pause();
-        _xBoundary = GetXBoundary();
+        _radius = Boundaries.GetComponent<Boundaries>().distanceFromOrigin; 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_xBoundary)
-        {
-            _radius = _xBoundary.position.x;
+            // update timer and if zero, spawn a powerup
             _timer.Update(Time.deltaTime);
             if (_timer.IsZero)
             {
                 SpawnPowerup();
+
+                // reset timer
                 _timer.Reset();
             }
-        }
-        else { _xBoundary = GetXBoundary(); }
     }
 }

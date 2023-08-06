@@ -16,6 +16,8 @@ public class HealthDestructable : MonoBehaviour
     private bool fadeOut = false;
     private bool hasRenderer;
 
+    public AudioSource audioData;
+
     void Start(){
         try{
             rend = GetComponent<Renderer>();
@@ -30,11 +32,7 @@ public class HealthDestructable : MonoBehaviour
     {
         if(destroyTrigger){
             DestroyObject();
-        }
-        if(hasRenderer && enableFade){
-            FlashRedOnHit();
-        }
-        
+        }        
     }
 
     private void OnCollisionEnter(Collision other) {
@@ -50,9 +48,9 @@ public class HealthDestructable : MonoBehaviour
             // if health falls below 0, destroy the object
             if(health <= 0.0){
                 DestroyObject();
-            }else if(hasRenderer){
-                fadeIn = true;
-            }
+            }else if(audioData != null){
+                    audioData.Play();
+                }
         }
     }
 
@@ -63,25 +61,5 @@ public class HealthDestructable : MonoBehaviour
         }
         Destroy(gameObject);
     }
-
-
-    void FlashRedOnHit(){
-        // this function flashes the item red when hit
-        if(fadeIn){
-            rend.material.color = new Color(rend.material.color.r , rend.material.color.g- Time.deltaTime, rend.material.color.b- Time.deltaTime, 1);
-            if(rend.material.color.g <= 0){
-                
-                fadeIn = false;
-                fadeOut = true;
-            }
-
-        }else if(fadeOut){
-            rend.material.color = new Color(rend.material.color.r , rend.material.color.g + Time.deltaTime, rend.material.color.b + Time.deltaTime, 1);
-            if(rend.material.color.g >= 1){
-                fadeOut = false;
-            }
-        }
-    }
-
 
 }

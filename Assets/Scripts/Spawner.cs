@@ -13,8 +13,9 @@ public class Spawner : MonoBehaviour
 
     public int numObjects = 1;
     public GameObject spawnTarget;
-    public float maxDistanceFromTarget = 8f;
-    public float minDistanceFromTarget = 2f;
+    public Boundaries boundaries;
+    public bool spawnAtBoundary;
+    [Range(1f, 4f)] public float boundaryOffset = 2f;
     public float minY = 1f;
 
 
@@ -22,10 +23,19 @@ public class Spawner : MonoBehaviour
     public GameObject aimTarget;
     public bool trigger = false;
 
+    private float radius;
+    private float offset;
+
     void Start(){
         if(spawnTarget == null){
             spawnTarget = this.gameObject;
         }
+
+        radius = boundaries.distanceFromOrigin;
+        if(spawnAtBoundary){
+            offset = -boundaryOffset;
+        }
+        
     }
 
     // Update is called once per frame
@@ -47,7 +57,12 @@ public class Spawner : MonoBehaviour
         // loop over and spawn a random object from the prefab list
         for(int i = 0; i< numObjects; i++){
             // give random position to the object
-            Vector3 position = UnityEngine.Random.onUnitSphere * UnityEngine.Random.Range(minDistanceFromTarget, maxDistanceFromTarget) + spawnTarget.transform.position;
+            Vector3 position;
+            if(spawnAtBoundary){
+                position = UnityEngine.Random.onUnitSphere * (radius + offset)  + spawnTarget.transform.position;
+            }else{
+                position = UnityEngine.Random.insideUnitSphere * (radius + offset)  + spawnTarget.transform.position;
+            }
             position.y = Mathf.Max(position.y, Mathf.Abs(minY));
 
             // instantiate
