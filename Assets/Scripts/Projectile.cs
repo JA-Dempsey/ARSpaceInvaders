@@ -6,7 +6,10 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    // Private
+    private ShootAudio _audio;
 
+    // Public
     public float Speed = 10.0f;
 
     public void SetSpeed(float speed)
@@ -17,11 +20,8 @@ public class Projectile : MonoBehaviour
     // Methods
     public void Shoot()
     {
-
         // set velocity of the laser
         GetComponent<Rigidbody>().velocity = (transform.forward * Speed);
-        
-        // GetComponent<Rigidbody>().AddForce(transform.forward * Speed);
     }
 
 
@@ -34,9 +34,13 @@ public class Projectile : MonoBehaviour
         else{ // collision with anything else
             Destroy(gameObject);
         }
+    }
 
-        
-        
+    private void Start()
+    {
+        // Must be attached to same object as the ShootAudio Script
+        _audio = GetComponent<ShootAudio>();
+        _audio.PlayRandomLaser(); // Play at start of projectile life
     }
 
     // Update is called once per frame
