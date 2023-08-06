@@ -324,7 +324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5441390947796195428, guid: c366146c57a3b4f058b4f879dcd4a633, type: 3}
       propertyPath: distanceFromOrigin
-      value: 30
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -853,6 +853,14 @@ PrefabInstance:
       propertyPath: spawnTarget
       value: 
       objectReference: {fileID: 1409786600}
+    - target: {fileID: 9059872462939612669, guid: c6d41d31b9a35434e9c2edf12e25e13d, type: 3}
+      propertyPath: maxDistanceFromTarget
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 9059872462939612669, guid: c6d41d31b9a35434e9c2edf12e25e13d, type: 3}
+      propertyPath: minDistanceFromTarget
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -974,7 +982,7 @@ PrefabInstance:
       objectReference: {fileID: 1409786600}
     - target: {fileID: 428592937208290996, guid: f404f3a958b4e264290af1bd27ef3292, type: 3}
       propertyPath: AreaReductionMod
-      value: 3
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 428592937208290996, guid: f404f3a958b4e264290af1bd27ef3292, type: 3}
       propertyPath: Prefabs.Array.size
@@ -1295,16 +1303,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1409786600}
     - target: {fileID: 5482831797609871600, guid: 37fab9fccf30147ed9142fbd04125ba7, type: 3}
+      propertyPath: numObjects
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5482831797609871600, guid: 37fab9fccf30147ed9142fbd04125ba7, type: 3}
       propertyPath: spawnTarget
       value: 
       objectReference: {fileID: 1409786600}
     - target: {fileID: 5482831797609871600, guid: 37fab9fccf30147ed9142fbd04125ba7, type: 3}
       propertyPath: maxDistanceFromTarget
-      value: 27
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 5482831797609871600, guid: 37fab9fccf30147ed9142fbd04125ba7, type: 3}
       propertyPath: minDistanceFromTarget
-      value: 25
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8900069818477251327, guid: 37fab9fccf30147ed9142fbd04125ba7, type: 3}
       propertyPath: m_RootOrder

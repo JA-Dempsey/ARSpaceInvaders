@@ -44,10 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a168fbda02074087989d6d875be1ec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseTimePerSpawn: 45
+  timeWaveModifier: 10
+  SpawnCenter: {fileID: 0}
+  Boundaries: {fileID: 0}
   Prefabs:
   - {fileID: 6139895467459244979, guid: a301b4652a70cbe4ab620d0ef5b43fdd, type: 3}
   - {fileID: 7150765877560935658, guid: 82425af585d1d4e43a440dbae7e0fee0, type: 3}
-  MaxX: {fileID: 0}
-  MinX: {fileID: 0}
-  MaxZ: {fileID: 0}
-  MinZ: {fileID: 0}
+  - {fileID: 3009678377626586802, guid: ee4066e997b0ca541b66d5d5c2779501, type: 3}
+  AreaReductionMod: 1.5

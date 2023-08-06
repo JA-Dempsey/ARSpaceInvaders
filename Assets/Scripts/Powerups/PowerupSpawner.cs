@@ -9,7 +9,8 @@ public class PowerupSpawner : MonoBehaviour
     // Const
     // Increase of time for spawn per wave
     // Reduces number of powerup spawns
-    private const float TIME_WAVE_MODIFIER = 5.0f;
+    public float baseTimePerSpawn = 45f;
+    public float timeWaveModifier = 5.0f;
 
     // Private
     private Transform _xBoundary;
@@ -47,7 +48,7 @@ public class PowerupSpawner : MonoBehaviour
     public void WavePowerupSpawn(int wave)
     {
         // +1 ensures no infinite spawn
-        float time = ((float) wave + 1) * TIME_WAVE_MODIFIER;
+        float time = ((float) wave + 1) * timeWaveModifier + baseTimePerSpawn;
         SetTimer(time);
         ResumeTimer();
     }
