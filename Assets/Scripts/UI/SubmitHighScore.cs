@@ -31,6 +31,12 @@ public class SubmitHighScore : MonoBehaviour
     // Submit score
     public void SubmitScore()
     {
+
+        // trim the hidden char and return if name is empty
+        if(String.IsNullOrEmpty(nameSubmission.text.Trim((char)8203))){
+            return;
+        }
+
         // add the score
         highScoreManager.AddScore(
             new ScoreEntry(nameSubmission.text, score)
