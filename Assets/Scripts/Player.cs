@@ -25,6 +25,8 @@ public class Player : MonoBehaviour
     public int CriticalShield = 0;
     public int CriticalEnergy = 1;
 
+    public GameObject Bunker;
+
     // Flashing Panels
     public FlashPanels FlashPanels;
 
@@ -107,6 +109,8 @@ public class Player : MonoBehaviour
         Shield = new(MinShield, MaxShield, CriticalShield);
         Energy = new(MinEnergy, MaxEnergy, CriticalEnergy);
 
+        Energy.Current = 1; // start with 1 energy
+
         CheckHealth();
     }
 
@@ -125,6 +129,16 @@ public class Player : MonoBehaviour
     void Update()
     {
         UpdateText();
+    }
+
+    public void SpawnBunker(){
+        if(Energy.Current > 0){
+            // spawns a bunker and reduces energy
+            GameObject bunker = Instantiate(Bunker, transform.position + transform.forward * 1.5f, transform.rotation);
+            bunker.transform.Rotate(90f, 0, 0);
+
+            Energy.Decrease(1);
+        }
     }
 
 

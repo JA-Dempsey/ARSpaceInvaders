@@ -9,11 +9,11 @@ public class HealthDestructable : MonoBehaviour
     public GameObject explosion;
     public float explosion_scale = 1f;
     public bool destroyTrigger = false; // allows for instant destruction of the object
+    public bool enableFade = true;
     
     Renderer rend;
-    public bool fadeIn = false;
-    [SerializeField] bool fadeOut = false;
-    [SerializeField] Color color;
+    private bool fadeIn = false;
+    private bool fadeOut = false;
     private bool hasRenderer;
 
     void Start(){
@@ -31,9 +31,8 @@ public class HealthDestructable : MonoBehaviour
         if(destroyTrigger){
             DestroyObject();
         }
-        if(hasRenderer){
+        if(hasRenderer && enableFade){
             FlashRedOnHit();
-            color = rend.material.color;
         }
         
     }
