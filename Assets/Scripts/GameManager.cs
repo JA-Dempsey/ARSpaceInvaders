@@ -139,5 +139,6 @@ public enum GameState{
     GamePaused = 1,
     GamePlay = 2,
     GameLost = 3,
-    GameQuit = 4
+    GameQuit = 4,
+    MainMenu = 5
 }

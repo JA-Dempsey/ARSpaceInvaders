@@ -10,12 +10,13 @@ public class GamePause : MonoBehaviour
     private Vector2 touchStartPosition;
     private float swipeThreshold = 100f;
     public GameObject confirmationScreen;
+    private GameManager gameManager;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = GameManager.Instance;
     }
 
     // Update is called once per frame
@@ -44,10 +45,7 @@ public class GamePause : MonoBehaviour
                 if (Mathf.Abs(swipeDelta) > swipeThreshold && swipeDelta > 0)
                 {
 
-                    // 1. Set unity time to 0 to pause the game
-                    //Time.timeScale = 0f;
-
-                    // 2. Show Confirmation Screen
+                    // 1. Show Confirmation Screen
                     ShowConfirmationScreen();
                 }
             }
@@ -66,11 +64,18 @@ public class GamePause : MonoBehaviour
         {
             Debug.LogWarning("No image assigned to the script");
         }
+
+        // 1. Set unity time to 0 to pause the game
+        Time.timeScale = 0f;
+
+        // Change the game state in the GameManager to GamePaused
+        gameManager.UpdateState(GameState.GamePaused);
     }
 
     public void ReturnToMainMenu()
     {
-        // Delay scene load
+       
+        // 1. Delay scene load
         Invoke("ExecuteReturnToMainMenu", 0.5f);
     }
 
@@ -83,6 +88,9 @@ public class GamePause : MonoBehaviour
 
     public void ReturnToGame()
     {
+        // Change the game state in the GameManager to GamePlay
+        gameManager.UpdateState(GameState.GamePlay);
+
         // 1. Unpause Game
         Time.timeScale = 1f;
 
