@@ -1009,7 +1009,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 428592937208290996, guid: f404f3a958b4e264290af1bd27ef3292, type: 3}
       propertyPath: baseTimePerSpawn
-      value: 30
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 428592937208290996, guid: f404f3a958b4e264290af1bd27ef3292, type: 3}
       propertyPath: Prefabs.Array.size

@@ -83,12 +83,12 @@ public class WaveManager : MonoBehaviour
     }
 
     void SpawnDebris(int delay){
-        const int MAX_DEBRIS = 4;
+        const int MAX_DEBRIS = 7;
 
         // spawn debris
         GameObject[] debris = GameObject.FindGameObjectsWithTag("Debris");
 
-        // limit number of debris in game to 8
+        // limit number of debris in game
         debrisSpawner.numObjects = Mathf.Max(MAX_DEBRIS - debris.Length, 0);
         debrisSpawner.Invoke("Spawn", delay);
     }
