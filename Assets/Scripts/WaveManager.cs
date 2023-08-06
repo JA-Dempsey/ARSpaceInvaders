@@ -14,8 +14,9 @@ public class WaveManager : MonoBehaviour
     public PowerupSpawner powerupSpawner;
     public TMP_Text waveTextDisplay;
     public TMP_Text enemiesRemainingText;
+    public Image waveTextbackground;
 
-    
+
     public int wave = 0;
     private bool enemySpawnInitiated = false;
     public int delayBetweenWaves = 10;
@@ -65,6 +66,7 @@ public class WaveManager : MonoBehaviour
         // display the UI element
         wave +=1;
         try{
+            waveTextbackground.gameObject.SetActive(true);
             waveTextDisplay.text = string.Format("WAVE {0}\nGet Ready!", wave.ToString());
             Invoke("hideText", delayBetweenWaves-1);
         }catch(NullReferenceException e){}
@@ -113,7 +115,8 @@ public class WaveManager : MonoBehaviour
     }
 
     void hideText(){
-        
+
+        waveTextbackground.gameObject.SetActive(false);
         waveTextDisplay.text = "";
     }
     
