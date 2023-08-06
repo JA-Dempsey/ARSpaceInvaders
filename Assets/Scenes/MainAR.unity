@@ -1510,6 +1510,14 @@ PrefabInstance:
       propertyPath: m_BlockingMask.m_Bits
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6086787536446944088, guid: 2a79431646af7544c89200accd7078d1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922705401418486362, guid: 2a79431646af7544c89200accd7078d1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

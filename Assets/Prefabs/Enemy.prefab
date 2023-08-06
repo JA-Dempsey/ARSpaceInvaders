@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 3410092518309556275}
   - component: {fileID: 4699334529622434621}
   - component: {fileID: 2613453157848057055}
+  - component: {fileID: 4806236223605411518}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -225,3 +226,20 @@ MonoBehaviour:
   sidewaysVelocity: 0.75
   crossVelocity: 0
   distance: 0
+--- !u!114 &4806236223605411518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6798503572103092583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411060de4483b5e4c9847cd3cbc18554, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  needBoxIndicator: 1
+  needArrowIndicator: 1
+  needDistanceText: 0
+  indicator: {fileID: 0}
