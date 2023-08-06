@@ -13,6 +13,7 @@ public class WaveManager : MonoBehaviour
     public Spawner debrisSpawner;
     public PowerupSpawner powerupSpawner;
     public TMP_Text waveTextDisplay;
+    public TMP_Text enemiesRemainingText;
 
     
     public int wave = 0;
@@ -52,6 +53,9 @@ public class WaveManager : MonoBehaviour
         if(currentCount > 0){            
             // reset flag once enemies are spawned
             enemySpawnInitiated = false;
+            enemiesRemainingText.text = String.Format("Enemies Remaining: {0}", currentCount);
+        }else{
+            enemiesRemainingText.text = "";
         }
 
     }
