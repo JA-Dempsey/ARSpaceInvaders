@@ -88,6 +88,7 @@ public class BaseResource
         if (_current < 0) // Ensure non-negative
             _current = 0;
 
+
         CheckFlags();
     }
 

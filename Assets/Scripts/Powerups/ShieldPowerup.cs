@@ -6,8 +6,10 @@ public class ShieldPowerup : MonoBehaviour
 {
     // Private
     private PowerupEffect _powerupEffect;
-    // Public
     private Player _playerScript;
+
+    // Public
+    public int PowerupScale = 20;
 
 
     // Flags
@@ -20,7 +22,7 @@ public class ShieldPowerup : MonoBehaviour
     // Methods
     public void Effect()
     {
-        _playerScript.RechargeShield(_powerupEffect.Scale);
+        _playerScript.Shield.Increase(_powerupEffect.Scale);
     }
 
     // Unity
@@ -31,17 +33,16 @@ public class ShieldPowerup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _powerupEffect = new("Shield", 20, 0);
+        _powerupEffect = new("Shield", PowerupScale, 0);
         if (_powerupEffect.Decay == 0)
             IsImmediate = true;
 
-        _playerScript = GameObject.Find("Player").GetComponent<Player>();
-
+        _playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "PlayerProjectile")
         {
             Effect();
             Destroy(gameObject);

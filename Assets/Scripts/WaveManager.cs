@@ -11,6 +11,7 @@ public class WaveManager : MonoBehaviour
 
     public Spawner enemySpawner;
     public Spawner debrisSpawner;
+    public PowerupSpawner powerupSpawner;
     public TMP_Text waveTextDisplay;
 
     
@@ -67,6 +68,7 @@ public class WaveManager : MonoBehaviour
         // spawn the objects
         SpawnEnemies(delayBetweenWaves);
         SpawnDebris(delayBetweenWaves+1);
+        powerupSpawner.WavePowerupSpawn(wave);
     }
 
     void SpawnEnemies(int delay){

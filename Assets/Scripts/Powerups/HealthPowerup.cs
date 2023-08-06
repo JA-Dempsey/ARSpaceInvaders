@@ -10,6 +10,9 @@ public class HealthPowerup : MonoBehaviour
     private PowerupEffect _powerupEffect;
     private Player _playerScript;
 
+    // Public
+    public int PowerupScale = 20;
+
     // Flags
     private bool _isImmediate = false;
     private bool _isFinished = false;
@@ -31,7 +34,7 @@ public class HealthPowerup : MonoBehaviour
     }
     public void Effect()
     {
-        _playerScript.HealHealth(_powerupEffect.Scale);
+        _playerScript.Health.Increase(_powerupEffect.Scale);
     }
 
     public void Decay(float time)
@@ -49,19 +52,19 @@ public class HealthPowerup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _powerupEffect = new("Health", 20, 0);
+        _powerupEffect = new("Health", PowerupScale, 0);
         if (_powerupEffect.Decay == 0)
             IsImmediate = true;
 
         // Interaction with other Unity Objects
         // This is slow, but can be updated if we decide to go with
         // an instance controlled by the central game controller
-        _playerScript = GameObject.Find("Player").GetComponent<Player>();
+        _playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "PlayerProjectile")
         {
             Effect();
             Destroy(gameObject);
