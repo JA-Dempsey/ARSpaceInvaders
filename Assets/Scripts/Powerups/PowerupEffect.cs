@@ -12,9 +12,9 @@ public class PowerupEffect
 
     public PowerupEffect(string name, int scale, float decay)
     {
-        _name = name;
-        _decay = decay;
-        _scale = scale;
+        Name = name;
+        Decay = decay;
+        Scale = scale;
     }
 
     public string Name { get; set; }
