@@ -84,7 +84,7 @@ public class PowerupSpawner : MonoBehaviour
 
     void Start()
     {
-        _timer = new(0f);
+        _timer = new(5.0f);
         _timer.Pause();
         GetBoundaries(); // One call ever for ref
         _xBoundary = GetXBoundary();
