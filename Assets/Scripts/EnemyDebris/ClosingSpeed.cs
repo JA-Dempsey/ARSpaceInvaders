@@ -21,6 +21,8 @@ public class ClosingSpeed : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(target == null){return;}
+        
         Vector3 direction = target.transform.position - transform.position;
         Vector3 motion = Vector3.Normalize(direction) * velocity;
         Vector3 cross = Vector3.Normalize(Vector3.Cross(Vector3.up, motion)) * sidewaysMotionV;
