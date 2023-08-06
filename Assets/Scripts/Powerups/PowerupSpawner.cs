@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 
 public class PowerupSpawner : MonoBehaviour
@@ -9,15 +10,16 @@ public class PowerupSpawner : MonoBehaviour
     // Increase of time for spawn per wave
     // Reduces number of powerup spawns
     private const float TIME_WAVE_MODIFIER = 5.0f;
-    private GameObject[] _boundaries;
 
     // Private
     private Transform _xBoundary;
     private float _radius;
     private ActionTimer _timer;
+    private ActionTimer _awaitBoundaries;
 
     // Public
     public GameObject SpawnCenter;
+    public GameObject Boundaries;
     public GameObject[] Prefabs;
     public float AreaReductionMod = 1; // 1 is no reduction
 
@@ -36,26 +38,10 @@ public class PowerupSpawner : MonoBehaviour
         GameObject instance = Instantiate(Prefabs[(int)Random.Range(0, len)], transform.position, Quaternion.identity);
     }
 
-    // Get references to the boundaries created
-    // at startup
-    public void GetBoundaries()
-    {
-        _boundaries = GameObject.FindGameObjectsWithTag("Boundary");
-    }
-
     // Only need x or z since spawner uses circle area
     public Transform GetXBoundary()
     {
-        for (int i = 0; i< _boundaries.Length; i++)
-        {
-            if (_boundaries[i].name == "Boundary X+")
-            {
-                return _boundaries[i].transform;
-            }
-        }
-
-        // No Boundary X+ found
-        return null;
+        return Boundaries.transform.Find("Boundary X+");
     }
 
     public void WavePowerupSpawn(int wave)
@@ -86,19 +72,22 @@ public class PowerupSpawner : MonoBehaviour
     {
         _timer = new(5.0f);
         _timer.Pause();
-        GetBoundaries(); // One call ever for ref
         _xBoundary = GetXBoundary();
-        _radius = _xBoundary.position.x;
     }
 
     // Update is called once per frame
     void Update()
     {
-        _timer.Update(Time.deltaTime);
-        if (_timer.IsZero)
+        if (_xBoundary)
         {
-            SpawnPowerup();
-            _timer.Reset();
+            _radius = _xBoundary.position.x;
+            _timer.Update(Time.deltaTime);
+            if (_timer.IsZero)
+            {
+                SpawnPowerup();
+                _timer.Reset();
+            }
         }
+        else { _xBoundary = GetXBoundary(); }
     }
 }
