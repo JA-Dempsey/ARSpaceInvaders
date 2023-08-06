@@ -17,6 +17,7 @@ public class PowerupSpawner : MonoBehaviour
     private ActionTimer _timer;
 
     // Public
+    public GameObject SpawnCenter;
     public GameObject[] Prefabs;
     public float AreaReductionMod = 1; // 1 is no reduction
 
@@ -29,17 +30,22 @@ public class PowerupSpawner : MonoBehaviour
     public void SpawnPowerup()
     {
         int len = Prefabs.Length;
-        Vector3 newPosition = Random.insideUnitSphere * (_radius / AreaReductionMod);
+        Vector3 newPosition = SpawnCenter.transform.position + (Random.insideUnitSphere * (_radius / AreaReductionMod));
         newPosition.y = 0;
         transform.position = newPosition;
         GameObject instance = Instantiate(Prefabs[(int)Random.Range(0, len)], transform.position, Quaternion.identity);
     }
 
+    // Get references to the boundaries created
+    // at startup
+    public void GetBoundaries()
+    {
+        _boundaries = GameObject.FindGameObjectsWithTag("Boundary");
+    }
+
     // Only need x or z since spawner uses circle area
     public Transform GetXBoundary()
     {
-        _boundaries = GameObject.FindGameObjectsWithTag("Boundary");
-
         for (int i = 0; i< _boundaries.Length; i++)
         {
             if (_boundaries[i].name == "Boundary X+")
@@ -55,7 +61,7 @@ public class PowerupSpawner : MonoBehaviour
     public void WavePowerupSpawn(int wave)
     {
         // +1 ensures no infinite spawn
-        float time = (wave + 1) * TIME_WAVE_MODIFIER;
+        float time = ((float) wave + 1) * TIME_WAVE_MODIFIER;
         SetTimer(time);
         ResumeTimer();
     }
@@ -78,8 +84,9 @@ public class PowerupSpawner : MonoBehaviour
 
     void Start()
     {
-        _timer = new(5.0f);
+        _timer = new(0f);
         _timer.Pause();
+        GetBoundaries(); // One call ever for ref
         _xBoundary = GetXBoundary();
         _radius = _xBoundary.position.x;
     }

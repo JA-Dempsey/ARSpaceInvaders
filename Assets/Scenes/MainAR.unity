@@ -955,6 +955,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 414099684}
     - target: {fileID: 428592937208290996, guid: f404f3a958b4e264290af1bd27ef3292, type: 3}
+      propertyPath: SpawnCenter
+      value: 
+      objectReference: {fileID: 1409786600}
+    - target: {fileID: 428592937208290996, guid: f404f3a958b4e264290af1bd27ef3292, type: 3}
       propertyPath: AreaReductionMod
       value: 6
       objectReference: {fileID: 0}
