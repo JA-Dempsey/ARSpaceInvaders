@@ -16,13 +16,13 @@ public class ButtonClick : MonoBehaviour
 
         // Make sure the audio source is not playing at the start
         buttonClick.Stop();
-        Debug.Log("Audio Stopped");
+        // Debug.Log("Audio Stopped");
     }
 
     public void PlayOnClick()
     {
         // 1. Play Button Click Audio
         buttonClick.Play();
-        Debug.Log("Button Clicked. Audio Started");
+        // Debug.Log("Button Clicked. Audio Started");
     }
 }

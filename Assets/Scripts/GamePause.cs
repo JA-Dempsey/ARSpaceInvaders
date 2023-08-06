@@ -83,7 +83,7 @@ public class GamePause : MonoBehaviour
     {
         // 1. Load Main Menu
         SceneManager.LoadScene("MainMenu");
-        Debug.Log("Returned to Main Menu");
+        // Debug.Log("Returned to Main Menu");
     }
 
     public void ReturnToGame()

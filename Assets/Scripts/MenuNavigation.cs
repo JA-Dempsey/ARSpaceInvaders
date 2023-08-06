@@ -16,7 +16,7 @@ public class MenuNavigation : MonoBehaviour
     public void ExecuteNewGameButton()
     {
         SceneManager.LoadScene("MainAR");
-        Debug.Log("Main AR");
+        // Debug.Log("Main AR");
     }
 
     // High Scores
@@ -78,7 +78,7 @@ public class MenuNavigation : MonoBehaviour
     public void ExecuteObstaclesButton()
     {
         SceneManager.LoadScene("Obstacles");
-        Debug.Log("Obstacles Tutorial");
+        // Debug.Log("Obstacles Tutorial");
     }
 
     // Enemies Tutorial
@@ -90,7 +90,7 @@ public class MenuNavigation : MonoBehaviour
     public void ExecuteEnemiesButton()
     {
         SceneManager.LoadScene("Enemies");
-        Debug.Log("Enemies Tutorial");
+        // Debug.Log("Enemies Tutorial");
     }
 
     // Powerups Tutorial
@@ -102,6 +102,6 @@ public class MenuNavigation : MonoBehaviour
     public void ExecutePowerupsButton()
     {
         SceneManager.LoadScene("Powerups");
-        Debug.Log("Powerups Tutorial");
+        // Debug.Log("Powerups Tutorial");
     }
 }

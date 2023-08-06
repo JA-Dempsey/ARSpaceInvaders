@@ -41,7 +41,7 @@ public class ActionTimer
         if (AllowCountdown)
         {
 
-            Debug.Log("Current Timer Time: " + _current);
+            // Debug.Log("Current Timer Time: " + _current);
             _current -= deltaTime;
             if (_current < 0)
                 _current = 0;  // Ensure non-negative
