@@ -80,27 +80,6 @@ public class Player : MonoBehaviour
 
     }
 
-    public void HealHealth(int heal)
-    {
-        Health.Increase(heal);
-    }
-
-    public void RechargeShield(int recharge)
-    {
-        Shield.Increase(recharge);
-    }
-
-    public void DamageEnergy(int energy)
-    {
-        Energy.Decrease(energy);
-    }
-
-    public void RechargeEnergy(int energy)
-    {
-        Energy.Increase(energy);
-    }
-
-
     // Unity Methods
     private void Awake()
     {
