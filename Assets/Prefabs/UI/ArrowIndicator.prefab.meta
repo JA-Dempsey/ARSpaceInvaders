@@ -13,5 +13,5 @@ AssetOrigin:
   productId: 71799
   packageName: Off Screen Target Indicator
   packageVersion: 3.0
-  assetPath: Assets/Pixel Play/Prefabs/ArrowIndicator.prefab
+  assetPath: Assets/Prefabs/UI/ArrowIndicator.prefab
   uploadId: 362973
