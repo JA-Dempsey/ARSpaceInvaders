@@ -4,20 +4,31 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
+///
+/// Handles a projectile when spawned, including straight movement
+/// and collision with other objects in the game.
+///
 public class Projectile : MonoBehaviour
 {
     // Private
     private ShootAudio _audio;
 
     // Public
-    public float Speed = 10.0f;
+    public float Speed = 10.0f; //!< The speed for the proectile
 
+    /// <summary>
+    /// Sets the speed of the projectile.
+    /// </summary>
+    /// <param name="speed">New speed for the projectile.</param>
     public void SetSpeed(float speed)
     {
         Speed = speed;
     }
 
-    // Methods
+    /// <summary>
+    /// Adds velocity to the projectile via the Rigidbody
+    /// of the object this script is attached to.
+    /// </summary>
     public void Shoot()
     {
         // set velocity of the laser
