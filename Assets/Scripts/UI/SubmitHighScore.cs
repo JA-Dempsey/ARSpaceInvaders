@@ -6,14 +6,18 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+///
+/// Handles submitting the high score, including loading and
+/// saving of the scores.
+///
 public class SubmitHighScore : MonoBehaviour
 {
     
-    public TMP_Text scoreText;
-    public TMP_Text nameSubmission;
+    public TMP_Text scoreText;                  //!< Text for the score
+    public TMP_Text nameSubmission;             //!< Text of the name to submit
     private HighScoreManager highScoreManager;
 
-    private int score;
+    private int score;                          // Score value used internally
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +32,9 @@ public class SubmitHighScore : MonoBehaviour
         }catch(Exception e){};
     }
 
-    // Submit score
+    /// <summary>
+    /// Submit the score and change to the high scores scene.
+    /// </summary>
     public void SubmitScore()
     {
 
