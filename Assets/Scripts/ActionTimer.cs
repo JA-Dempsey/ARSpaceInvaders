@@ -2,21 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ActionTimer
 {
 
-    private float _timer;
+    private float _time;
     private float _current;
     private bool _allowCountdown = false;
     private bool _isZero = false;
 
-    public ActionTimer(float timer)
+    /// <summary>
+    /// Constructor for the ActionTimer class.
+    /// </summary>
+    /// <param name="time"></param>
+    public ActionTimer(float time)
     {
-        _timer = timer;
-        _current = _timer;
+        _time = time;
+        _current = _time;
     }
 
-    public float Timer { get; set; }
+
+    public float Time { get; set; }
     public bool IsZero { get; set; }
     public bool AllowCountdown { get; set; }
 
@@ -32,7 +38,7 @@ public class ActionTimer
 
     public void Reset()
     {
-        _current = _timer;
+        _current = _time;
         IsZero = false;
     }
 
