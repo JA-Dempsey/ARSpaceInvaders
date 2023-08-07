@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+///
+/// Defines an Energy Powerup and the effect it has when
+/// a player projectile or player collides with the powerup.
+///
 public class EnergyPowerup : MonoBehaviour
 {
     // Private
@@ -9,17 +13,18 @@ public class EnergyPowerup : MonoBehaviour
     private Player _playerScript;
 
     // Public
-    public int PowerupScale = 1;
-
+    public int PowerupScale = 1;    //!< How much of a resource the powerup gives
 
     // Flags
     private bool _isImmediate = false;
 
     // Setters/Getters
-
-    public bool IsImmediate { get; set; }
+    public bool IsImmediate { get; set; }  //!< Flag. If powerup should be given immediately
 
     // Methods
+    /// <summary>
+    /// Effect when powerup is collected by player or shot at by player.
+    /// </summary>
     public void Effect()
     {
         _playerScript.Energy.Increase(_powerupEffect.Scale);

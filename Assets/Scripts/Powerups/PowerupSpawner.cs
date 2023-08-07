@@ -4,13 +4,17 @@ using Unity.VisualScripting;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 
+/// 
+/// Scripts that defines a powerup spawner and dictates how
+/// powerups will spawn in the game
+///
 public class PowerupSpawner : MonoBehaviour
 {
     // Const
     // Increase of time for spawn per wave
     // Reduces number of powerup spawns
-    public float baseTimePerSpawn = 45f;
-    public float timeWaveModifier = 5.0f;
+    public float baseTimePerSpawn = 45f;    //!< Base timer for powerup spawns
+    public float timeWaveModifier = 5.0f;   //!< Time modifier per wave
 
     // Private
     private float _radius;
@@ -18,17 +22,18 @@ public class PowerupSpawner : MonoBehaviour
     private ActionTimer _awaitBoundaries;
 
     // Public
-    public GameObject SpawnCenter;
-    public GameObject Boundaries;
-    public GameObject[] Prefabs;
-    public float AreaReductionMod = 1; // 1 is no reduction
+    public GameObject SpawnCenter;          //!< The GameObject at the center of the spawns
+    public GameObject Boundaries;           //!< The boundary gameObject
+    public GameObject[] Prefabs;            //!< Array of prefabs to spawn
+    public float AreaReductionMod = 1;      //!< 1 Amount of area reduced from boundary. 1 is no reduction.
 
     private void Awake()
     {
     }
 
-    // Start is called before the first frame update
-
+    /// <summary>
+    /// Spawns a powerup based on the Spawncenter randomly.
+    /// </summary>
     public void SpawnPowerup()
     {
         int len = Prefabs.Length;
@@ -38,6 +43,11 @@ public class PowerupSpawner : MonoBehaviour
         GameObject instance = Instantiate(Prefabs[(int)Random.Range(0, len)], transform.position, Quaternion.identity);
     }
 
+    /// <summary>
+    /// Sets the timer for the next powerup spawn and begins
+    /// spawning powerups continuously.
+    /// </summary>
+    /// <param name="wave">The current spawn wave</param>
     public void WavePowerupSpawn(int wave)
     {
         // +1 ensures no infinite spawn
@@ -46,17 +56,27 @@ public class PowerupSpawner : MonoBehaviour
         ResumeTimer();
     }
 
-    public void SetTimer(float timer)
+    /// <summary>
+    /// Set the timer for the powerup spawns and reset it.
+    /// </summary>
+    /// <param name="timer">The new time for the timer.</param>
+    public void SetTimer(float time)
     {
-        _timer.Timer = timer;
+        _timer.Timer = time;
         _timer.Reset();
     }
 
+    /// <summary>
+    /// Pause the Spawn Timer.
+    /// </summary>
     public void PauseTimer()
     {
         _timer.Pause();
     }
 
+    /// <summary>
+    /// Resume the Spawn Timer.
+    /// </summary>
     public void ResumeTimer()
     {
         _timer.Start();

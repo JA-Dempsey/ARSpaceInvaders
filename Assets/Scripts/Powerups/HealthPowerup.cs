@@ -4,6 +4,10 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.LowLevelPhysics;
 
+///
+/// Defines a Health Powerup and the effect it has when
+/// a player projectile or player collides with the powerup.
+///
 public class HealthPowerup : MonoBehaviour
 {
     // Private
@@ -11,7 +15,7 @@ public class HealthPowerup : MonoBehaviour
     private Player _playerScript;
 
     // Public
-    public int PowerupScale = 20;
+    public int PowerupScale = 20;       //!< How much of a resource the powerup gives
 
     // Flags
     private bool _isImmediate = false;
@@ -20,11 +24,15 @@ public class HealthPowerup : MonoBehaviour
 
     // Setters/Getters
 
-    public bool IsImmediate { get; set; }
-    public bool IsFinished { get; set; }
-    public bool Buffed { get; set; }
+    public bool IsImmediate { get; set; }   //!< Flag. If powerup is given immediately
+    public bool IsFinished { get; set; }    //!< Flag. If buff should be finished
+    public bool Buffed { get; set; }        //!< Flag. If buff currently active
 
     // Methods
+    /// <summary>
+    /// Checks to make sure immediate flag is
+    /// set when decay hits 0.
+    /// </summary>
     public void CheckImmediate()
     {
         if (_powerupEffect.Decay == 0)
@@ -32,11 +40,20 @@ public class HealthPowerup : MonoBehaviour
             IsImmediate = true;
         }
     }
+
+    /// <summary>
+    /// Method that enacts the change to player when
+    /// powerup is collected.
+    /// </summary>
     public void Effect()
     {
         _playerScript.Health.Increase(_powerupEffect.Scale);
     }
 
+    /// <summary>
+    /// Reduces the decay timer for the powerup.
+    /// </summary>
+    /// <param name="time">Amount of time to reduce the decay timer by</param>
     public void Decay(float time)
     {
         _powerupEffect.Decay -= time;
@@ -49,6 +66,7 @@ public class HealthPowerup : MonoBehaviour
     private void Awake()
     {
     }
+
     // Start is called before the first frame update
     void Start()
     {
