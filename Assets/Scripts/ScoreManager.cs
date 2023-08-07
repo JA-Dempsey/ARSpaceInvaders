@@ -5,10 +5,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-/// <summary>
+///
 /// Manager for the score in the game. Adds score based on
 /// number of enemies killed.
-/// </summary>
+///
 public class ScoreManager : MonoBehaviour
 {
 
