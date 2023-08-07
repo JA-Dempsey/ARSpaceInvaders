@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+///
+/// The ActionTimer is used during a game/update loop to
+/// track time to zero for an action. Gives options for pausing and
+/// reseting the timer.
+///
 public class ActionTimer
 {
-
     private float _timer;
     private float _current;
     private bool _allowCountdown = false;
