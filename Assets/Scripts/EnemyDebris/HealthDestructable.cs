@@ -2,21 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+///
+/// Script that allows the tracking for an object to be destroyed, and 
+/// allows an explosion to occure when an object is destroyed
+///
 public class HealthDestructable : MonoBehaviour
 {
 
-    public float health = 1f;
-    public GameObject explosion;
-    public float explosion_scale = 1f;
-    public bool destroyTrigger = false; // allows for instant destruction of the object
-    public bool enableFade = true;
+    public float health = 1f;               //!< The health of each object
+    public GameObject explosion;            //!< Ref to explosion object
+    public float explosion_scale = 1f;      //!< The scale for the explosion
+    public bool destroyTrigger = false;     //!< allows for instant destruction of the object
+    public bool enableFade = true;          //!< Enables the fading for the explosion
     
     Renderer rend;
     private bool fadeIn = false;
     private bool fadeOut = false;
     private bool hasRenderer;
 
-    public AudioSource audioData;
+    public AudioSource audioData;           //!< The audio for the explosion
 
     void Start(){
         try{
@@ -35,6 +39,11 @@ public class HealthDestructable : MonoBehaviour
         }        
     }
 
+    /// <summary>
+    /// Handle collisions for projectiles hitting the object attached to this
+    /// script.
+    /// </summary>
+    /// <param name="other">The other object that collided.</param>
     private void OnCollisionEnter(Collision other) {
         
         // if colliding with projectile, then reduce health
@@ -54,6 +63,9 @@ public class HealthDestructable : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Destroyes the object and creates/starts the explosion animation.
+    /// </summary>
     private void DestroyObject() {
         if(explosion != null){
             GameObject destruction_animation = Instantiate(explosion, this.gameObject.transform.position, Quaternion.identity);

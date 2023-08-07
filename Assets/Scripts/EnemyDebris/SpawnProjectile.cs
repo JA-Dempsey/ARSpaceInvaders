@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+///
+/// Spawns a projectile for the enemies.
+///
 public class SpawnProjectile : MonoBehaviour
 {
 
-    public float delay = 5f;
-    public GameObject projectilePrefab;
+    public float delay = 5f;                //!< Delay for firing projectile
+    public GameObject projectilePrefab;     //!< Prefab of the projectile
     private GameObject projectileChild;
-    private bool delayDone = false;
+    private bool delayDone = false;         // Flag. If delay is finished.
     
     // allows projectiles to be spawned with different speed
-    public bool overWriteSpeed = false;
-    public float projectileSpeed = 3f;
+    public bool overWriteSpeed = false;         //!< If speed should be overwritten
+    public float projectileSpeed = 3f;          //!< The projectile speed
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +33,9 @@ public class SpawnProjectile : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Shoots the projectile at the given speed at the player.
+    /// </summary>
     void Shoot(){
 
         // spawn projectile

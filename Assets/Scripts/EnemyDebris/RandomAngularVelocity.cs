@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// 
+/// Imparts random angular velocity to the object this
+/// script is attached to
+///
 public class RandomAngularVelocity : MonoBehaviour
 {
 
-    public float upperBound = 1f;
-    public float lowerBound = 0.1f;
+    public float upperBound = 1f;      //!< Restrict velocity to this max
+    public float lowerBound = 0.1f;    //!< Restrict velocity to this min
     private Rigidbody rb;
     [SerializeField] private Vector3 rotationVector;
 
