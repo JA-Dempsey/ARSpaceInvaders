@@ -1,0 +1,319 @@
+\doxysection{Player Class Reference}
+\hypertarget{class_player}{}\label{class_player}\index{Player@{Player}}
+
+
+Script that tracks \doxylink{class_player}{Player} information, and related entities. This includes resources, such as energy, health, and shields, as well as related UI updates.  
+
+
+Inheritance diagram for Player\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_player}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_player_ab6d7cf54204870f62029f60bc548686b}{Check\+Health}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the player is alive. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a99faac94a9622d9ecb72207d265026e6}{Update\+Text}} ()
+\item 
+void \mbox{\hyperlink{class_player_af4c85b1c6321ca930faa4c6f17428051}{Take\+Damage}} (int damage)
+\begin{DoxyCompactList}\small\item\em Calculates if damage to shield and health. Damage always hurts shield first, then health once shield is expended. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_afd3b8f3cca833ecd6cbc3097e691d167}{Spawn\+Bunker}} ()
+\begin{DoxyCompactList}\small\item\em Spawns Bunker/\+Shield for player when they press the Energy icon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_player_aa31df936a1c5641ed287c77c755eb433}{Max\+Health}} = 100
+\begin{DoxyCompactList}\small\item\em The max of the Health resource. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_afb3110fc59c81b264b5e5d1a2bc6503a}{Min\+Health}} = 0
+\begin{DoxyCompactList}\small\item\em The min of the Health resource. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_aed94af08f19f6b801adca8ea8655fd57}{Max\+Shield}} = 100
+\begin{DoxyCompactList}\small\item\em The max of the Shield resource. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_a3f0c5865f982f144c244e5d019170398}{Min\+Shield}} = 0
+\begin{DoxyCompactList}\small\item\em The min of the Shield resource. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_abbd806972de8c02c1f28bddf6f7013f5}{Max\+Energy}} = 3
+\begin{DoxyCompactList}\small\item\em The max of the Energy resource. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_a88b6b9ec03d303aa766008930fb6fd63}{Min\+Energy}} = 0
+\begin{DoxyCompactList}\small\item\em The min of the Energy resource. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_a84c229890f602ef3bfdae6e437f5cc7b}{Critical\+Health}} = 50
+\begin{DoxyCompactList}\small\item\em Health resource critical threshold. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_a9573d3c1a636d24373d5790caa75a390}{Critical\+Shield}} = 0
+\begin{DoxyCompactList}\small\item\em Shield resource critical threshold. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_a5e7a7fed05c5cbffb2e2705cc68abc87}{Critical\+Energy}} = 1
+\begin{DoxyCompactList}\small\item\em Energy resource critical threshold. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_player_addfbcf3edba0c0bcde64e91f47c29188}{Bunker}}
+\begin{DoxyCompactList}\small\item\em Reference to the Bunker. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_flash_panels}{Flash\+Panels}} \mbox{\hyperlink{class_player_a9c43d7a0336f61cd76a51999ff62628c}{Flash\+Panels}}
+\begin{DoxyCompactList}\small\item\em References to flash panels for hit indications. \end{DoxyCompactList}\item 
+TMP\+\_\+\+Text \mbox{\hyperlink{class_player_a7522cec1c4241ce05c3e7fb26da274f2}{Health\+Text}}
+\begin{DoxyCompactList}\small\item\em UI text for current health. \end{DoxyCompactList}\item 
+TMP\+\_\+\+Text \mbox{\hyperlink{class_player_ad188d968fa5b0860bf2c616d4387e71d}{Energy\+Text}}
+\begin{DoxyCompactList}\small\item\em UI text for current energy. \end{DoxyCompactList}\item 
+TMP\+\_\+\+Text \mbox{\hyperlink{class_player_aec0e5e6d6302d8f5d0e4b88ef0bb02a2}{Shield\+Text}}
+\begin{DoxyCompactList}\small\item\em UI text for current shield. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_a07612333f7225c98f2cbd9392479cf97}{Enemy\+Damage}} = 10
+\begin{DoxyCompactList}\small\item\em Damage done when \doxylink{class_player}{Player} hit by enemy. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_base_resource}{Base\+Resource}} \mbox{\hyperlink{class_player_a574702504d6357e64a5c81982896c69c}{Health}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_base_resource}{Base\+Resource} Class. Health Resource. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_base_resource}{Base\+Resource}} \mbox{\hyperlink{class_player_af682c72c362182eb39bc67da7eb9b1b3}{Shield}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_base_resource}{Base\+Resource} Class. Shield Resource. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_base_resource}{Base\+Resource}} \mbox{\hyperlink{class_player_af9cad1ff557af6346b9ec670341e80d4}{Energy}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_base_resource}{Base\+Resource} Class. Energy Resource. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_player_a8f0ddc8c509c32870cd16fb0ff00c983}{Is\+Alive}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Flag for if the player is alive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Script that tracks \doxylink{class_player}{Player} information, and related entities. This includes resources, such as energy, health, and shields, as well as related UI updates. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_player_ab6d7cf54204870f62029f60bc548686b}\label{class_player_ab6d7cf54204870f62029f60bc548686b} 
+\index{Player@{Player}!CheckHealth@{CheckHealth}}
+\index{CheckHealth@{CheckHealth}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{CheckHealth()}{CheckHealth()}}
+{\footnotesize\ttfamily bool Player.\+Check\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the player is alive. 
+
+\begin{DoxyReturn}{Returns}
+Returns Is\+Alive if player still alive
+\end{DoxyReturn}
+\Hypertarget{class_player_afd3b8f3cca833ecd6cbc3097e691d167}\label{class_player_afd3b8f3cca833ecd6cbc3097e691d167} 
+\index{Player@{Player}!SpawnBunker@{SpawnBunker}}
+\index{SpawnBunker@{SpawnBunker}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{SpawnBunker()}{SpawnBunker()}}
+{\footnotesize\ttfamily void Player.\+Spawn\+Bunker (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Spawns Bunker/\+Shield for player when they press the Energy icon. 
+
+\Hypertarget{class_player_af4c85b1c6321ca930faa4c6f17428051}\label{class_player_af4c85b1c6321ca930faa4c6f17428051} 
+\index{Player@{Player}!TakeDamage@{TakeDamage}}
+\index{TakeDamage@{TakeDamage}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{TakeDamage()}{TakeDamage()}}
+{\footnotesize\ttfamily void Player.\+Take\+Damage (\begin{DoxyParamCaption}\item[{int}]{damage }\end{DoxyParamCaption})}
+
+
+
+Calculates if damage to shield and health. Damage always hurts shield first, then health once shield is expended. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em damage} & The damage the player takes\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_a99faac94a9622d9ecb72207d265026e6}\label{class_player_a99faac94a9622d9ecb72207d265026e6} 
+\index{Player@{Player}!UpdateText@{UpdateText}}
+\index{UpdateText@{UpdateText}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{UpdateText()}{UpdateText()}}
+{\footnotesize\ttfamily void Player.\+Update\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_player_addfbcf3edba0c0bcde64e91f47c29188}\label{class_player_addfbcf3edba0c0bcde64e91f47c29188} 
+\index{Player@{Player}!Bunker@{Bunker}}
+\index{Bunker@{Bunker}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Bunker}{Bunker}}
+{\footnotesize\ttfamily Game\+Object Player.\+Bunker}
+
+
+
+Reference to the Bunker. 
+
+\Hypertarget{class_player_a5e7a7fed05c5cbffb2e2705cc68abc87}\label{class_player_a5e7a7fed05c5cbffb2e2705cc68abc87} 
+\index{Player@{Player}!CriticalEnergy@{CriticalEnergy}}
+\index{CriticalEnergy@{CriticalEnergy}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{CriticalEnergy}{CriticalEnergy}}
+{\footnotesize\ttfamily int Player.\+Critical\+Energy = 1}
+
+
+
+Energy resource critical threshold. 
+
+\Hypertarget{class_player_a84c229890f602ef3bfdae6e437f5cc7b}\label{class_player_a84c229890f602ef3bfdae6e437f5cc7b} 
+\index{Player@{Player}!CriticalHealth@{CriticalHealth}}
+\index{CriticalHealth@{CriticalHealth}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{CriticalHealth}{CriticalHealth}}
+{\footnotesize\ttfamily int Player.\+Critical\+Health = 50}
+
+
+
+Health resource critical threshold. 
+
+\Hypertarget{class_player_a9573d3c1a636d24373d5790caa75a390}\label{class_player_a9573d3c1a636d24373d5790caa75a390} 
+\index{Player@{Player}!CriticalShield@{CriticalShield}}
+\index{CriticalShield@{CriticalShield}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{CriticalShield}{CriticalShield}}
+{\footnotesize\ttfamily int Player.\+Critical\+Shield = 0}
+
+
+
+Shield resource critical threshold. 
+
+\Hypertarget{class_player_a07612333f7225c98f2cbd9392479cf97}\label{class_player_a07612333f7225c98f2cbd9392479cf97} 
+\index{Player@{Player}!EnemyDamage@{EnemyDamage}}
+\index{EnemyDamage@{EnemyDamage}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{EnemyDamage}{EnemyDamage}}
+{\footnotesize\ttfamily int Player.\+Enemy\+Damage = 10}
+
+
+
+Damage done when \doxylink{class_player}{Player} hit by enemy. 
+
+\Hypertarget{class_player_af9cad1ff557af6346b9ec670341e80d4}\label{class_player_af9cad1ff557af6346b9ec670341e80d4} 
+\index{Player@{Player}!Energy@{Energy}}
+\index{Energy@{Energy}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Energy}{Energy}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_base_resource}{Base\+Resource}} Player.\+Energy}
+
+
+
+\doxylink{class_base_resource}{Base\+Resource} Class. Energy Resource. 
+
+\Hypertarget{class_player_ad188d968fa5b0860bf2c616d4387e71d}\label{class_player_ad188d968fa5b0860bf2c616d4387e71d} 
+\index{Player@{Player}!EnergyText@{EnergyText}}
+\index{EnergyText@{EnergyText}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{EnergyText}{EnergyText}}
+{\footnotesize\ttfamily TMP\+\_\+\+Text Player.\+Energy\+Text}
+
+
+
+UI text for current energy. 
+
+\Hypertarget{class_player_a9c43d7a0336f61cd76a51999ff62628c}\label{class_player_a9c43d7a0336f61cd76a51999ff62628c} 
+\index{Player@{Player}!FlashPanels@{FlashPanels}}
+\index{FlashPanels@{FlashPanels}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{FlashPanels}{FlashPanels}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_flash_panels}{Flash\+Panels}} Player.\+Flash\+Panels}
+
+
+
+References to flash panels for hit indications. 
+
+\Hypertarget{class_player_a574702504d6357e64a5c81982896c69c}\label{class_player_a574702504d6357e64a5c81982896c69c} 
+\index{Player@{Player}!Health@{Health}}
+\index{Health@{Health}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Health}{Health}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_base_resource}{Base\+Resource}} Player.\+Health}
+
+
+
+\doxylink{class_base_resource}{Base\+Resource} Class. Health Resource. 
+
+\Hypertarget{class_player_a7522cec1c4241ce05c3e7fb26da274f2}\label{class_player_a7522cec1c4241ce05c3e7fb26da274f2} 
+\index{Player@{Player}!HealthText@{HealthText}}
+\index{HealthText@{HealthText}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{HealthText}{HealthText}}
+{\footnotesize\ttfamily TMP\+\_\+\+Text Player.\+Health\+Text}
+
+
+
+UI text for current health. 
+
+\Hypertarget{class_player_abbd806972de8c02c1f28bddf6f7013f5}\label{class_player_abbd806972de8c02c1f28bddf6f7013f5} 
+\index{Player@{Player}!MaxEnergy@{MaxEnergy}}
+\index{MaxEnergy@{MaxEnergy}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{MaxEnergy}{MaxEnergy}}
+{\footnotesize\ttfamily int Player.\+Max\+Energy = 3}
+
+
+
+The max of the Energy resource. 
+
+\Hypertarget{class_player_aa31df936a1c5641ed287c77c755eb433}\label{class_player_aa31df936a1c5641ed287c77c755eb433} 
+\index{Player@{Player}!MaxHealth@{MaxHealth}}
+\index{MaxHealth@{MaxHealth}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{MaxHealth}{MaxHealth}}
+{\footnotesize\ttfamily int Player.\+Max\+Health = 100}
+
+
+
+The max of the Health resource. 
+
+\Hypertarget{class_player_aed94af08f19f6b801adca8ea8655fd57}\label{class_player_aed94af08f19f6b801adca8ea8655fd57} 
+\index{Player@{Player}!MaxShield@{MaxShield}}
+\index{MaxShield@{MaxShield}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{MaxShield}{MaxShield}}
+{\footnotesize\ttfamily int Player.\+Max\+Shield = 100}
+
+
+
+The max of the Shield resource. 
+
+\Hypertarget{class_player_a88b6b9ec03d303aa766008930fb6fd63}\label{class_player_a88b6b9ec03d303aa766008930fb6fd63} 
+\index{Player@{Player}!MinEnergy@{MinEnergy}}
+\index{MinEnergy@{MinEnergy}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{MinEnergy}{MinEnergy}}
+{\footnotesize\ttfamily int Player.\+Min\+Energy = 0}
+
+
+
+The min of the Energy resource. 
+
+\Hypertarget{class_player_afb3110fc59c81b264b5e5d1a2bc6503a}\label{class_player_afb3110fc59c81b264b5e5d1a2bc6503a} 
+\index{Player@{Player}!MinHealth@{MinHealth}}
+\index{MinHealth@{MinHealth}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{MinHealth}{MinHealth}}
+{\footnotesize\ttfamily int Player.\+Min\+Health = 0}
+
+
+
+The min of the Health resource. 
+
+\Hypertarget{class_player_a3f0c5865f982f144c244e5d019170398}\label{class_player_a3f0c5865f982f144c244e5d019170398} 
+\index{Player@{Player}!MinShield@{MinShield}}
+\index{MinShield@{MinShield}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{MinShield}{MinShield}}
+{\footnotesize\ttfamily int Player.\+Min\+Shield = 0}
+
+
+
+The min of the Shield resource. 
+
+\Hypertarget{class_player_af682c72c362182eb39bc67da7eb9b1b3}\label{class_player_af682c72c362182eb39bc67da7eb9b1b3} 
+\index{Player@{Player}!Shield@{Shield}}
+\index{Shield@{Shield}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Shield}{Shield}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_base_resource}{Base\+Resource}} Player.\+Shield}
+
+
+
+\doxylink{class_base_resource}{Base\+Resource} Class. Shield Resource. 
+
+\Hypertarget{class_player_aec0e5e6d6302d8f5d0e4b88ef0bb02a2}\label{class_player_aec0e5e6d6302d8f5d0e4b88ef0bb02a2} 
+\index{Player@{Player}!ShieldText@{ShieldText}}
+\index{ShieldText@{ShieldText}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{ShieldText}{ShieldText}}
+{\footnotesize\ttfamily TMP\+\_\+\+Text Player.\+Shield\+Text}
+
+
+
+UI text for current shield. 
+
+
+
+\doxysubsection{Property Documentation}
+\Hypertarget{class_player_a8f0ddc8c509c32870cd16fb0ff00c983}\label{class_player_a8f0ddc8c509c32870cd16fb0ff00c983} 
+\index{Player@{Player}!IsAlive@{IsAlive}}
+\index{IsAlive@{IsAlive}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{IsAlive}{IsAlive}}
+{\footnotesize\ttfamily bool Player.\+Is\+Alive\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Flag for if the player is alive. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/andre/\+Unity/\+ARSpace\+Invaders/\+Assets/\+Scripts/\mbox{\hyperlink{_player_8cs}{Player.\+cs}}\end{DoxyCompactItemize}

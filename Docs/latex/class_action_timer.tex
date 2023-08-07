@@ -1,0 +1,143 @@
+\doxysection{Action\+Timer Class Reference}
+\hypertarget{class_action_timer}{}\label{class_action_timer}\index{ActionTimer@{ActionTimer}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_action_timer_a35ee40749a68d103650408ecf4992974}{Action\+Timer}} (float time)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_action_timer}{Action\+Timer} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_action_timer_a3ea39cf2b149eae5f8731e8908d04829}{Start}} ()
+\begin{DoxyCompactList}\small\item\em Starts the countdown of the timer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_action_timer_a270a9fa3ba4ae9bf2b5f11f2f577082d}{Pause}} ()
+\begin{DoxyCompactList}\small\item\em Pauses the countdown of the timer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_action_timer_aac1c51cce9264fda2aa0ad0bab45578d}{Reset}} ()
+\begin{DoxyCompactList}\small\item\em Resets current time to time Timer and resets affected flags. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_action_timer_a2312d98ea1600a9604908cc68eb977f9}{Update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Update the current time given the time since the last update. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_action_timer_af70e42210fe740ba4c0984c3344b107a}{Current}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Current timer time. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_action_timer_a7878b02f4394749aa0d642a94bdf6a94}{Timer}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The current set timer. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_action_timer_ac1901184c390a6851d7e3583fd8703e7}{Is\+Zero}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Flag, true if time = 0. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_action_timer_a08fced75401a65f0035b6ca844826299}{Allow\+Countdown}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Flag, true if not paused. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{class_action_timer}{Action\+Timer} is used during a game/update loop to track time to zero for an action. Gives options for pausing and reseting the timer. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_action_timer_a35ee40749a68d103650408ecf4992974}\label{class_action_timer_a35ee40749a68d103650408ecf4992974} 
+\index{ActionTimer@{ActionTimer}!ActionTimer@{ActionTimer}}
+\index{ActionTimer@{ActionTimer}!ActionTimer@{ActionTimer}}
+\doxysubsubsection{\texorpdfstring{ActionTimer()}{ActionTimer()}}
+{\footnotesize\ttfamily Action\+Timer.\+Action\+Timer (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{class_action_timer}{Action\+Timer} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & The amount of time to use for the timer\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_action_timer_a270a9fa3ba4ae9bf2b5f11f2f577082d}\label{class_action_timer_a270a9fa3ba4ae9bf2b5f11f2f577082d} 
+\index{ActionTimer@{ActionTimer}!Pause@{Pause}}
+\index{Pause@{Pause}!ActionTimer@{ActionTimer}}
+\doxysubsubsection{\texorpdfstring{Pause()}{Pause()}}
+{\footnotesize\ttfamily void Action\+Timer.\+Pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Pauses the countdown of the timer. 
+
+\Hypertarget{class_action_timer_aac1c51cce9264fda2aa0ad0bab45578d}\label{class_action_timer_aac1c51cce9264fda2aa0ad0bab45578d} 
+\index{ActionTimer@{ActionTimer}!Reset@{Reset}}
+\index{Reset@{Reset}!ActionTimer@{ActionTimer}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily void Action\+Timer.\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets current time to time Timer and resets affected flags. 
+
+\Hypertarget{class_action_timer_a3ea39cf2b149eae5f8731e8908d04829}\label{class_action_timer_a3ea39cf2b149eae5f8731e8908d04829} 
+\index{ActionTimer@{ActionTimer}!Start@{Start}}
+\index{Start@{Start}!ActionTimer@{ActionTimer}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Action\+Timer.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Starts the countdown of the timer. 
+
+\Hypertarget{class_action_timer_a2312d98ea1600a9604908cc68eb977f9}\label{class_action_timer_a2312d98ea1600a9604908cc68eb977f9} 
+\index{ActionTimer@{ActionTimer}!Update@{Update}}
+\index{Update@{Update}!ActionTimer@{ActionTimer}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Action\+Timer.\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})}
+
+
+
+Update the current time given the time since the last update. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & The time since last update.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Property Documentation}
+\Hypertarget{class_action_timer_a08fced75401a65f0035b6ca844826299}\label{class_action_timer_a08fced75401a65f0035b6ca844826299} 
+\index{ActionTimer@{ActionTimer}!AllowCountdown@{AllowCountdown}}
+\index{AllowCountdown@{AllowCountdown}!ActionTimer@{ActionTimer}}
+\doxysubsubsection{\texorpdfstring{AllowCountdown}{AllowCountdown}}
+{\footnotesize\ttfamily bool Action\+Timer.\+Allow\+Countdown\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Flag, true if not paused. 
+
+\Hypertarget{class_action_timer_af70e42210fe740ba4c0984c3344b107a}\label{class_action_timer_af70e42210fe740ba4c0984c3344b107a} 
+\index{ActionTimer@{ActionTimer}!Current@{Current}}
+\index{Current@{Current}!ActionTimer@{ActionTimer}}
+\doxysubsubsection{\texorpdfstring{Current}{Current}}
+{\footnotesize\ttfamily float Action\+Timer.\+Current\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Current timer time. 
+
+\Hypertarget{class_action_timer_ac1901184c390a6851d7e3583fd8703e7}\label{class_action_timer_ac1901184c390a6851d7e3583fd8703e7} 
+\index{ActionTimer@{ActionTimer}!IsZero@{IsZero}}
+\index{IsZero@{IsZero}!ActionTimer@{ActionTimer}}
+\doxysubsubsection{\texorpdfstring{IsZero}{IsZero}}
+{\footnotesize\ttfamily bool Action\+Timer.\+Is\+Zero\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Flag, true if time = 0. 
+
+\Hypertarget{class_action_timer_a7878b02f4394749aa0d642a94bdf6a94}\label{class_action_timer_a7878b02f4394749aa0d642a94bdf6a94} 
+\index{ActionTimer@{ActionTimer}!Timer@{Timer}}
+\index{Timer@{Timer}!ActionTimer@{ActionTimer}}
+\doxysubsubsection{\texorpdfstring{Timer}{Timer}}
+{\footnotesize\ttfamily float Action\+Timer.\+Timer\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The current set timer. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/andre/\+Unity/\+ARSpace\+Invaders/\+Assets/\+Scripts/\mbox{\hyperlink{_action_timer_8cs}{Action\+Timer.\+cs}}\end{DoxyCompactItemize}

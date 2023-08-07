@@ -1,0 +1,170 @@
+\doxysection{Powerup\+Spawner Class Reference}
+\hypertarget{class_powerup_spawner}{}\label{class_powerup_spawner}\index{PowerupSpawner@{PowerupSpawner}}
+Inheritance diagram for Powerup\+Spawner\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_powerup_spawner}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_powerup_spawner_a7e6eeff0ac13e7c5da68ff15225abd02}{Spawn\+Powerup}} ()
+\begin{DoxyCompactList}\small\item\em Spawns a powerup based on the Spawncenter randomly. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_powerup_spawner_a8df0ca8ca9031f689be2f07b2ebf8258}{Wave\+Powerup\+Spawn}} (int wave)
+\begin{DoxyCompactList}\small\item\em Sets the timer for the next powerup spawn and begins spawning powerups continuously. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_powerup_spawner_a42b02029686c06ba2b329103ffd1e2c0}{Set\+Timer}} (float time)
+\begin{DoxyCompactList}\small\item\em Set the timer for the powerup spawns and reset it. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_powerup_spawner_a506d24c774d84aaeccce5690935dfbb3}{Pause\+Timer}} ()
+\begin{DoxyCompactList}\small\item\em Pause the Spawn Timer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_powerup_spawner_a812d9e4f8a36c91c478bedd5f074748b}{Resume\+Timer}} ()
+\begin{DoxyCompactList}\small\item\em Resume the Spawn Timer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_powerup_spawner_ac47f92bb95662f1172c1bbdb5944444b}{base\+Time\+Per\+Spawn}} = 45f
+\begin{DoxyCompactList}\small\item\em Base timer for powerup spawns. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_powerup_spawner_a3de32eca5b0c6c8b2b719d498477ee48}{time\+Wave\+Modifier}} = 5.\+0f
+\begin{DoxyCompactList}\small\item\em Time modifier per wave. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_powerup_spawner_a3e89cc878ca77ebf9fab1d94e9b1969f}{Spawn\+Center}}
+\begin{DoxyCompactList}\small\item\em The Game\+Object at the center of the spawns. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_powerup_spawner_a2df5766e4dc3b4c339e50dde146f29df}{Boundaries}}
+\begin{DoxyCompactList}\small\item\em The boundary game\+Object. \end{DoxyCompactList}\item 
+Game\+Object\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_powerup_spawner_a13ce02cec45e71a9639af322d0ee3230}{Prefabs}}
+\begin{DoxyCompactList}\small\item\em Array of prefabs to spawn. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_powerup_spawner_ad9dea7a56e04fbc48ebcce286eded58b}{Area\+Reduction\+Mod}} = 1
+\begin{DoxyCompactList}\small\item\em 1 Amount of area reduced from boundary. 1 is no reduction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Scripts that defines a powerup spawner and dictates how powerups will spawn in the game 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_powerup_spawner_a506d24c774d84aaeccce5690935dfbb3}\label{class_powerup_spawner_a506d24c774d84aaeccce5690935dfbb3} 
+\index{PowerupSpawner@{PowerupSpawner}!PauseTimer@{PauseTimer}}
+\index{PauseTimer@{PauseTimer}!PowerupSpawner@{PowerupSpawner}}
+\doxysubsubsection{\texorpdfstring{PauseTimer()}{PauseTimer()}}
+{\footnotesize\ttfamily void Powerup\+Spawner.\+Pause\+Timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Pause the Spawn Timer. 
+
+\Hypertarget{class_powerup_spawner_a812d9e4f8a36c91c478bedd5f074748b}\label{class_powerup_spawner_a812d9e4f8a36c91c478bedd5f074748b} 
+\index{PowerupSpawner@{PowerupSpawner}!ResumeTimer@{ResumeTimer}}
+\index{ResumeTimer@{ResumeTimer}!PowerupSpawner@{PowerupSpawner}}
+\doxysubsubsection{\texorpdfstring{ResumeTimer()}{ResumeTimer()}}
+{\footnotesize\ttfamily void Powerup\+Spawner.\+Resume\+Timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resume the Spawn Timer. 
+
+\Hypertarget{class_powerup_spawner_a42b02029686c06ba2b329103ffd1e2c0}\label{class_powerup_spawner_a42b02029686c06ba2b329103ffd1e2c0} 
+\index{PowerupSpawner@{PowerupSpawner}!SetTimer@{SetTimer}}
+\index{SetTimer@{SetTimer}!PowerupSpawner@{PowerupSpawner}}
+\doxysubsubsection{\texorpdfstring{SetTimer()}{SetTimer()}}
+{\footnotesize\ttfamily void Powerup\+Spawner.\+Set\+Timer (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})}
+
+
+
+Set the timer for the powerup spawns and reset it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em timer} & The new time for the timer.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_powerup_spawner_a7e6eeff0ac13e7c5da68ff15225abd02}\label{class_powerup_spawner_a7e6eeff0ac13e7c5da68ff15225abd02} 
+\index{PowerupSpawner@{PowerupSpawner}!SpawnPowerup@{SpawnPowerup}}
+\index{SpawnPowerup@{SpawnPowerup}!PowerupSpawner@{PowerupSpawner}}
+\doxysubsubsection{\texorpdfstring{SpawnPowerup()}{SpawnPowerup()}}
+{\footnotesize\ttfamily void Powerup\+Spawner.\+Spawn\+Powerup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Spawns a powerup based on the Spawncenter randomly. 
+
+\Hypertarget{class_powerup_spawner_a8df0ca8ca9031f689be2f07b2ebf8258}\label{class_powerup_spawner_a8df0ca8ca9031f689be2f07b2ebf8258} 
+\index{PowerupSpawner@{PowerupSpawner}!WavePowerupSpawn@{WavePowerupSpawn}}
+\index{WavePowerupSpawn@{WavePowerupSpawn}!PowerupSpawner@{PowerupSpawner}}
+\doxysubsubsection{\texorpdfstring{WavePowerupSpawn()}{WavePowerupSpawn()}}
+{\footnotesize\ttfamily void Powerup\+Spawner.\+Wave\+Powerup\+Spawn (\begin{DoxyParamCaption}\item[{int}]{wave }\end{DoxyParamCaption})}
+
+
+
+Sets the timer for the next powerup spawn and begins spawning powerups continuously. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wave} & The current spawn wave\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_powerup_spawner_ad9dea7a56e04fbc48ebcce286eded58b}\label{class_powerup_spawner_ad9dea7a56e04fbc48ebcce286eded58b} 
+\index{PowerupSpawner@{PowerupSpawner}!AreaReductionMod@{AreaReductionMod}}
+\index{AreaReductionMod@{AreaReductionMod}!PowerupSpawner@{PowerupSpawner}}
+\doxysubsubsection{\texorpdfstring{AreaReductionMod}{AreaReductionMod}}
+{\footnotesize\ttfamily float Powerup\+Spawner.\+Area\+Reduction\+Mod = 1}
+
+
+
+1 Amount of area reduced from boundary. 1 is no reduction. 
+
+\Hypertarget{class_powerup_spawner_ac47f92bb95662f1172c1bbdb5944444b}\label{class_powerup_spawner_ac47f92bb95662f1172c1bbdb5944444b} 
+\index{PowerupSpawner@{PowerupSpawner}!baseTimePerSpawn@{baseTimePerSpawn}}
+\index{baseTimePerSpawn@{baseTimePerSpawn}!PowerupSpawner@{PowerupSpawner}}
+\doxysubsubsection{\texorpdfstring{baseTimePerSpawn}{baseTimePerSpawn}}
+{\footnotesize\ttfamily float Powerup\+Spawner.\+base\+Time\+Per\+Spawn = 45f}
+
+
+
+Base timer for powerup spawns. 
+
+\Hypertarget{class_powerup_spawner_a2df5766e4dc3b4c339e50dde146f29df}\label{class_powerup_spawner_a2df5766e4dc3b4c339e50dde146f29df} 
+\index{PowerupSpawner@{PowerupSpawner}!Boundaries@{Boundaries}}
+\index{Boundaries@{Boundaries}!PowerupSpawner@{PowerupSpawner}}
+\doxysubsubsection{\texorpdfstring{Boundaries}{Boundaries}}
+{\footnotesize\ttfamily Game\+Object Powerup\+Spawner.\+Boundaries}
+
+
+
+The boundary game\+Object. 
+
+\Hypertarget{class_powerup_spawner_a13ce02cec45e71a9639af322d0ee3230}\label{class_powerup_spawner_a13ce02cec45e71a9639af322d0ee3230} 
+\index{PowerupSpawner@{PowerupSpawner}!Prefabs@{Prefabs}}
+\index{Prefabs@{Prefabs}!PowerupSpawner@{PowerupSpawner}}
+\doxysubsubsection{\texorpdfstring{Prefabs}{Prefabs}}
+{\footnotesize\ttfamily Game\+Object \mbox{[}$\,$\mbox{]} Powerup\+Spawner.\+Prefabs}
+
+
+
+Array of prefabs to spawn. 
+
+\Hypertarget{class_powerup_spawner_a3e89cc878ca77ebf9fab1d94e9b1969f}\label{class_powerup_spawner_a3e89cc878ca77ebf9fab1d94e9b1969f} 
+\index{PowerupSpawner@{PowerupSpawner}!SpawnCenter@{SpawnCenter}}
+\index{SpawnCenter@{SpawnCenter}!PowerupSpawner@{PowerupSpawner}}
+\doxysubsubsection{\texorpdfstring{SpawnCenter}{SpawnCenter}}
+{\footnotesize\ttfamily Game\+Object Powerup\+Spawner.\+Spawn\+Center}
+
+
+
+The Game\+Object at the center of the spawns. 
+
+\Hypertarget{class_powerup_spawner_a3de32eca5b0c6c8b2b719d498477ee48}\label{class_powerup_spawner_a3de32eca5b0c6c8b2b719d498477ee48} 
+\index{PowerupSpawner@{PowerupSpawner}!timeWaveModifier@{timeWaveModifier}}
+\index{timeWaveModifier@{timeWaveModifier}!PowerupSpawner@{PowerupSpawner}}
+\doxysubsubsection{\texorpdfstring{timeWaveModifier}{timeWaveModifier}}
+{\footnotesize\ttfamily float Powerup\+Spawner.\+time\+Wave\+Modifier = 5.\+0f}
+
+
+
+Time modifier per wave. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/andre/\+Unity/\+ARSpace\+Invaders/\+Assets/\+Scripts/\+Powerups/\mbox{\hyperlink{_powerup_spawner_8cs}{Powerup\+Spawner.\+cs}}\end{DoxyCompactItemize}
