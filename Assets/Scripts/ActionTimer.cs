@@ -6,7 +6,7 @@ using UnityEngine;
 public class ActionTimer
 {
 
-    private float _time;
+    private float _timer;
     private float _current;
     private bool _allowCountdown = false;
     private bool _isZero = false;
@@ -14,34 +14,49 @@ public class ActionTimer
     /// <summary>
     /// Constructor for the ActionTimer class.
     /// </summary>
-    /// <param name="time"></param>
+    /// <param name="time">The amount of time to use for the timer</param>
     public ActionTimer(float time)
     {
-        _time = time;
-        _current = _time;
+        _timer = time;
+        _current = _timer;
     }
 
+    public float Current { get; set; } //!< Current timer time
+    public float Timer { get; set; } //!< The current set timer
+    public bool IsZero { get; set; } //!< Flag, true if time = 0
+    public bool AllowCountdown { get; set; } //!< Flag, true if not paused
 
-    public float Time { get; set; }
-    public bool IsZero { get; set; }
-    public bool AllowCountdown { get; set; }
-
+    /// <summary>
+    /// Starts the countdown of the timer.
+    /// </summary>
     public void Start()
     {
         AllowCountdown = true;
     }
 
+    /// <summary>
+    /// Pauses the countdown of the timer.
+    /// </summary>
     public void Pause()
     {
         AllowCountdown = false;
     }
 
+    /// <summary>
+    /// Resets current time to time Timer and resets affected
+    /// flags.
+    /// </summary>
     public void Reset()
     {
-        _current = _time;
+        _current = _timer;
         IsZero = false;
     }
 
+    /// <summary>
+    /// Update the current time given the time
+    /// since the last update.
+    /// </summary>
+    /// <param name="deltaTime">The time since last update.</param>
     public void Update(float deltaTime)
     {
         if (AllowCountdown)
