@@ -4,13 +4,18 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+///
+/// A class that handles game pausing
+///
 public class GamePause : MonoBehaviour
 {
-
+    // Private
     private Vector2 touchStartPosition;
     private float swipeThreshold = 100f;
-    public GameObject confirmationScreen;
     private GameManager gameManager;
+
+    // Public
+    public GameObject confirmationScreen; //!< A reference to a confirmation screen
 
 
     // Start is called before the first frame update
@@ -52,6 +57,9 @@ public class GamePause : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Shows the confirmation screen.
+    /// </summary>
     public void ShowConfirmationScreen()
     {
         if (confirmationScreen != null)
@@ -72,6 +80,10 @@ public class GamePause : MonoBehaviour
         gameManager.UpdateState(GameState.GamePaused);
     }
 
+    /// <summary>
+    /// Invokes the code to return to main menu after a small
+    /// delay.
+    /// </summary>
     public void ReturnToMainMenu()
     {
        
@@ -79,6 +91,9 @@ public class GamePause : MonoBehaviour
         Invoke("ExecuteReturnToMainMenu", 0.5f);
     }
 
+    /// <summary>
+    /// Returns to main menu.
+    /// </summary>
     public void ExecuteReturnToMainMenu()
     {
         // 1. Load Main Menu
@@ -86,6 +101,10 @@ public class GamePause : MonoBehaviour
         // Debug.Log("Returned to Main Menu");
     }
 
+    /// <summary>
+    /// Returns to the game, ensures the time scale
+    /// is 1.0f and hides the confirmation screen.
+    /// </summary>
     public void ReturnToGame()
     {
         // Change the game state in the GameManager to GamePlay
@@ -98,6 +117,9 @@ public class GamePause : MonoBehaviour
         HideConfirmationScreen();
     }
 
+    /// <summary>
+    /// Hides the confirmation screen if available.
+    /// </summary>
     public void HideConfirmationScreen()
     {
         if (confirmationScreen != null)

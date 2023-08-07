@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+///
+/// A manager for audio that allows sounds/music to
+/// exist throughout multiple scenes in Unity.
+///
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
-    public AudioClip backgroundMusic;
+    public AudioClip backgroundMusic; //!< Music to manage
     private AudioSource audioSource;
 
     private void Awake()

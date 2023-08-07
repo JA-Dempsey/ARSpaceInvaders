@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+///
+/// Class that flashes a RawImage also attached to the
+/// GameObject with this script.
+///
 public class Flashing : MonoBehaviour
 {
-    public float flashingSpeed = 2.0f; 
-    public float minOpacity = 0.1f;    
-    public float maxOpacity = 1.0f;    
+    public float flashingSpeed = 2.0f; //!< Speed of flashing
+    public float minOpacity = 0.1f;    //!< The lowest alpha opacity for flash
+    public float maxOpacity = 1.0f;    //!< The highest alpha opacity for flash
 
     private RawImage rawImage;
     private bool increasingOpacity = true;

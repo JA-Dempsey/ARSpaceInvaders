@@ -4,9 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 
+///
+/// Class that contains an audiosource for the
+/// click of a button.
+///
 public class ButtonClick : MonoBehaviour
 {
-    public AudioSource buttonClick;
+    public AudioSource buttonClick; //!< Audio to play on click
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +23,9 @@ public class ButtonClick : MonoBehaviour
         // Debug.Log("Audio Stopped");
     }
 
+    /// <summary>
+    /// Plays the buttonClick audio.
+    /// </summary>
     public void PlayOnClick()
     {
         // 1. Play Button Click Audio
