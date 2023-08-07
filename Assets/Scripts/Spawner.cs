@@ -12,17 +12,17 @@ using UnityEngine.Animations;
 public class Spawner : MonoBehaviour
 {
 
-    public int numObjects = 1;  //!< Number of objects to spawn
-    public GameObject spawnTarget; //!< Target of the spawn, a GameObject
-    public Boundaries boundaries; //!< The boundary prefab/script in the scene
-    public bool spawnAtBoundary; //!< Flag for whether to spawn at boundary
+    public int numObjects = 1;      //!< Number of objects to spawn
+    public GameObject spawnTarget;  //!< Target of the spawn, a GameObject
+    public Boundaries boundaries;   //!< The boundary prefab/script in the scene
+    public bool spawnAtBoundary;    //!< Flag for whether to spawn at boundary
     [Range(1f, 4f)] public float boundaryOffset = 2f;  //!< Offset for boundary spawn
-    public float minY = 1f;  //!< Minimum y value for spawn
+    public float minY = 1f;         //!< Minimum y value for spawn
 
 
-    public GameObject[] prefabs;  //!< Array of prefabs to spawn
-    public GameObject aimTarget; //!< For enemies, the target they will shoot at
-    public bool trigger = false; //!< If true allows Spawn()
+    public GameObject[] prefabs;    //!< Array of prefabs to spawn
+    public GameObject aimTarget;    //!< For enemies, the target they will shoot at
+    public bool trigger = false;    //!< If true allows Spawn()
 
     private float radius;
     private float offset;
