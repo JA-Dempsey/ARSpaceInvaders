@@ -4,20 +4,20 @@
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_powerup_effect_aa8b64c38663459a2cf6cafaaa33582ec}{Powerup\+Effect}} (string name, int scale, float decay)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_powerup_effect}{Powerup\+Effect} class. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_powerup_effect_ac426af86631b57146d8ba883c1c74384}{Update\+Decay}} (float elapsed\+Time)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Updates the timer for the decay by the given time. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
 string \mbox{\hyperlink{class_powerup_effect_a36a35008b66f7d9e4e8862089252151d}{Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
 float \mbox{\hyperlink{class_powerup_effect_af8a6dd029aef08a62511e693e207d3e1}{Decay}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em How long the powerup will/should last. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_powerup_effect_af917cf087144791a3c4a14743254fd39}{Scale}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Affect powerup has on player/character. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_powerup_effect_a669349417b24b5bbf25ec776e3202424}{Is\+Expired}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Flag, if powerup should be expired. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -29,6 +29,19 @@ bool \mbox{\hyperlink{class_powerup_effect_a669349417b24b5bbf25ec776e3202424}{Is
 
 
 
+Constructor for the \doxylink{class_powerup_effect}{Powerup\+Effect} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of effect.\\
+\hline
+{\em scale} & How much of the effect powerup has\\
+\hline
+{\em decay} & How long before the effect ends\\
+\hline
+\end{DoxyParams}
+
+
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_powerup_effect_ac426af86631b57146d8ba883c1c74384}\label{class_powerup_effect_ac426af86631b57146d8ba883c1c74384} 
 \index{PowerupEffect@{PowerupEffect}!UpdateDecay@{UpdateDecay}}
@@ -38,6 +51,15 @@ bool \mbox{\hyperlink{class_powerup_effect_a669349417b24b5bbf25ec776e3202424}{Is
 
 
 
+Updates the timer for the decay by the given time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elapsed\+Time} & Reduce timer by this amount\\
+\hline
+\end{DoxyParams}
+
+
 \doxysubsection{Property Documentation}
 \Hypertarget{class_powerup_effect_af8a6dd029aef08a62511e693e207d3e1}\label{class_powerup_effect_af8a6dd029aef08a62511e693e207d3e1} 
 \index{PowerupEffect@{PowerupEffect}!Decay@{Decay}}
@@ -45,11 +67,19 @@ bool \mbox{\hyperlink{class_powerup_effect_a669349417b24b5bbf25ec776e3202424}{Is
 \doxysubsubsection{\texorpdfstring{Decay}{Decay}}
 {\footnotesize\ttfamily float Powerup\+Effect.\+Decay\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
+
+
+How long the powerup will/should last. 
+
 \Hypertarget{class_powerup_effect_a669349417b24b5bbf25ec776e3202424}\label{class_powerup_effect_a669349417b24b5bbf25ec776e3202424} 
 \index{PowerupEffect@{PowerupEffect}!IsExpired@{IsExpired}}
 \index{IsExpired@{IsExpired}!PowerupEffect@{PowerupEffect}}
 \doxysubsubsection{\texorpdfstring{IsExpired}{IsExpired}}
 {\footnotesize\ttfamily bool Powerup\+Effect.\+Is\+Expired\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Flag, if powerup should be expired. 
 
 \Hypertarget{class_powerup_effect_a36a35008b66f7d9e4e8862089252151d}\label{class_powerup_effect_a36a35008b66f7d9e4e8862089252151d} 
 \index{PowerupEffect@{PowerupEffect}!Name@{Name}}
@@ -62,6 +92,10 @@ bool \mbox{\hyperlink{class_powerup_effect_a669349417b24b5bbf25ec776e3202424}{Is
 \index{Scale@{Scale}!PowerupEffect@{PowerupEffect}}
 \doxysubsubsection{\texorpdfstring{Scale}{Scale}}
 {\footnotesize\ttfamily int Powerup\+Effect.\+Scale\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Affect powerup has on player/character. 
 
 
 

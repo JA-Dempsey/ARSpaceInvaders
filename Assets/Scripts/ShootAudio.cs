@@ -9,8 +9,8 @@ using UnityEngine;
 public class ShootAudio: MonoBehaviour
 {
 
-    public AudioSource Audio;
-    public AudioClip[] LaserClips;
+    public AudioSource Audio;  //!< An audiosource is required
+    public AudioClip[] LaserClips;  //!< Array of sounds to play, sound clips
 
     /// <summary>
     /// Play one of the chosen laser sounds at random for more

@@ -10,7 +10,7 @@ public class BoundedMotion : MonoBehaviour
 {
 
     // public fields
-    public float velocity = 1.0f;      //!< Velocity of bounded motion
+    public float velocity = 1.0f;  //!< Velocity of bounded motion
 
     // private fields
     private Rigidbody rb;

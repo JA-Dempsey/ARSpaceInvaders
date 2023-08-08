@@ -12,11 +12,12 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
 
-    public int score = 0;               //<! Initial score
-    public TMP_Text scoreText;          //<! Text for the score
-    private GameObject[] enemies;       //<! Array of enemies
-    private int pointsPerEnemy = 10;    //<! Points given per enemy
-    private int lastEnemyCount = 0;     //<! Used for calculations, this number is given as enemies after last enemy death
+    public int score = 0; //!< Initial score
+    public TMP_Text scoreText; //!< Text for the score
+
+    private GameObject[] enemies;  // Array of enemies
+    private int pointsPerEnemy = 10;  // Points given per enemy
+    private int lastEnemyCount = 0;  // Used for calculations, this number is given as enemies after last enemy death
 
     // Start is called before the first frame update
     void Start()

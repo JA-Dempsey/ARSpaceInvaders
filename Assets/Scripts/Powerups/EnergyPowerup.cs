@@ -13,7 +13,7 @@ public class EnergyPowerup : MonoBehaviour
     private Player _playerScript;
 
     // Public
-    public int PowerupScale = 1;    //!< How much of a resource the powerup gives
+    public int PowerupScale = 1;  //!< How much of a resource the powerup gives
 
     // Flags
     private bool _isImmediate = false;

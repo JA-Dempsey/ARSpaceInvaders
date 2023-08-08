@@ -7,9 +7,9 @@ using UnityEngine;
 ///
 public class ClosingSpeed : MonoBehaviour
 {
-    public GameObject target;               //!< Terget to close in on
-    public float velocity = 0.5f;           //!< Velocity to apply
-    public float sidewaysVelocity = 2f;     //!< Sideways velocit to apply
+    public GameObject target;  //!< Target to close in on
+    public float velocity = 0.5f;  //!< Velocity to apply
+    public float sidewaysVelocity = 2f;  //!< Sideways velocity to apply
 
     private Rigidbody rb;
     private float sidewaysMotionV;
