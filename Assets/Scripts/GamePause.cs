@@ -13,6 +13,7 @@ public class GamePause : MonoBehaviour
     private Vector2 touchStartPosition;
     private float swipeThreshold = 100f;
     private GameManager gameManager;
+    public AudioSource musicSource;
 
     // Public
     public GameObject confirmationScreen; //!< A reference to a confirmation screen
@@ -49,8 +50,7 @@ public class GamePause : MonoBehaviour
                 // Check if the swipe is valid
                 if (Mathf.Abs(swipeDelta) > swipeThreshold && swipeDelta > 0)
                 {
-
-                    // 1. Show Confirmation Screen
+                    // Show Confirmation Screen
                     ShowConfirmationScreen();
                 }
             }
@@ -64,7 +64,6 @@ public class GamePause : MonoBehaviour
     {
         if (confirmationScreen != null)
         {
-            //confirmationScreen.enabled = true;
             confirmationScreen.SetActive(true);
         }
 
@@ -73,47 +72,30 @@ public class GamePause : MonoBehaviour
             Debug.LogWarning("No image assigned to the script");
         }
 
-        // 1. Set unity time to 0 to pause the game
+        // Pause the game and music
+        musicSource.Pause();
         Time.timeScale = 0f;
-
-        // Change the game state in the GameManager to GamePaused
         gameManager.UpdateState(GameState.GamePaused);
-    }
-
-    /// <summary>
-    /// Invokes the code to return to main menu after a small
-    /// delay.
-    /// </summary>
-    public void ReturnToMainMenu()
-    {
-       
-        // 1. Delay scene load
-        Invoke("ExecuteReturnToMainMenu", 0.5f);
+        Debug.Log("Game paused");
     }
 
     /// <summary>
     /// Returns to main menu.
     /// </summary>
-    public void ExecuteReturnToMainMenu()
+    public void ReturnToMainMenu()
     {
-        // 1. Load Main Menu
+        // Load Main Menu
         SceneManager.LoadScene("MainMenu");
-        // Debug.Log("Returned to Main Menu");
+        Debug.Log("Returned to Main Menu");
+        Time.timeScale = 1f;
     }
 
     /// <summary>
-    /// Returns to the game, ensures the time scale
-    /// is 1.0f and hides the confirmation screen.
+    /// Returns to the game, hides the confirmation screen.
     /// </summary>
     public void ReturnToGame()
     {
-        // Change the game state in the GameManager to GamePlay
-        gameManager.UpdateState(GameState.GamePlay);
-
-        // 1. Unpause Game
-        Time.timeScale = 1f;
-
-        // 2. Hide ConfirmationScreen
+        // Hide ConfirmationScreen
         HideConfirmationScreen();
     }
 
@@ -124,7 +106,6 @@ public class GamePause : MonoBehaviour
     {
         if (confirmationScreen != null)
         {
-            //confirmationScreen.enabled = false;
             confirmationScreen.SetActive(false);
         }
 
@@ -132,6 +113,12 @@ public class GamePause : MonoBehaviour
         {
             Debug.LogWarning("No image assigned to the script");
         }
+
+        // Pause the game and music
+        musicSource.UnPause();
+        Time.timeScale = 1f;
+        gameManager.UpdateState(GameState.GamePlay);
+        Debug.Log("Game unpaused");
     }
 }
 

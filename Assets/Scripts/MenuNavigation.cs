@@ -43,7 +43,7 @@ public class MenuNavigation : MonoBehaviour
     public void ExecuteHighScoresButton()
     {
         SceneManager.LoadScene("HighScores");
-        Debug.Log("How To Play");
+        Debug.Log("High Scores");
     }
 
     /// <summary>

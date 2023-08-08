@@ -47,22 +47,11 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void HandleGameStart()
     {
-        // Check if game was paused
-        if (Time.timeScale == 0f)
-        {
-            // Set unity time to 1
-            Time.timeScale = 1f;
-        }
-
-        else 
-        {
-            // Set starting game parameters...pull values from other scripts instead of hardcoding
-
-            // Get Player Script from Player Object
-            // Defaults set within Editor for vitals/resources
-            _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        }
-
+        // Set starting game parameters...pull values from other scripts instead of hardcoding
+        // Get Player Script from Player Object
+        // Defaults set within Editor for vitals/resources
+        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        
         // Update State
         UpdateState(GameState.GamePlay);
     }
@@ -72,12 +61,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void HandleGamePaused()
     {
-        // 1. Set unity time to 0
-        Time.timeScale = 0f;
-
-        // 2. Load Main Menu Scene
-        SceneManager.LoadScene("MainMenu");
-
+        Debug.Log("Game state updated: GamePaused");
     }
 
     /// <summary>
@@ -119,7 +103,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void HandleGameQuit()
     {
-        // 1. Quit Game
+        // Quit Game
         Application.Quit();
     }
 
@@ -154,6 +138,5 @@ public enum GameState{
     GamePaused = 1,
     GamePlay = 2,
     GameLost = 3,
-    GameQuit = 4,
-    MainMenu = 5
+    GameQuit = 4
 }
