@@ -2,10 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+///
+/// Script that handles showing the proper screen when a score
+/// is submitted.
+///
 public class ShowSubmitScoreBox : MonoBehaviour
 {
-    public GameObject submitScoreScreen;
+    public GameObject submitScoreScreen;  //<! The submit score screen to set as active
 
+    /// <summary>
+    /// Shows the given submit score screen
+    /// </summary>
     public void ShowSubmitScoreScreen()
     {
         if (submitScoreScreen != null)
@@ -19,6 +26,9 @@ public class ShowSubmitScoreBox : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Hides the given submit score screen
+    /// </summary>
     public void HideSubmitScoreScreen()
     {
         if (submitScoreScreen != null)

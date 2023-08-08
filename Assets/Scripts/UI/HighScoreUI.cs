@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+///
+/// The UI for the HighScore
+///
 public class HighScoreUI : MonoBehaviour
 {
-    public HighScoresRowUI rowPrefab;
-    public HighScoreManager highScoreManager;
+    public HighScoresRowUI rowPrefab;           //!< The row prefab to use for UI Rows
+    public HighScoreManager highScoreManager;   //!< Ref to a HighScoreManager in scene
     
     void Start(){
         

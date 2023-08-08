@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+///
+/// Shows the scope after the start of the game.
+///
 public class ShowScope : MonoBehaviour
 {
-    public RawImage rawImage;
+    public RawImage rawImage;  //!< Image for the scope
 
     void Start()
     {

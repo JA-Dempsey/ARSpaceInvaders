@@ -3,28 +3,42 @@ using System.Collections.Generic;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 
+///
+/// Class that creates controls to enable/disable panels
+/// so that they can flash in the given timer interval.
+///
 public class FlashPanels : MonoBehaviour
 {
-
-    public GameObject RedPanel;
-    public GameObject BluePanel;
+    // Private
     private ActionTimer _timer;
 
-    public float FlashTime = 0.25f;
+    // Public
+    public GameObject RedPanel;  //!< The red panel to hide/show
+    public GameObject BluePanel; //!< The blue panel to hide/show
+    public float FlashTime = 0.25f; //!< The interval for the flash
 
     // Methods
+    /// <summary>
+    /// Hides all the panels for the script.
+    /// </summary>
     public void HideAll()
     {
         RedPanel.SetActive(false);
         BluePanel.SetActive(false);
     }
 
+    /// <summary>
+    /// Shows the red panel given to the script.
+    /// </summary>
     public void ShowRed()
     {
         RedPanel.SetActive(true);
         _timer.Start();
     }
 
+    /// <summary>
+    /// Shows the blue panel given to the script.
+    /// </summary>
     public void ShowBlue()
     {
         BluePanel.SetActive(true);

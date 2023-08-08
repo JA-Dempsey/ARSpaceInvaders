@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
+/// 
+/// Class that handles game exit when player tries to exit the
+/// game, giving the user a chance to cancel the exit
+/// 
 public class GameExit : MonoBehaviour
 {
 
     private Vector2 touchStartPosition;
     private float swipeThreshold = 100f;
-    public GameObject confirmationScreen;
+    public GameObject confirmationScreen;  //!< Reference to a confirmation screen
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +53,9 @@ public class GameExit : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Shows the confirmation screen if one exists.
+    /// </summary>
     public void ShowConfirmationScreen()
     {
         if (confirmationScreen != null)
@@ -63,18 +69,27 @@ public class GameExit : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Exits the game/application.
+    /// </summary>
     public void ExitGame()
     {
         // 1. Exit Game
         Application.Quit();
     }
 
+    /// <summary>
+    /// Returns to main menu.
+    /// </summary>
     public void ReturnToMainMenu()
     {
         // 1. Hide confirmation screen
         HideConfirmationScreen();
     }
 
+    /// <summary>
+    /// Hides the confirmation screen menu if one exists.
+    /// </summary>
     public void HideConfirmationScreen()
     {
         if (confirmationScreen != null)

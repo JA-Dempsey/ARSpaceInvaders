@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-// This class generates the boundaries for the game dynamically
-// using inputs in the Inspector
+/// 
+/// This class generates the boundaries for the game dynamically
+/// using inputs in the Inspector.
+/// Generates during the Start() phase in Unity.
+///
 public class Boundaries : MonoBehaviour
 {
 
-    public float distanceFromOrigin = 10f;
-    public GameObject BoundaryPrefab;
-    public bool debugVisibility = false;
+    public float distanceFromOrigin = 10f; //!< Origin the location of boundary prefab
+    public GameObject BoundaryPrefab; //!< A reference to the BoundaryPrefab
+    public bool debugVisibility = false; //!< Boundaries will be visible if true
 
     private const float Y_OFFSET = -2;
     private GameObject[] boundaries;

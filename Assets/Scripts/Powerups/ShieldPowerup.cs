@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+///
+/// Defines a Shield Powerup and the effect it has when
+/// a player projectile or player collides with the powerup.
+///
 public class ShieldPowerup : MonoBehaviour
 {
     // Private
@@ -9,7 +13,7 @@ public class ShieldPowerup : MonoBehaviour
     private Player _playerScript;
 
     // Public
-    public int PowerupScale = 20;
+    public int PowerupScale = 20;           //!< The amount of a resource the powerup gives
 
 
     // Flags
@@ -17,9 +21,12 @@ public class ShieldPowerup : MonoBehaviour
 
     // Setters/Getters
 
-    public bool IsImmediate { get; set; }
+    public bool IsImmediate { get; set; }   //!< Flag. If powerup given immediately
 
     // Methods
+    /// <summary>
+    /// Effect when powerup is collected or shot at by the player.
+    /// </summary>
     public void Effect()
     {
         _playerScript.Shield.Increase(_powerupEffect.Scale);

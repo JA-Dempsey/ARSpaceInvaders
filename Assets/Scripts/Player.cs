@@ -7,43 +7,51 @@ using UnityEngine;
 using UnityEngine.Experimental.XR.Interaction;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Script that tracks Player information, and related entities.
+/// This includes resources, such as energy, health, and shields, as well
+/// as related UI updates.
+/// </summary>
 public class Player : MonoBehaviour
 {
-    // Private
 
     // Bool Flags
     private bool _isAlive = true;
 
     // Public
-    public int MaxHealth = 100;
-    public int MinHealth = 0;
-    public int MaxShield = 100;
-    public int MinShield = 0;
-    public int MaxEnergy = 3;
-    public int MinEnergy = 0;
-    public int CriticalHealth = 50;
-    public int CriticalShield = 0;
-    public int CriticalEnergy = 1;
+    public int MaxHealth = 100;     //!< The max of the Health resource
+    public int MinHealth = 0;       //!< The min of the Health resource
+    public int MaxShield = 100;     //!< The max of the Shield resource
+    public int MinShield = 0;       //!< The min of the Shield resource
+    public int MaxEnergy = 3;       //!< The max of the Energy resource
+    public int MinEnergy = 0;       //!< The min of the Energy resource
+    public int CriticalHealth = 50; //!< Health resource critical threshold
+    public int CriticalShield = 0;  //!< Shield resource critical threshold
+    public int CriticalEnergy = 1;  //!< Energy resource critical threshold
 
-    public GameObject Bunker;
+    public GameObject Bunker;       //!< Reference to the Bunker
 
     // Flashing Panels
-    public FlashPanels FlashPanels;
+    public FlashPanels FlashPanels; //!< References to flash panels for hit indications
 
     // Text
-    public TMP_Text HealthText;
-    public TMP_Text EnergyText;
-    public TMP_Text ShieldText;
+    public TMP_Text HealthText;     //!< UI text for current health
+    public TMP_Text EnergyText;     //!< UI text for current energy
+    public TMP_Text ShieldText;     //!< UI text for current shield
 
-    public int EnemyDamage = 10; // Damage done when Player hit by enemy
+    public int EnemyDamage = 10;    //!< Damage done when Player hit by enemy
 
-    public BaseResource Health;
-    public BaseResource Shield;
-    public BaseResource Energy;
+    public BaseResource Health;     //!< BaseResource Class. Health Resource.
+    public BaseResource Shield;     //!< BaseResource Class. Shield Resource.
+    public BaseResource Energy;     //!< BaseResource Class. Energy Resource.
 
-    public bool IsAlive { get; set; }
+    public bool IsAlive { get; set; }   //!< Flag for if the player is alive.
 
     // Methods
+    /// <summary>
+    /// Checks if the player is alive.
+    /// </summary>
+    /// <returns>Returns IsAlive if player still alive</returns>
     public bool CheckHealth()
     {
         IsAlive = !Health.IsZero;
@@ -61,9 +69,12 @@ public class Player : MonoBehaviour
         catch (NullReferenceException e){ }
     }
 
-    // Increase/Decrease Function Maps
-    // Reduces complexity of calls from other objects
-    // and provides methods to do other things if necessary
+    /// <summary>
+    /// Calculates if damage to shield and health. Damage
+    /// always hurts shield first, then health once shield is
+    /// expended.
+    /// </summary>
+    /// <param name="damage">The damage the player takes</param>
     public void TakeDamage(int damage)
     {
         // damage shield first
@@ -110,6 +121,9 @@ public class Player : MonoBehaviour
         UpdateText();
     }
 
+    /// <summary>
+    /// Spawns Bunker/Shield for player when they press the Energy icon
+    /// </summary>
     public void SpawnBunker(){
         if(Energy.Current > 0){
             // spawns a bunker and reduces energy

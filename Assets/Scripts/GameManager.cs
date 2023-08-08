@@ -4,8 +4,10 @@ using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
 
-// Enum Based Game Manager
-
+/// 
+/// An Enum based Game Manager to track scene changes in Unity,
+/// and to maintain anything that needs to cross scenes
+/// 
 public class GameManager : MonoBehaviour
 {
     // Private
@@ -13,8 +15,8 @@ public class GameManager : MonoBehaviour
 
     // Public
     public static GameManager Instance;
-    public GameState State;
-    public static event Action<GameState> OnGameStateUpdated;
+    public GameState State; //!< A GameState Enum
+    public static event Action<GameState> OnGameStateUpdated; //!< Event for updated GameState
 
     // Make instance accessible anywhere in the game
     private void Awake()
@@ -28,7 +30,10 @@ public class GameManager : MonoBehaviour
         UpdateState(GameState.GameStart);
     }
 
-    // Check and update the state of the game
+    /// <summary>
+    /// Check and update the state of the game.
+    /// </summary>
+    /// <param name="updatedState">The enum value for updated state.</param>
     public void UpdateState(GameState updatedState)
     {
         State = updatedState;
@@ -37,7 +42,9 @@ public class GameManager : MonoBehaviour
         OnGameStateUpdated?.Invoke(updatedState);
     }
 
-    // Instructions for GameStart
+    /// <summary>
+    /// Instructions for game start.
+    /// </summary>
     private void HandleGameStart()
     {
         // Check if game was paused
@@ -60,7 +67,9 @@ public class GameManager : MonoBehaviour
         UpdateState(GameState.GamePlay);
     }
 
-    // Instructions for GamePaused
+    /// <summary>
+    /// Instructions for GamePaused.
+    /// </summary>
     private void HandleGamePaused()
     {
         // 1. Set unity time to 0
@@ -71,7 +80,9 @@ public class GameManager : MonoBehaviour
 
     }
 
-    // Instructions for GamePlay
+    /// <summary>
+    /// Instructions for GamePlay
+    /// </summary>
     private void HandleGamePlay()
     {
         // Check if player health is 0 %, update state to game lost
@@ -87,7 +98,9 @@ public class GameManager : MonoBehaviour
         }       
     }
 
-    // Instructions for GameLost
+    /// <summary>
+    /// Instructions for GameLost
+    /// </summary>
     private void HandleGameLost()
     {
         // Check to see if high score, then load the correct scene
@@ -101,7 +114,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Instructions for GameQuit
+    /// <summary>
+    /// Instructions for GameQuit
+    /// </summary>
     private void HandleGameQuit()
     {
         // 1. Quit Game
@@ -131,7 +146,9 @@ public class GameManager : MonoBehaviour
     }
 }
 
-// Different possible game states
+/// <summary>
+/// An enum for all the possible game states.
+/// </summary>
 public enum GameState{
     GameStart = 0,
     GamePaused = 1,

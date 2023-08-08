@@ -2,14 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+///
+/// Script that plays one of the prefabs allocated to
+/// the script, at the object this script is attached to.
+///
 public class ShootAudio: MonoBehaviour
 {
 
-    public AudioSource Audio;
-    public AudioClip[] LaserClips;
+    public AudioSource Audio;  //!< An audiosource is required
+    public AudioClip[] LaserClips;  //!< Array of sounds to play, sound clips
 
-    // Play one of the chosen laser sounds at random
-    // Gives variety when spammed
+    /// <summary>
+    /// Play one of the chosen laser sounds at random for more
+    /// variety.
+    /// </summary>
     public void PlayRandomLaser()
     {
         Audio.PlayOneShot(LaserClips[(int) Random.Range(0, LaserClips.Length)]);

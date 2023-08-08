@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+///
+/// Script that allows an object to move closer to another.
+///
 public class ClosingSpeed : MonoBehaviour
 {
-    public GameObject target;
-    public float velocity = 0.5f;
-    public float sidewaysVelocity = 2f;
+    public GameObject target;  //!< Target to close in on
+    public float velocity = 0.5f;  //!< Velocity to apply
+    public float sidewaysVelocity = 2f;  //!< Sideways velocity to apply
 
     private Rigidbody rb;
     private float sidewaysMotionV;

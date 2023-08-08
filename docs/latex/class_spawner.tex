@@ -1,0 +1,130 @@
+\doxysection{Spawner Class Reference}
+\hypertarget{class_spawner}{}\label{class_spawner}\index{Spawner@{Spawner}}
+Inheritance diagram for Spawner\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_spawner}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_spawner_a7287ff0ffc14bee98ef0c708bdd6c24a}{num\+Objects}} = 1
+\begin{DoxyCompactList}\small\item\em Number of objects to spawn. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_spawner_a9ad23ae27708354dbbf66941f67de767}{spawn\+Target}}
+\begin{DoxyCompactList}\small\item\em Target of the spawn, a Game\+Object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_boundaries}{Boundaries}} \mbox{\hyperlink{class_spawner_a477e4335ff5532ba9bf29bbdcb13f7da}{boundaries}}
+\begin{DoxyCompactList}\small\item\em The boundary prefab/script in the scene. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_spawner_acdf7e857d9d3bc33cd0eeaca72db851b}{spawn\+At\+Boundary}}
+\begin{DoxyCompactList}\small\item\em Flag for whether to spawn at boundary. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spawner_a6f43c85cb1585fe97d750e21bfb639dd}{boundary\+Offset}} = 2f
+\begin{DoxyCompactList}\small\item\em Offset for boundary spawn. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_spawner_a6534a238f30879a2de131f953b7ae667}{minY}} = 1f
+\begin{DoxyCompactList}\small\item\em Minimum y value for spawn. \end{DoxyCompactList}\item 
+Game\+Object\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_spawner_ae871248564ccf824c15c6105f4e3bb97}{prefabs}}
+\begin{DoxyCompactList}\small\item\em Array of prefabs to spawn. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_spawner_a0dd440d9b5fc178dffd4061edf9772a6}{aim\+Target}}
+\begin{DoxyCompactList}\small\item\em For enemies, the target they will shoot at. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_spawner_a9d6f4b1feae97af13f20aeb42d6ab220}{trigger}} = false
+\begin{DoxyCompactList}\small\item\em If true allows Spawn() \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This script spawns game objects within a defined play region. It also sets up the game object scripts with the correct targets. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_spawner_a0dd440d9b5fc178dffd4061edf9772a6}\label{class_spawner_a0dd440d9b5fc178dffd4061edf9772a6} 
+\index{Spawner@{Spawner}!aimTarget@{aimTarget}}
+\index{aimTarget@{aimTarget}!Spawner@{Spawner}}
+\doxysubsubsection{\texorpdfstring{aimTarget}{aimTarget}}
+{\footnotesize\ttfamily Game\+Object Spawner.\+aim\+Target}
+
+
+
+For enemies, the target they will shoot at. 
+
+\Hypertarget{class_spawner_a477e4335ff5532ba9bf29bbdcb13f7da}\label{class_spawner_a477e4335ff5532ba9bf29bbdcb13f7da} 
+\index{Spawner@{Spawner}!boundaries@{boundaries}}
+\index{boundaries@{boundaries}!Spawner@{Spawner}}
+\doxysubsubsection{\texorpdfstring{boundaries}{boundaries}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_boundaries}{Boundaries}} Spawner.\+boundaries}
+
+
+
+The boundary prefab/script in the scene. 
+
+\Hypertarget{class_spawner_a6f43c85cb1585fe97d750e21bfb639dd}\label{class_spawner_a6f43c85cb1585fe97d750e21bfb639dd} 
+\index{Spawner@{Spawner}!boundaryOffset@{boundaryOffset}}
+\index{boundaryOffset@{boundaryOffset}!Spawner@{Spawner}}
+\doxysubsubsection{\texorpdfstring{boundaryOffset}{boundaryOffset}}
+{\footnotesize\ttfamily float Spawner.\+boundary\+Offset = 2f}
+
+
+
+Offset for boundary spawn. 
+
+\Hypertarget{class_spawner_a6534a238f30879a2de131f953b7ae667}\label{class_spawner_a6534a238f30879a2de131f953b7ae667} 
+\index{Spawner@{Spawner}!minY@{minY}}
+\index{minY@{minY}!Spawner@{Spawner}}
+\doxysubsubsection{\texorpdfstring{minY}{minY}}
+{\footnotesize\ttfamily float Spawner.\+minY = 1f}
+
+
+
+Minimum y value for spawn. 
+
+\Hypertarget{class_spawner_a7287ff0ffc14bee98ef0c708bdd6c24a}\label{class_spawner_a7287ff0ffc14bee98ef0c708bdd6c24a} 
+\index{Spawner@{Spawner}!numObjects@{numObjects}}
+\index{numObjects@{numObjects}!Spawner@{Spawner}}
+\doxysubsubsection{\texorpdfstring{numObjects}{numObjects}}
+{\footnotesize\ttfamily int Spawner.\+num\+Objects = 1}
+
+
+
+Number of objects to spawn. 
+
+\Hypertarget{class_spawner_ae871248564ccf824c15c6105f4e3bb97}\label{class_spawner_ae871248564ccf824c15c6105f4e3bb97} 
+\index{Spawner@{Spawner}!prefabs@{prefabs}}
+\index{prefabs@{prefabs}!Spawner@{Spawner}}
+\doxysubsubsection{\texorpdfstring{prefabs}{prefabs}}
+{\footnotesize\ttfamily Game\+Object \mbox{[}$\,$\mbox{]} Spawner.\+prefabs}
+
+
+
+Array of prefabs to spawn. 
+
+\Hypertarget{class_spawner_acdf7e857d9d3bc33cd0eeaca72db851b}\label{class_spawner_acdf7e857d9d3bc33cd0eeaca72db851b} 
+\index{Spawner@{Spawner}!spawnAtBoundary@{spawnAtBoundary}}
+\index{spawnAtBoundary@{spawnAtBoundary}!Spawner@{Spawner}}
+\doxysubsubsection{\texorpdfstring{spawnAtBoundary}{spawnAtBoundary}}
+{\footnotesize\ttfamily bool Spawner.\+spawn\+At\+Boundary}
+
+
+
+Flag for whether to spawn at boundary. 
+
+\Hypertarget{class_spawner_a9ad23ae27708354dbbf66941f67de767}\label{class_spawner_a9ad23ae27708354dbbf66941f67de767} 
+\index{Spawner@{Spawner}!spawnTarget@{spawnTarget}}
+\index{spawnTarget@{spawnTarget}!Spawner@{Spawner}}
+\doxysubsubsection{\texorpdfstring{spawnTarget}{spawnTarget}}
+{\footnotesize\ttfamily Game\+Object Spawner.\+spawn\+Target}
+
+
+
+Target of the spawn, a Game\+Object. 
+
+\Hypertarget{class_spawner_a9d6f4b1feae97af13f20aeb42d6ab220}\label{class_spawner_a9d6f4b1feae97af13f20aeb42d6ab220} 
+\index{Spawner@{Spawner}!trigger@{trigger}}
+\index{trigger@{trigger}!Spawner@{Spawner}}
+\doxysubsubsection{\texorpdfstring{trigger}{trigger}}
+{\footnotesize\ttfamily bool Spawner.\+trigger = false}
+
+
+
+If true allows Spawn() 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/andre/\+Unity/\+ARSpace\+Invaders/\+Assets/\+Scripts/\mbox{\hyperlink{_spawner_8cs}{Spawner.\+cs}}\end{DoxyCompactItemize}

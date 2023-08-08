@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-/**
-This class can be applied to objects that need randomized motion
-*/
-
+///
+/// This class can be applied to objects that need randomized motion.
+///
 public class BoundedMotion : MonoBehaviour
 {
 
     // public fields
-    public float velocity = 1.0f;
+    public float velocity = 1.0f;  //!< Velocity of bounded motion
 
     // private fields
     private Rigidbody rb;

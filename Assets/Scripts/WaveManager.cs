@@ -5,23 +5,26 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-
+///
+/// Script attached to WaveManager prefab that handles the waves for the game,
+/// including when to spawn enemies, powerups, and debris.
+///
 public class WaveManager : MonoBehaviour
 {
-
-    public Spawner enemySpawner;
-    public Spawner debrisSpawner;
-    public PowerupSpawner powerupSpawner;
-    public TMP_Text waveTextDisplay;
-    public TMP_Text enemiesRemainingText;
-    public Image waveTextbackground;
-
-
-    public int wave = 0;
+    // Private
     private bool enemySpawnInitiated = false;
-    public int delayBetweenWaves = 10;
-    
 
+    // Public
+    public Spawner enemySpawner;            //!< Ref to enemy spawner
+    public Spawner debrisSpawner;           //!< Ref to debris spawner
+    public PowerupSpawner powerupSpawner;   //!< Ref to powerup spawner
+    public TMP_Text waveTextDisplay;        //!< Ref to text box for displaying wave text
+    public TMP_Text enemiesRemainingText;   //!< Ref to text for enemies remaining text on screen
+    public Image waveTextbackground;        //!< Image for the background of the wave text
+
+    public int wave = 0;                    //!< The current wave
+    public int delayBetweenWaves = 10;      //!< The delay between waves
+    
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +38,9 @@ public class WaveManager : MonoBehaviour
         evaluateEnemies();
     }
 
+    /// <summary>
+    /// Evaluates enemies left and spawns a new wave when appropriate.
+    /// </summary>
     void evaluateEnemies(){
 
         // count how many enemies are left        
@@ -61,6 +67,10 @@ public class WaveManager : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// The actions necessary for a new wave. Includes
+    /// the actual spawns of enemies, debries, and powerups.
+    /// </summary>
     void newWave(){
         
         // display the UI element
@@ -77,6 +87,10 @@ public class WaveManager : MonoBehaviour
         powerupSpawner.WavePowerupSpawn(wave);
     }
 
+    /// <summary>
+    /// Spawns enemies after a delay.
+    /// </summary>
+    /// <param name="delay">The delay before spawning enemies.</param>
     void SpawnEnemies(int delay){
         // add delay to spawning next wave to give player time to prepare
         enemySpawner.numObjects += 1;
@@ -84,6 +98,10 @@ public class WaveManager : MonoBehaviour
         Invoke("UpdateDifficulty", delay+1);
     }
 
+    /// <summary>
+    /// Spawns debris after a delay.
+    /// </summary>
+    /// <param name="delay">The delay before spawning debris.</param>
     void SpawnDebris(int delay){
         const int MAX_DEBRIS = 7;
 
@@ -95,6 +113,9 @@ public class WaveManager : MonoBehaviour
         debrisSpawner.Invoke("Spawn", delay);
     }
 
+    /// <summary>
+    /// Updates the difficulty before the next wave.
+    /// </summary>
     void UpdateDifficulty(){
 
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");

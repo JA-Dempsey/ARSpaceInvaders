@@ -1,5 +1,8 @@
 using System;
 
+///
+/// An entry for a new score. Includes the name and the score.
+///
 [Serializable] public class ScoreEntry: IComparable<ScoreEntry>{
     
     // represnts a score entry with name and score
@@ -13,6 +16,11 @@ using System;
         this.score = score;
     }
 
+    /// <summary>
+    /// Compares to the given other ScoreEntry.
+    /// </summary>
+    /// <param name="other">The score entry to compare to</param>
+    /// <returns></returns>
     public int CompareTo(ScoreEntry other){
         try{
             if(this.score > other.score){

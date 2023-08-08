@@ -1,0 +1,101 @@
+\doxysection{High\+Score\+Manager Class Reference}
+\hypertarget{class_high_score_manager}{}\label{class_high_score_manager}\index{HighScoreManager@{HighScoreManager}}
+
+
+Manages high scores and deals with adding score entry and making sure they appear on the right rows.  
+
+
+Inheritance diagram for High\+Score\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_high_score_manager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+IEnumerable$<$ \mbox{\hyperlink{class_score_entry}{Score\+Entry}} $>$ \mbox{\hyperlink{class_high_score_manager_a8ea27301797aada2473fdc9458dd7842}{Get\+High\+Scores}} ()
+\begin{DoxyCompactList}\small\item\em Enumerable that returns a list of scores. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_high_score_manager_aae98d07e428e39547032ae2ac3872708}{Add\+Score}} (\mbox{\hyperlink{class_score_entry}{Score\+Entry}} score)
+\begin{DoxyCompactList}\small\item\em Adds a score entry and sorts the list and prunes the excess. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_high_score_manager_a9411134ab2d40e170181bac98752d1c2}{Lowest\+Score}} ()
+\begin{DoxyCompactList}\small\item\em Returns the lowest score on the list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_high_score_manager_ad6e6e98fde53e455c0987f38cfc1bc0c}{Save\+Score}} ()
+\begin{DoxyCompactList}\small\item\em Saves scores back into Player\+Prefs. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_high_score_manager_a2b6144503f459e2279c79ebd84179178}{At\+Capacity}} ()
+\begin{DoxyCompactList}\small\item\em Returns true if high scores are at capacity TOTAL\+\_\+\+TRACKED\+\_\+\+SCORES. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages high scores and deals with adding score entry and making sure they appear on the right rows. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_high_score_manager_aae98d07e428e39547032ae2ac3872708}\label{class_high_score_manager_aae98d07e428e39547032ae2ac3872708} 
+\index{HighScoreManager@{HighScoreManager}!AddScore@{AddScore}}
+\index{AddScore@{AddScore}!HighScoreManager@{HighScoreManager}}
+\doxysubsubsection{\texorpdfstring{AddScore()}{AddScore()}}
+{\footnotesize\ttfamily void High\+Score\+Manager.\+Add\+Score (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_score_entry}{Score\+Entry}}}]{score }\end{DoxyParamCaption})}
+
+
+
+Adds a score entry and sorts the list and prunes the excess. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em score} & Score entry to add to the list\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_high_score_manager_a2b6144503f459e2279c79ebd84179178}\label{class_high_score_manager_a2b6144503f459e2279c79ebd84179178} 
+\index{HighScoreManager@{HighScoreManager}!AtCapacity@{AtCapacity}}
+\index{AtCapacity@{AtCapacity}!HighScoreManager@{HighScoreManager}}
+\doxysubsubsection{\texorpdfstring{AtCapacity()}{AtCapacity()}}
+{\footnotesize\ttfamily bool High\+Score\+Manager.\+At\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns true if high scores are at capacity TOTAL\+\_\+\+TRACKED\+\_\+\+SCORES. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{class_high_score_manager_a8ea27301797aada2473fdc9458dd7842}\label{class_high_score_manager_a8ea27301797aada2473fdc9458dd7842} 
+\index{HighScoreManager@{HighScoreManager}!GetHighScores@{GetHighScores}}
+\index{GetHighScores@{GetHighScores}!HighScoreManager@{HighScoreManager}}
+\doxysubsubsection{\texorpdfstring{GetHighScores()}{GetHighScores()}}
+{\footnotesize\ttfamily IEnumerable$<$ \mbox{\hyperlink{class_score_entry}{Score\+Entry}} $>$ High\+Score\+Manager.\+Get\+High\+Scores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Enumerable that returns a list of scores. 
+
+\begin{DoxyReturn}{Returns}
+A list of scores.
+\end{DoxyReturn}
+\Hypertarget{class_high_score_manager_a9411134ab2d40e170181bac98752d1c2}\label{class_high_score_manager_a9411134ab2d40e170181bac98752d1c2} 
+\index{HighScoreManager@{HighScoreManager}!LowestScore@{LowestScore}}
+\index{LowestScore@{LowestScore}!HighScoreManager@{HighScoreManager}}
+\doxysubsubsection{\texorpdfstring{LowestScore()}{LowestScore()}}
+{\footnotesize\ttfamily int High\+Score\+Manager.\+Lowest\+Score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the lowest score on the list. 
+
+\begin{DoxyReturn}{Returns}
+The lowest score found in the scores list
+\end{DoxyReturn}
+\Hypertarget{class_high_score_manager_ad6e6e98fde53e455c0987f38cfc1bc0c}\label{class_high_score_manager_ad6e6e98fde53e455c0987f38cfc1bc0c} 
+\index{HighScoreManager@{HighScoreManager}!SaveScore@{SaveScore}}
+\index{SaveScore@{SaveScore}!HighScoreManager@{HighScoreManager}}
+\doxysubsubsection{\texorpdfstring{SaveScore()}{SaveScore()}}
+{\footnotesize\ttfamily void High\+Score\+Manager.\+Save\+Score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Saves scores back into Player\+Prefs. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/andre/\+Unity/\+ARSpace\+Invaders/\+Assets/\+Scripts/\+UI/\mbox{\hyperlink{_high_score_manager_8cs}{High\+Score\+Manager.\+cs}}\end{DoxyCompactItemize}

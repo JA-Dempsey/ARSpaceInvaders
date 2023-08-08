@@ -4,24 +4,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
 
-/**
-This script spawns game objects within a defined play region
-It also sets up the game object scripts with the correct targets
-*/
+
+///
+/// This script spawns game objects within a defined play region.
+/// It also sets up the game object scripts with the correct targets.
+///
 public class Spawner : MonoBehaviour
 {
 
-    public int numObjects = 1;
-    public GameObject spawnTarget;
-    public Boundaries boundaries;
-    public bool spawnAtBoundary;
-    [Range(1f, 4f)] public float boundaryOffset = 2f;
-    public float minY = 1f;
+    public int numObjects = 1;      //!< Number of objects to spawn
+    public GameObject spawnTarget;  //!< Target of the spawn, a GameObject
+    public Boundaries boundaries;   //!< The boundary prefab/script in the scene
+    public bool spawnAtBoundary;    //!< Flag for whether to spawn at boundary
+    [Range(1f, 4f)] public float boundaryOffset = 2f;  //!< Offset for boundary spawn
+    public float minY = 1f;         //!< Minimum y value for spawn
 
 
-    public GameObject[] prefabs;
-    public GameObject aimTarget;
-    public bool trigger = false;
+    public GameObject[] prefabs;    //!< Array of prefabs to spawn
+    public GameObject aimTarget;    //!< For enemies, the target they will shoot at
+    public bool trigger = false;    //!< If true allows Spawn()
 
     private float radius;
     private float offset;
@@ -48,6 +49,10 @@ public class Spawner : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Loops through and selects a random object from the script's
+    /// prefab list added in Unity's Editor, and spawns one of them.
+    /// </summary>
     void Spawn(){
         // enforce number of objects to be at least 1
         if(numObjects < 1){

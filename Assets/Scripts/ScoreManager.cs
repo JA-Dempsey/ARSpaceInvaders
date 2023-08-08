@@ -5,14 +5,19 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+///
+/// Manager for the score in the game. Adds score based on
+/// number of enemies killed.
+///
 public class ScoreManager : MonoBehaviour
 {
 
-    public int score = 0;
-    public TMP_Text scoreText;
-    private GameObject[] enemies;
-    private int pointsPerEnemy = 10;
-    private int lastEnemyCount = 0;
+    public int score = 0; //!< Initial score
+    public TMP_Text scoreText; //!< Text for the score
+
+    private GameObject[] enemies;  // Array of enemies
+    private int pointsPerEnemy = 10;  // Points given per enemy
+    private int lastEnemyCount = 0;  // Used for calculations, this number is given as enemies after last enemy death
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +38,11 @@ public class ScoreManager : MonoBehaviour
         }catch(NullReferenceException e){}
     }
 
-    // allows score to be incremented/decremented by some value
+    /// <summary>
+    /// Allows score to be incremented/decremented by some value.
+    /// </summary>
+    /// <param name="value">Value to increment/decrement (- to decrement)</param>
+    /// <returns>Returns the current score</returns>
     public int addScore(int value){
         score += value;
 
