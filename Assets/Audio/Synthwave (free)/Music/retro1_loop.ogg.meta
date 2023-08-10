@@ -1,0 +1,29 @@
+fileFormatVersion: 2
+guid: f30b503af853d1a4881d32c0052cb366
+timeCreated: 1485733424
+licenseType: Store
+AudioImporter:
+  serializedVersion: 6
+  defaultSettings:
+    loadType: 0
+    sampleRateSetting: 0
+    sampleRateOverride: 44100
+    compressionFormat: 1
+    quality: 1
+    conversionMode: 0
+  platformSettingOverrides: {}
+  forceToMono: 0
+  normalize: 1
+  preloadAudioData: 1
+  loadInBackground: 0
+  3D: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 81687
+  packageName: Synthwave music pack (free)
+  packageVersion: 1.0
+  assetPath: Assets/Synthwave (free)/Music/retro1_loop.ogg
+  uploadId: 159131

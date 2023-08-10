@@ -1,0 +1,118 @@
+\doxysection{Wave\+Manager Class Reference}
+\hypertarget{class_wave_manager}{}\label{class_wave_manager}\index{WaveManager@{WaveManager}}
+Inheritance diagram for Wave\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_wave_manager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_spawner}{Spawner}} \mbox{\hyperlink{class_wave_manager_a7aa507f217de51c583dc9bc375a4ad8a}{enemy\+Spawner}}
+\begin{DoxyCompactList}\small\item\em Ref to enemy spawner. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_spawner}{Spawner}} \mbox{\hyperlink{class_wave_manager_a48082399516fa430dffdacea3d327b86}{debris\+Spawner}}
+\begin{DoxyCompactList}\small\item\em Ref to debris spawner. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_powerup_spawner}{Powerup\+Spawner}} \mbox{\hyperlink{class_wave_manager_ad6efecb3375a9e6e2decf3526a1c3504}{powerup\+Spawner}}
+\begin{DoxyCompactList}\small\item\em Ref to powerup spawner. \end{DoxyCompactList}\item 
+TMP\+\_\+\+Text \mbox{\hyperlink{class_wave_manager_a642355cf03e5aa2dd827a81eab5dc46e}{wave\+Text\+Display}}
+\begin{DoxyCompactList}\small\item\em Ref to text box for displaying wave text. \end{DoxyCompactList}\item 
+TMP\+\_\+\+Text \mbox{\hyperlink{class_wave_manager_ab1bfcbbd882fe08ce0bb550e8c89bfe1}{enemies\+Remaining\+Text}}
+\begin{DoxyCompactList}\small\item\em Ref to text for enemies remaining text on screen. \end{DoxyCompactList}\item 
+Image \mbox{\hyperlink{class_wave_manager_a8fa48dc0448af49567b51f6458648351}{wave\+Textbackground}}
+\begin{DoxyCompactList}\small\item\em Image for the background of the wave text. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_wave_manager_ab48ab28b1868acc17f81c4f48dbf74e0}{wave}} = 0
+\begin{DoxyCompactList}\small\item\em The current wave. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_wave_manager_a03f985efb42b0bbb1d89ae26c26c8dd0}{delay\+Between\+Waves}} = 10
+\begin{DoxyCompactList}\small\item\em The delay between waves. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Script attached to \doxylink{class_wave_manager}{Wave\+Manager} prefab that handles the waves for the game, including when to spawn enemies, powerups, and debris. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_wave_manager_a48082399516fa430dffdacea3d327b86}\label{class_wave_manager_a48082399516fa430dffdacea3d327b86} 
+\index{WaveManager@{WaveManager}!debrisSpawner@{debrisSpawner}}
+\index{debrisSpawner@{debrisSpawner}!WaveManager@{WaveManager}}
+\doxysubsubsection{\texorpdfstring{debrisSpawner}{debrisSpawner}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_spawner}{Spawner}} Wave\+Manager.\+debris\+Spawner}
+
+
+
+Ref to debris spawner. 
+
+\Hypertarget{class_wave_manager_a03f985efb42b0bbb1d89ae26c26c8dd0}\label{class_wave_manager_a03f985efb42b0bbb1d89ae26c26c8dd0} 
+\index{WaveManager@{WaveManager}!delayBetweenWaves@{delayBetweenWaves}}
+\index{delayBetweenWaves@{delayBetweenWaves}!WaveManager@{WaveManager}}
+\doxysubsubsection{\texorpdfstring{delayBetweenWaves}{delayBetweenWaves}}
+{\footnotesize\ttfamily int Wave\+Manager.\+delay\+Between\+Waves = 10}
+
+
+
+The delay between waves. 
+
+\Hypertarget{class_wave_manager_ab1bfcbbd882fe08ce0bb550e8c89bfe1}\label{class_wave_manager_ab1bfcbbd882fe08ce0bb550e8c89bfe1} 
+\index{WaveManager@{WaveManager}!enemiesRemainingText@{enemiesRemainingText}}
+\index{enemiesRemainingText@{enemiesRemainingText}!WaveManager@{WaveManager}}
+\doxysubsubsection{\texorpdfstring{enemiesRemainingText}{enemiesRemainingText}}
+{\footnotesize\ttfamily TMP\+\_\+\+Text Wave\+Manager.\+enemies\+Remaining\+Text}
+
+
+
+Ref to text for enemies remaining text on screen. 
+
+\Hypertarget{class_wave_manager_a7aa507f217de51c583dc9bc375a4ad8a}\label{class_wave_manager_a7aa507f217de51c583dc9bc375a4ad8a} 
+\index{WaveManager@{WaveManager}!enemySpawner@{enemySpawner}}
+\index{enemySpawner@{enemySpawner}!WaveManager@{WaveManager}}
+\doxysubsubsection{\texorpdfstring{enemySpawner}{enemySpawner}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_spawner}{Spawner}} Wave\+Manager.\+enemy\+Spawner}
+
+
+
+Ref to enemy spawner. 
+
+\Hypertarget{class_wave_manager_ad6efecb3375a9e6e2decf3526a1c3504}\label{class_wave_manager_ad6efecb3375a9e6e2decf3526a1c3504} 
+\index{WaveManager@{WaveManager}!powerupSpawner@{powerupSpawner}}
+\index{powerupSpawner@{powerupSpawner}!WaveManager@{WaveManager}}
+\doxysubsubsection{\texorpdfstring{powerupSpawner}{powerupSpawner}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_powerup_spawner}{Powerup\+Spawner}} Wave\+Manager.\+powerup\+Spawner}
+
+
+
+Ref to powerup spawner. 
+
+\Hypertarget{class_wave_manager_ab48ab28b1868acc17f81c4f48dbf74e0}\label{class_wave_manager_ab48ab28b1868acc17f81c4f48dbf74e0} 
+\index{WaveManager@{WaveManager}!wave@{wave}}
+\index{wave@{wave}!WaveManager@{WaveManager}}
+\doxysubsubsection{\texorpdfstring{wave}{wave}}
+{\footnotesize\ttfamily int Wave\+Manager.\+wave = 0}
+
+
+
+The current wave. 
+
+\Hypertarget{class_wave_manager_a8fa48dc0448af49567b51f6458648351}\label{class_wave_manager_a8fa48dc0448af49567b51f6458648351} 
+\index{WaveManager@{WaveManager}!waveTextbackground@{waveTextbackground}}
+\index{waveTextbackground@{waveTextbackground}!WaveManager@{WaveManager}}
+\doxysubsubsection{\texorpdfstring{waveTextbackground}{waveTextbackground}}
+{\footnotesize\ttfamily Image Wave\+Manager.\+wave\+Textbackground}
+
+
+
+Image for the background of the wave text. 
+
+\Hypertarget{class_wave_manager_a642355cf03e5aa2dd827a81eab5dc46e}\label{class_wave_manager_a642355cf03e5aa2dd827a81eab5dc46e} 
+\index{WaveManager@{WaveManager}!waveTextDisplay@{waveTextDisplay}}
+\index{waveTextDisplay@{waveTextDisplay}!WaveManager@{WaveManager}}
+\doxysubsubsection{\texorpdfstring{waveTextDisplay}{waveTextDisplay}}
+{\footnotesize\ttfamily TMP\+\_\+\+Text Wave\+Manager.\+wave\+Text\+Display}
+
+
+
+Ref to text box for displaying wave text. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/andre/\+Unity/\+ARSpace\+Invaders/\+Assets/\+Scripts/\mbox{\hyperlink{_wave_manager_8cs}{Wave\+Manager.\+cs}}\end{DoxyCompactItemize}

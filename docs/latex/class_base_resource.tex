@@ -1,0 +1,152 @@
+\doxysection{Base\+Resource Class Reference}
+\hypertarget{class_base_resource}{}\label{class_base_resource}\index{BaseResource@{BaseResource}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_base_resource_a9d7958bbd04066adf11c78bb0a1a3dcc}{Base\+Resource}} (int min, int max, int critical)
+\begin{DoxyCompactList}\small\item\em Constructor for a \doxylink{class_base_resource}{Base\+Resource}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_base_resource_a84cd80471bd7b5925d8ce025632d48f5}{Check\+Flags}} ()
+\begin{DoxyCompactList}\small\item\em Checks that flags are correct based on current resource values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_base_resource_a04a83c4a5b4c1670f1d03ece454077e6}{Decrease}} (int decrease)
+\begin{DoxyCompactList}\small\item\em Decrease the resource. Can\textquotesingle{}t decrease below 0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_base_resource_a556f3320874641ef43444e59f640ed1c}{Increase}} (int increase)
+\begin{DoxyCompactList}\small\item\em Increase the resource. Can\textquotesingle{}t decrease above max. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_base_resource_a2f0549b4c4fd2001d9632e6d4ac4c48a}{Current}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The current value of the resource. Always positive. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_base_resource_a3265ad1d7e9bf2e418b761084825ea42}{Max}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The max possible values of the resource. Always positive. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_base_resource_a9971eccf23a4508f80338517e49b9300}{Critical}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The critical threshold value. Always positive. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_base_resource_af390cf9914de977e817a274fe62c7b2a}{Is\+Zero}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Flag. True if Current = 0. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_base_resource_acbde44877486d35f01adb1ed5c53b265}{Is\+Critical}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Flag. True if Current \texorpdfstring{$<$}{<} Critical. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that tracks a resource for a player/unit, and ways to update the resource. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_base_resource_a9d7958bbd04066adf11c78bb0a1a3dcc}\label{class_base_resource_a9d7958bbd04066adf11c78bb0a1a3dcc} 
+\index{BaseResource@{BaseResource}!BaseResource@{BaseResource}}
+\index{BaseResource@{BaseResource}!BaseResource@{BaseResource}}
+\doxysubsubsection{\texorpdfstring{BaseResource()}{BaseResource()}}
+{\footnotesize\ttfamily Base\+Resource.\+Base\+Resource (\begin{DoxyParamCaption}\item[{int}]{min,  }\item[{int}]{max,  }\item[{int}]{critical }\end{DoxyParamCaption})}
+
+
+
+Constructor for a \doxylink{class_base_resource}{Base\+Resource}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & Currently always 0\\
+\hline
+{\em max} & Max resource value\\
+\hline
+{\em critical} & Threshold under which resource is considered critical\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_base_resource_a84cd80471bd7b5925d8ce025632d48f5}\label{class_base_resource_a84cd80471bd7b5925d8ce025632d48f5} 
+\index{BaseResource@{BaseResource}!CheckFlags@{CheckFlags}}
+\index{CheckFlags@{CheckFlags}!BaseResource@{BaseResource}}
+\doxysubsubsection{\texorpdfstring{CheckFlags()}{CheckFlags()}}
+{\footnotesize\ttfamily void Base\+Resource.\+Check\+Flags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks that flags are correct based on current resource values. 
+
+\Hypertarget{class_base_resource_a04a83c4a5b4c1670f1d03ece454077e6}\label{class_base_resource_a04a83c4a5b4c1670f1d03ece454077e6} 
+\index{BaseResource@{BaseResource}!Decrease@{Decrease}}
+\index{Decrease@{Decrease}!BaseResource@{BaseResource}}
+\doxysubsubsection{\texorpdfstring{Decrease()}{Decrease()}}
+{\footnotesize\ttfamily void Base\+Resource.\+Decrease (\begin{DoxyParamCaption}\item[{int}]{decrease }\end{DoxyParamCaption})}
+
+
+
+Decrease the resource. Can\textquotesingle{}t decrease below 0. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em decrease} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_base_resource_a556f3320874641ef43444e59f640ed1c}\label{class_base_resource_a556f3320874641ef43444e59f640ed1c} 
+\index{BaseResource@{BaseResource}!Increase@{Increase}}
+\index{Increase@{Increase}!BaseResource@{BaseResource}}
+\doxysubsubsection{\texorpdfstring{Increase()}{Increase()}}
+{\footnotesize\ttfamily void Base\+Resource.\+Increase (\begin{DoxyParamCaption}\item[{int}]{increase }\end{DoxyParamCaption})}
+
+
+
+Increase the resource. Can\textquotesingle{}t decrease above max. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em increase} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Property Documentation}
+\Hypertarget{class_base_resource_a9971eccf23a4508f80338517e49b9300}\label{class_base_resource_a9971eccf23a4508f80338517e49b9300} 
+\index{BaseResource@{BaseResource}!Critical@{Critical}}
+\index{Critical@{Critical}!BaseResource@{BaseResource}}
+\doxysubsubsection{\texorpdfstring{Critical}{Critical}}
+{\footnotesize\ttfamily int Base\+Resource.\+Critical\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The critical threshold value. Always positive. 
+
+\Hypertarget{class_base_resource_a2f0549b4c4fd2001d9632e6d4ac4c48a}\label{class_base_resource_a2f0549b4c4fd2001d9632e6d4ac4c48a} 
+\index{BaseResource@{BaseResource}!Current@{Current}}
+\index{Current@{Current}!BaseResource@{BaseResource}}
+\doxysubsubsection{\texorpdfstring{Current}{Current}}
+{\footnotesize\ttfamily int Base\+Resource.\+Current\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The current value of the resource. Always positive. 
+
+\Hypertarget{class_base_resource_acbde44877486d35f01adb1ed5c53b265}\label{class_base_resource_acbde44877486d35f01adb1ed5c53b265} 
+\index{BaseResource@{BaseResource}!IsCritical@{IsCritical}}
+\index{IsCritical@{IsCritical}!BaseResource@{BaseResource}}
+\doxysubsubsection{\texorpdfstring{IsCritical}{IsCritical}}
+{\footnotesize\ttfamily bool Base\+Resource.\+Is\+Critical\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Flag. True if Current \texorpdfstring{$<$}{<} Critical. 
+
+\Hypertarget{class_base_resource_af390cf9914de977e817a274fe62c7b2a}\label{class_base_resource_af390cf9914de977e817a274fe62c7b2a} 
+\index{BaseResource@{BaseResource}!IsZero@{IsZero}}
+\index{IsZero@{IsZero}!BaseResource@{BaseResource}}
+\doxysubsubsection{\texorpdfstring{IsZero}{IsZero}}
+{\footnotesize\ttfamily bool Base\+Resource.\+Is\+Zero\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Flag. True if Current = 0. 
+
+\Hypertarget{class_base_resource_a3265ad1d7e9bf2e418b761084825ea42}\label{class_base_resource_a3265ad1d7e9bf2e418b761084825ea42} 
+\index{BaseResource@{BaseResource}!Max@{Max}}
+\index{Max@{Max}!BaseResource@{BaseResource}}
+\doxysubsubsection{\texorpdfstring{Max}{Max}}
+{\footnotesize\ttfamily int Base\+Resource.\+Max\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The max possible values of the resource. Always positive. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/andre/\+Unity/\+ARSpace\+Invaders/\+Assets/\+Scripts/\mbox{\hyperlink{_base_resource_8cs}{Base\+Resource.\+cs}}\end{DoxyCompactItemize}

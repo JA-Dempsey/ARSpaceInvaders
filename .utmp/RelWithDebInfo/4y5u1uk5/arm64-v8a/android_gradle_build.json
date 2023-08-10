@@ -1,0 +1,39 @@
+{
+  "buildFiles": [
+    "C:\\Users\\jcoro\\Desktop\\OSU\\Summer 2023\\CS467-Capstone Project\\ARSpaceInvaders-menu-navigation\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\unityLibrary\\src\\main\\cpp\\CMakeLists.txt",
+    "C:\\Users\\jcoro\\Desktop\\OSU\\Summer 2023\\CS467-Capstone Project\\ARSpaceInvaders-menu-navigation\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\unityLibrary\\src\\main\\cpp\\FramePacing\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "C:\\Program Files\\Unity\\Hub\\Editor\\2023.1.3f1\\Editor\\Data\\PlaybackEngines\\AndroidPlayer\\SDK\\cmake\\3.22.1\\bin\\ninja.exe",
+      "-C",
+      "C:\\Users\\jcoro\\Desktop\\OSU\\Summer 2023\\CS467-Capstone Project\\ARSpaceInvaders-menu-navigation\\.utmp\\RelWithDebInfo\\4y5u1uk5\\arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "C:\\Program Files\\Unity\\Hub\\Editor\\2023.1.3f1\\Editor\\Data\\PlaybackEngines\\AndroidPlayer\\SDK\\cmake\\3.22.1\\bin\\ninja.exe",
+    "-C",
+    "C:\\Users\\jcoro\\Desktop\\OSU\\Summer 2023\\CS467-Capstone Project\\ARSpaceInvaders-menu-navigation\\.utmp\\RelWithDebInfo\\4y5u1uk5\\arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "swappywrapper::@7e25bd1f32ce224db4e9": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "swappywrapper",
+      "output": "C:\\Users\\jcoro\\Desktop\\OSU\\Summer 2023\\CS467-Capstone Project\\ARSpaceInvaders-menu-navigation\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\unityLibrary\\build\\intermediates\\cxx\\RelWithDebInfo\\4y5u1uk5\\obj\\arm64-v8a\\libswappywrapper.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "C:\\Program Files\\Unity\\Hub\\Editor\\2023.1.3f1\\Editor\\Data\\PlaybackEngines\\AndroidPlayer\\NDK\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "cppCompilerExecutable": "C:\\Program Files\\Unity\\Hub\\Editor\\2023.1.3f1\\Editor\\Data\\PlaybackEngines\\AndroidPlayer\\NDK\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

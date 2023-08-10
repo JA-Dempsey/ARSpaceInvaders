@@ -1,0 +1,123 @@
+\doxysection{Health\+Powerup Class Reference}
+\hypertarget{class_health_powerup}{}\label{class_health_powerup}\index{HealthPowerup@{HealthPowerup}}
+Inheritance diagram for Health\+Powerup\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_health_powerup}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_health_powerup_a0aa550bd171504fffdb8f6559d0c4482}{Check\+Immediate}} ()
+\begin{DoxyCompactList}\small\item\em Checks to make sure immediate flag is set when decay hits 0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_health_powerup_ac5fb01a2d3a95326905d2ac91b6daa70}{Effect}} ()
+\begin{DoxyCompactList}\small\item\em Method that enacts the change to player when powerup is collected. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_health_powerup_ac0032422d248691b514e6ad09645cf13}{Decay}} (float time)
+\begin{DoxyCompactList}\small\item\em Reduces the decay timer for the powerup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_health_powerup_ac18de95127f3afee903f8711fd2630e2}{Powerup\+Scale}} = 20
+\begin{DoxyCompactList}\small\item\em How much of a resource the powerup gives. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_health_powerup_abcea38329fd4f87111493ce79e9a0df9}{Is\+Immediate}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Flag. If powerup is given immediately. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_health_powerup_a88309bc44c9df62cc8b944e73ff60333}{Is\+Finished}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Flag. If buff should be finished. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_health_powerup_a83d531cf1cadb69e708779c5427584b4}{Buffed}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Flag. If buff currently active. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines a Health \doxylink{class_powerup}{Powerup} and the effect it has when a player projectile or player collides with the powerup. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_health_powerup_a0aa550bd171504fffdb8f6559d0c4482}\label{class_health_powerup_a0aa550bd171504fffdb8f6559d0c4482} 
+\index{HealthPowerup@{HealthPowerup}!CheckImmediate@{CheckImmediate}}
+\index{CheckImmediate@{CheckImmediate}!HealthPowerup@{HealthPowerup}}
+\doxysubsubsection{\texorpdfstring{CheckImmediate()}{CheckImmediate()}}
+{\footnotesize\ttfamily void Health\+Powerup.\+Check\+Immediate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks to make sure immediate flag is set when decay hits 0. 
+
+\Hypertarget{class_health_powerup_ac0032422d248691b514e6ad09645cf13}\label{class_health_powerup_ac0032422d248691b514e6ad09645cf13} 
+\index{HealthPowerup@{HealthPowerup}!Decay@{Decay}}
+\index{Decay@{Decay}!HealthPowerup@{HealthPowerup}}
+\doxysubsubsection{\texorpdfstring{Decay()}{Decay()}}
+{\footnotesize\ttfamily void Health\+Powerup.\+Decay (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})}
+
+
+
+Reduces the decay timer for the powerup. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Amount of time to reduce the decay timer by\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_health_powerup_ac5fb01a2d3a95326905d2ac91b6daa70}\label{class_health_powerup_ac5fb01a2d3a95326905d2ac91b6daa70} 
+\index{HealthPowerup@{HealthPowerup}!Effect@{Effect}}
+\index{Effect@{Effect}!HealthPowerup@{HealthPowerup}}
+\doxysubsubsection{\texorpdfstring{Effect()}{Effect()}}
+{\footnotesize\ttfamily void Health\+Powerup.\+Effect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method that enacts the change to player when powerup is collected. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_health_powerup_ac18de95127f3afee903f8711fd2630e2}\label{class_health_powerup_ac18de95127f3afee903f8711fd2630e2} 
+\index{HealthPowerup@{HealthPowerup}!PowerupScale@{PowerupScale}}
+\index{PowerupScale@{PowerupScale}!HealthPowerup@{HealthPowerup}}
+\doxysubsubsection{\texorpdfstring{PowerupScale}{PowerupScale}}
+{\footnotesize\ttfamily int Health\+Powerup.\+Powerup\+Scale = 20}
+
+
+
+How much of a resource the powerup gives. 
+
+
+
+\doxysubsection{Property Documentation}
+\Hypertarget{class_health_powerup_a83d531cf1cadb69e708779c5427584b4}\label{class_health_powerup_a83d531cf1cadb69e708779c5427584b4} 
+\index{HealthPowerup@{HealthPowerup}!Buffed@{Buffed}}
+\index{Buffed@{Buffed}!HealthPowerup@{HealthPowerup}}
+\doxysubsubsection{\texorpdfstring{Buffed}{Buffed}}
+{\footnotesize\ttfamily bool Health\+Powerup.\+Buffed\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Flag. If buff currently active. 
+
+\Hypertarget{class_health_powerup_a88309bc44c9df62cc8b944e73ff60333}\label{class_health_powerup_a88309bc44c9df62cc8b944e73ff60333} 
+\index{HealthPowerup@{HealthPowerup}!IsFinished@{IsFinished}}
+\index{IsFinished@{IsFinished}!HealthPowerup@{HealthPowerup}}
+\doxysubsubsection{\texorpdfstring{IsFinished}{IsFinished}}
+{\footnotesize\ttfamily bool Health\+Powerup.\+Is\+Finished\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Flag. If buff should be finished. 
+
+\Hypertarget{class_health_powerup_abcea38329fd4f87111493ce79e9a0df9}\label{class_health_powerup_abcea38329fd4f87111493ce79e9a0df9} 
+\index{HealthPowerup@{HealthPowerup}!IsImmediate@{IsImmediate}}
+\index{IsImmediate@{IsImmediate}!HealthPowerup@{HealthPowerup}}
+\doxysubsubsection{\texorpdfstring{IsImmediate}{IsImmediate}}
+{\footnotesize\ttfamily bool Health\+Powerup.\+Is\+Immediate\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Flag. If powerup is given immediately. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/andre/\+Unity/\+ARSpace\+Invaders/\+Assets/\+Scripts/\+Powerups/\mbox{\hyperlink{_health_powerup_8cs}{Health\+Powerup.\+cs}}\end{DoxyCompactItemize}
